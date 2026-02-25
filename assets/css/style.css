@@ -1,0 +1,103 @@
+@layer tokens, breakpoints, base, components, utilities;
+@import "tokens.css";
+@import "breakpoints.css";
+@layer tokens {
+  @font-face {
+    font-family: "New Kansas";
+    src: url("/assets/fonts/NewKansas-Thin.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "New Kansas";
+    src: url("/assets/fonts/NewKansas-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "New Kansas";
+    src: url("/assets/fonts/NewKansas-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "New Kansas";
+    src: url("/assets/fonts/NewKansas-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "New Kansas";
+    src: url("/assets/fonts/NewKansas-Semi-Bold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "New Kansas";
+    src: url("/assets/fonts/NewKansas-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "New Kansas";
+    src: url("/assets/fonts/NewKansas-Black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "New Kansas";
+    src: url("/assets/fonts/NewKansas-Heavy.otf") format("opentype");
+    font-weight: 950;
+    font-style: normal;
+  }
+}
+@layer tokens {
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url("/assets/fonts/SofiaPro-Thin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url("/assets/fonts/SofiaPro-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url("/assets/fonts/SofiaPro-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url("/assets/fonts/SofiaPro-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url("/assets/fonts/SofiaPro-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url("/assets/fonts/SofiaPro-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+  }
+}
