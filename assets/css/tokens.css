@@ -1,6 +1,23 @@
-:root{
+:root {
+    /*Semantic tokens*/
     /* Dark theme */
-    --color-bg: #563127;
-    --color-text: #fff9eb;
-    --color-accent: #ff743c;
+    --dark-color-bg: #563127;
+    --dark-color-text: #fff9eb;
+    --dark-color-accent: #ff743c;
+    /* Additional dark‑theme semantic tokens */
+    --dark-color-surface: #6b3d31;
+    --dark-color-text-muted: rgba(255, 249, 235, 0.7);
+    --dark-color-accent-hover: #ff8656;
+    --dark-color-accent-active: #e05f2c;
+
+    /* Light theme */
+    --light-color-bg: #d9cae4;
+    --light-color-text: #563127;
+    --light-color-accent: #e98ad8;
+    /* Additional light‑theme semantic tokens */
+    --light-color-surface: #e8dff0;
+    --light-color-text-muted: rgba(86, 49, 39, 0.6);
+    --light-color-accent-hover: #f29be0;
+    --light-color-accent-active: #d374c4;
+
 }

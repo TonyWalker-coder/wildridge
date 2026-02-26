@@ -1,7 +1,7 @@
 @layer tokens, breakpoints, base, components, utilities;
 @import "tokens.css";
 @import "breakpoints.css";
-@layer tokens {
+
   @font-face {
     font-family: "New Kansas";
     src: url("/assets/fonts/NewKansas-Thin.otf") format("opentype");
@@ -57,8 +57,6 @@
     font-weight: 950;
     font-style: normal;
   }
-}
-@layer tokens {
   @font-face {
     font-family: "Sofia Pro";
     src: url("/assets/fonts/SofiaPro-Thin.woff") format("woff");
@@ -100,4 +98,29 @@
     font-weight: 900;
     font-style: normal;
   }
-}
+@layer tokens {
+:root {
+  /* Global tokens */
+  --color-bg: var(--dark-color-bg);
+  --color-text: var(--dark-color-text);
+
+  /* A surface should be lighter than bg but still in the dark palette.
+     Using a slightly desaturated, lifted version of your bg works well. */
+  --color-surface: var(--dark-color-surface);
+
+  /* Borders already mapped */
+  --color-borders: var(--dark-color-accent);
+
+  /* Muted text should be readable but clearly secondary.
+     A 70% tint of your main text colour works well. */
+  --color-text-muted: var(--dark-color-text-muted);
+
+  /* Accent hover can stay the same or brighten slightly.
+     Active should be a deeper, more saturated version. */
+  --color-accent-hover: var(--dark-color-accent-hover);
+  --color-accent-active: var(--dark-color-accent-active);
+
+  --font-primary: "New Kansas", sans-serif;
+  --font-secondary: "Sofia Pro", sans-serif;
+}}
+

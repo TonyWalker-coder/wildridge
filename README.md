@@ -1,10 +1,116 @@
+<style>
+
+@import url(href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+body {
+  font-family: 'Noto', sans-serif;
+}
+
+
+      @font-face {
+    font-family: "New Kansas";
+    src: url("assets/fonts/NewKansas-Thin.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "New Kansas";
+    src: url("assets/fonts/NewKansas-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "New Kansas";
+    src: url("assets/fonts/NewKansas-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "New Kansas";
+    src: url("assets/fonts/NewKansas-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "New Kansas";
+    src: url("assets/fonts/NewKansas-Semi-Bold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "New Kansas";
+    src: url("assets/fonts/NewKansas-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "New Kansas";
+    src: url("assets/fonts/NewKansas-Black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "New Kansas";
+    src: url("assets/fonts/NewKansas-Heavy.otf") format("opentype");
+    font-weight: 950;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url("assets/fonts/SofiaPro-Thin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url("assets/fonts/SofiaPro-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url("assets/fonts/SofiaPro-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url("assets/fonts/SofiaPro-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url("assets/fonts/SofiaPro-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url("assets/fonts/SofiaPro-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+  }
+</style>
+
 ## Table of Contents
 
 - [User Stories](#user-stories)
 - [Supporting Documentation](#supporting-documentation)
 - [Tech Stack](#tech-stack)
 - [Folder Structure](#folder-structure)
-
+- [Colour Palette](#color-palette)
 
 
 ## user stories
@@ -160,3 +266,59 @@ The site can integrate external APIs to provide additional real‑time or contex
     ├── about.html
     ├── activities.html
     └── shopandcafe.html
+```
+<a id="color-palette"></a>
+## Colour Palette
+
+The project uses a paired dark an
+d light colour system designed to feel warm, earthy, and consistent across the site. The dark theme is built around deep browns and ember‑orange accents, giving it a grounded, rustic tone that fits the overall aesthetic. Soft cream tones and muted variants provide contrast for text, surfaces, and subtle UI elements. The light theme mirrors the same structure but shifts into gentle lilacs and warm browns, keeping the identity intact while offering a brighter, more open feel. Both palettes are structured so backgrounds, surfaces, accents, and muted tones map cleanly between modes, ensuring predictable contrast and a cohesive visual rhythm throughout the interface.
+
+### Dark Theme
+
+<div style="display:flex; gap:10px;">
+  <div style="width:60px; height:60px; background:#563127; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#fff9eb; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#ff743c; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#6b3d31; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:rgba(255, 249, 235, 0.7); border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#ff8656; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#e05f2c; border-radius:6px;"></div>
+</div>
+
+### Light Theme
+
+<div style="display:flex; gap:10px;">
+  <div style="width:60px; height:60px; background:#d9cae4; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#563127; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#e98ad8; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#e8dff0; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:rgba(86, 49, 39, 0.6); border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#f29be0; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#d374c4; border-radius:6px;"></div>
+</div>
+
+## type
+
+### Headings — Bree Serif
+
+Friendly, handcrafted, and distinctive without compromising clarity.
+"New Kansas"
+
+<p style="font-family:'Bree Serif', serif; font-size:24px;">
+The quick brown fox jumps over the lazy dog.
+</p>
+<p style="font-family:'New Kansas', serif; font-size:24px;">
+The quick brown fox jumps over the lazy dog.
+</p>
+
+### Body Text — Inter
+
+Modern, clean, highly readable, and fully self‑hosted for performance.
+
+<p style="font-family:'Inter', serif; font-size:24px;">
+  The quick brown fox jumps over the lazy dog.
+</p>
+
+<p style="font-family:'Sofia Pro', serif; font-size:24px">
+  The quick brown fox jumps over the lazy dog.
+</p>
