@@ -1,109 +1,17 @@
-<style>
-
-@import url(href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
-body {
-  font-family: 'Noto', sans-serif;
-}
-
-
+<STYLE>
       @font-face {
     font-family: "New Kansas";
-    src: url("assets/fonts/NewKansas-Thin.otf") format("opentype");
-    font-weight: 100;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "New Kansas";
-    src: url("assets/fonts/NewKansas-Light.otf") format("opentype");
-    font-weight: 300;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "New Kansas";
-    src: url("assets/fonts/NewKansas-Regular.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "New Kansas";
-    src: url("assets/fonts/NewKansas-Medium.otf") format("opentype");
-    font-weight: 500;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "New Kansas";
-    src: url("assets/fonts/NewKansas-Semi-Bold.otf") format("opentype");
+    src: url("assets/fonts/New-Kansas-Semi-Bold.otf") format("opentype");
     font-weight: 600;
     font-style: normal;
   }
-
-  @font-face {
-    font-family: "New Kansas";
-    src: url("assets/fonts/NewKansas-Bold.otf") format("opentype");
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "New Kansas";
-    src: url("assets/fonts/NewKansas-Black.otf") format("opentype");
-    font-weight: 900;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "New Kansas";
-    src: url("assets/fonts/NewKansas-Heavy.otf") format("opentype");
-    font-weight: 950;
-    font-style: normal;
-  }
-  @font-face {
+@font-face {
     font-family: "Sofia Pro";
-    src: url("assets/fonts/SofiaPro-Thin.woff") format("woff");
-    font-weight: 100;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Sofia Pro";
-    src: url("assets/fonts/SofiaPro-Light.woff") format("woff");
+    src: url("assets/fonts/Sofia-Pro-Light.woff") format("woff");
     font-weight: 300;
     font-style: normal;
   }
-
-  @font-face {
-    font-family: "Sofia Pro";
-    src: url("assets/fonts/SofiaPro-Regular.woff") format("woff");
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Sofia Pro";
-    src: url("assets/fonts/SofiaPro-Medium.woff") format("woff");
-    font-weight: 500;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Sofia Pro";
-    src: url("assets/fonts/SofiaPro-Bold.woff") format("woff");
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Sofia Pro";
-    src: url("assets/fonts/SofiaPro-Black.woff") format("woff");
-    font-weight: 900;
-    font-style: normal;
-  }
-</style>
-
+</STYLE>
 ## Table of Contents
 
 - [User Stories](#user-stories)
@@ -111,6 +19,8 @@ body {
 - [Tech Stack](#tech-stack)
 - [Folder Structure](#folder-structure)
 - [Colour Palette](#color-palette)
+- [Typography](#typography)
+- [Design Tokens and System Consistency](#tokens)
 
 
 ## user stories
@@ -297,28 +207,27 @@ d light colour system designed to feel warm, earthy, and consistent across the s
   <div style="width:60px; height:60px; background:#d374c4; border-radius:6px;"></div>
 </div>
 
-## type
+## Typography
 
-### Headings — Bree Serif
+The typography system pairs a bold, characterful display face with a clean, modern body font to create a balance between personality and readability. Headings carry the visual identity and set the tone, while body text stays neutral and highly legible, giving the layout a clear hierarchy and a consistent rhythm across the site.
 
-Friendly, handcrafted, and distinctive without compromising clarity.
-"New Kansas"
+### Headings — New Kansas
 
-<p style="font-family:'Bree Serif', serif; font-size:24px;">
+A strong, expressive serif used for titles and section headers to give the design warmth and personality.
+
+<p style="font-family:'New Kansas'; font-size:24px;">
 The quick brown fox jumps over the lazy dog.
 </p>
-<p style="font-family:'New Kansas', serif; font-size:24px;">
-The quick brown fox jumps over the lazy dog.
-</p>
 
-### Body Text — Inter
+### Body Text — Sofia Pro
 
-Modern, clean, highly readable, and fully self‑hosted for performance.
+A clean, versatile sans‑serif chosen for clarity and comfort, ideal for longer passages and general UI text.
 
-<p style="font-family:'Inter', serif; font-size:24px;">
+<p style="font-family:'Sofia Pro'; font-size:24px;">
   The quick brown fox jumps over the lazy dog.
 </p>
 
-<p style="font-family:'Sofia Pro', serif; font-size:24px">
-  The quick brown fox jumps over the lazy dog.
-</p>
+<a id="tokens"></a>
+## Design Tokens and System Consistency
+
+A token set gives your project a single source of truth for every reusable value, so colours, spacing, typography, and component behaviour all stay consistent no matter where they’re used. Instead of scattering hex codes, font weights, or layout numbers across different files, each value is defined once and referenced everywhere, which makes the system predictable and easy to maintain. When you update a token, the entire interface updates with it, keeping the design coherent as the project grows. Tokens also make dark and light themes straightforward, because each theme simply swaps out its own set of values while the components continue to reference the same names. This approach turns the design into a structured system rather than a collection of ad‑hoc choices, and it ensures that every part of the site speaks the same visual language.

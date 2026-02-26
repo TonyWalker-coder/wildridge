@@ -1,104 +1,104 @@
 @layer tokens, breakpoints, base, components, utilities;
 @import "tokens.css";
 @import "breakpoints.css";
-
+@layer tokens {
   @font-face {
     font-family: "New Kansas";
-    src: url("/assets/fonts/NewKansas-Thin.otf") format("opentype");
+    src: url("../fonts/New-Kansas-Thin.otf") format("opentype");
     font-weight: 100;
     font-style: normal;
   }
 
   @font-face {
     font-family: "New Kansas";
-    src: url("/assets/fonts/NewKansas-Light.otf") format("opentype");
+    src: url("../fonts/New-Kansas-Light.otf") format("opentype");
     font-weight: 300;
     font-style: normal;
   }
 
   @font-face {
     font-family: "New Kansas";
-    src: url("/assets/fonts/NewKansas-Regular.otf") format("opentype");
+    src: url("../fonts/New-Kansas-Regular.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
   }
 
   @font-face {
     font-family: "New Kansas";
-    src: url("/assets/fonts/NewKansas-Medium.otf") format("opentype");
+    src: url("../fonts/New-Kansas-Medium.otf") format("opentype");
     font-weight: 500;
     font-style: normal;
   }
 
   @font-face {
     font-family: "New Kansas";
-    src: url("/assets/fonts/NewKansas-Semi-Bold.otf") format("opentype");
+    src: url("../fonts/New-Kansas-Semi-Bold.otf") format("opentype");
     font-weight: 600;
     font-style: normal;
   }
 
   @font-face {
     font-family: "New Kansas";
-    src: url("/assets/fonts/NewKansas-Bold.otf") format("opentype");
+    src: url("../fonts/New-Kansas-Bold.otf") format("opentype");
     font-weight: 700;
     font-style: normal;
   }
 
   @font-face {
     font-family: "New Kansas";
-    src: url("/assets/fonts/NewKansas-Black.otf") format("opentype");
+    src: url("../fonts/New-Kansas-Black.otf") format("opentype");
     font-weight: 900;
     font-style: normal;
   }
 
   @font-face {
     font-family: "New Kansas";
-    src: url("/assets/fonts/NewKansas-Heavy.otf") format("opentype");
+    src: url("../fonts/New-Kansas-Heavy.otf") format("opentype");
     font-weight: 950;
     font-style: normal;
   }
   @font-face {
     font-family: "Sofia Pro";
-    src: url("/assets/fonts/SofiaPro-Thin.woff") format("woff");
+    src: url("../fonts/SofiaPro-Thin.woff") format("woff");
     font-weight: 100;
     font-style: normal;
   }
 
   @font-face {
     font-family: "Sofia Pro";
-    src: url("/assets/fonts/SofiaPro-Light.woff") format("woff");
+    src: url("../fonts/Sofia-Pro-Light.woff") format("woff");
     font-weight: 300;
     font-style: normal;
   }
 
   @font-face {
     font-family: "Sofia Pro";
-    src: url("/assets/fonts/SofiaPro-Regular.woff") format("woff");
+    src: url("../fonts/Sofia-Pro-Regular.woff") format("woff");
     font-weight: 400;
     font-style: normal;
   }
 
   @font-face {
     font-family: "Sofia Pro";
-    src: url("/assets/fonts/SofiaPro-Medium.woff") format("woff");
+    src: url("../fonts/Sofia-Pro-Medium.woff") format("woff");
     font-weight: 500;
     font-style: normal;
   }
 
   @font-face {
     font-family: "Sofia Pro";
-    src: url("/assets/fonts/SofiaPro-Bold.woff") format("woff");
+    src: url("../fonts/Sofia-Pro-Bold.woff") format("woff");
     font-weight: 700;
     font-style: normal;
   }
 
   @font-face {
     font-family: "Sofia Pro";
-    src: url("/assets/fonts/SofiaPro-Black.woff") format("woff");
+    src: url("../fonts/Sofia-Pro-Black.woff") format("woff");
     font-weight: 900;
     font-style: normal;
   }
-@layer tokens {
+
 :root {
   /* Global tokens */
   --color-bg: var(--dark-color-bg);
@@ -120,7 +120,23 @@
   --color-accent-hover: var(--dark-color-accent-hover);
   --color-accent-active: var(--dark-color-accent-active);
 
-  --font-primary: "New Kansas", sans-serif;
-  --font-secondary: "Sofia Pro", sans-serif;
-}}
+  /* Typography tokens making use of clamp for responsive sizing */
+  h1 {
+    font-size: clamp(var(--font-size-2xl), 4vw + var(--font-size-md), var(--font-size-5xl));
+  }
 
+  h2 {
+    font-size: clamp(var(--font-size-1xl), 3vw + var(--font-size-md), var(--font-size-4xl));
+  }
+
+  p {
+    font-size: clamp(var(--font-size-md), 2vw + var(--font-size-md), var(--font-size-3xl));
+  }
+
+  #small {
+    font-size: clamp(var(--font-size-sm), 1.5vw + var(--font-size-xs), var(--font-size-2xxl));
+  }
+
+
+}
+}
