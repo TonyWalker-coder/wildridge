@@ -33,11 +33,12 @@
     --font-secondary: "Sofia Pro";
 
     /* Font sizes */
+    --font-size-xxs: 0.25rem;
     --font-size-xs: 0.5rem;
     --font-size-sm: 0.75rem;
     --font-size-md: 1rem;
     --font-size-lg: 1.25rem;
-    --font-size-xl: 1.75rem;
+    --font-size-1xl: 1.75rem;
     --font-size-2xl: 2rem;
     --font-size-2xxl: 2.5rem;
     --font-size-3xl: 3rem;

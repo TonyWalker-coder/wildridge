@@ -98,6 +98,15 @@
     font-weight: 900;
     font-style: normal;
   }
+@font-face {
+  font-family: "Modak";
+  src:
+    url("../fonts/Modak.woff2") format("woff2"),
+    url("../fonts/Modak.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   /* Global tokens */
@@ -137,6 +146,101 @@
     font-size: clamp(var(--font-size-sm), 1.5vw + var(--font-size-xs), var(--font-size-2xxl));
   }
 
+/* Component colour tokens */
+--button-bg: var(--color-accent);
+--button-bg-hover: var(--color-accent-hover);
+--button-bg-active: var(--color-accent-active);
+--button-text: var(--color-text);
+--button-border: var(--color-borders);
+--button-disabled-bg: var(--color-surface);
+--button-disabled-text: var(--color-text-muted);
+
+--card-bg: var(--color-surface);
+--card-border: var(--color-borders);
+--card-shadow: var(--shadow-md);
+
+--input-bg: var(--color-surface);
+--input-border: var(--color-borders);
+--input-focus-ring: var(--color-accent);
+--input-placeholder: var(--color-text-muted);
+
+--link-text: var(--color-accent);
+--link-hover: var(--color-accent-hover);
+--link-active: var(--color-accent-active);
 
 }
 }
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Full-width navbar fixed navbar */
+.navbar {
+  position: absolute;
+  top: 2.0833%;       /*40px on 1920 baseline */
+  left: 4.1667%;      /*80px on 1920 baseline */
+  right: 4.1667%;     /*80px on 1920 baseline */
+
+  height: 80px;
+  background: var(--color-surface);
+
+  border-radius: 20px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px;   /* inner breathing room */
+}
+
+.nav-center {
+  display: flex;
+  gap: 4px;
+}
+.nav-center button:first-child {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.nav-center button:last-child {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+.nav-center button {
+  padding: 10px 20px;
+  /*border-radius: 10px;*/
+  width: clamp(140px, 10.4vw, 220px);
+  border: 1px solid var(--button-border);
+  font-family: "Sofia Pro", sans-serif;
+  font-size: clamp(var(--font-size-sm), 1.5vw + var(--font-size-xs), var(--font-size-md));
+  margin:0;
+  background-color: var(--button-bg);
+}
+
+/* Logo styles */
+:root{
+  --step-5: clamp(var(--font-size-2xl), 4vw + var(--font-size-md), var(--font-size-5xl));
+}
+
+.logo {
+  font-family: "Modak", sans-serif;
+  font-size: var(--step-5);
+  color:tan;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.logotext {
+  font-family: "Sofia Pro", sans-serif;
+  font-size: clamp(var(--font-size-xxs), 1.5vw + var(--font-size-xxs), var(--font-size-1xl));
+  color: var(--color-text);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+/*end of logo styles */
+
+
+
+
+
+
