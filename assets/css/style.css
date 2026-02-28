@@ -1,6 +1,6 @@
 @layer tokens, breakpoints, base, components, utilities;
 @import "tokens.css";
-@import "breakpoints.css";
+
 @layer tokens {
   @font-face {
     font-family: "New Kansas";
@@ -57,6 +57,7 @@
     font-weight: 950;
     font-style: normal;
   }
+
   @font-face {
     font-family: "Sofia Pro";
     src: url("../fonts/SofiaPro-Thin.woff") format("woff");
@@ -98,149 +99,246 @@
     font-weight: 900;
     font-style: normal;
   }
-@font-face {
-  font-family: "Modak";
-  src:
-    url("../fonts/Modak.woff2") format("woff2"),
-    url("../fonts/Modak.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
-:root {
-  /* Global tokens */
-  --color-bg: var(--dark-color-bg);
-  --color-text: var(--dark-color-text);
+  @font-face {
+    font-family: "Modak";
+    src:
+      url("../fonts/Modak.woff2") format("woff2"),
+      url("../fonts/Modak.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 
-  /* A surface should be lighter than bg but still in the dark palette.
+  :root {
+    /* Global tokens */
+    --color-bg: var(--dark-color-bg);
+    --color-text: var(--dark-color-text);
+
+    /* A surface should be lighter than bg but still in the dark palette.
      Using a slightly desaturated, lifted version of your bg works well. */
-  --color-surface: var(--dark-color-surface);
+    --color-surface: var(--dark-color-surface);
 
-  /* Borders already mapped */
-  --color-borders: var(--dark-color-accent);
+    /* Borders already mapped */
+    --color-borders: var(--dark-color-accent);
 
-  /* Muted text should be readable but clearly secondary.
+    /* Muted text should be readable but clearly secondary.
      A 70% tint of your main text colour works well. */
-  --color-text-muted: var(--dark-color-text-muted);
+    --color-text-muted: var(--dark-color-text-muted);
 
-  /* Accent hover can stay the same or brighten slightly.
+    /* Accent hover can stay the same or brighten slightly.
      Active should be a deeper, more saturated version. */
-  --color-accent-hover: var(--dark-color-accent-hover);
-  --color-accent-active: var(--dark-color-accent-active);
+    --color-accent-hover: var(--dark-color-accent-hover);
+    --color-accent-active: var(--dark-color-accent-active);
 
-  /* Typography tokens making use of clamp for responsive sizing */
-  h1 {
-    font-size: clamp(var(--font-size-2xl), 4vw + var(--font-size-md), var(--font-size-5xl));
+
+
+    /* Component colour tokens */
+    --button-bg: var(--color-accent);
+    --button-bg-hover: var(--color-accent-hover);
+    --button-bg-active: var(--color-accent-active);
+    --button-text: var(--color-text);
+    --button-border: var(--color-borders);
+    --button-disabled-bg: var(--color-surface);
+    --button-disabled-text: var(--color-text-muted);
+
+    --card-bg: var(--color-surface);
+    --card-border: var(--color-borders);
+    --card-shadow: var(--shadow-md);
+
+    --input-bg: var(--color-surface);
+    --input-border: var(--color-borders);
+    --input-focus-ring: var(--color-accent);
+    --input-placeholder: var(--color-text-muted);
+
+    --link-text: var(--color-accent);
+    --link-hover: var(--color-accent-hover);
+    --link-active: var(--color-accent-active);
+
   }
-
-  h2 {
-    font-size: clamp(var(--font-size-1xl), 3vw + var(--font-size-md), var(--font-size-4xl));
-  }
-
-  p {
-    font-size: clamp(var(--font-size-md), 2vw + var(--font-size-md), var(--font-size-3xl));
-  }
-
-  #small {
-    font-size: clamp(var(--font-size-sm), 1.5vw + var(--font-size-xs), var(--font-size-2xxl));
-  }
-
-/* Component colour tokens */
---button-bg: var(--color-accent);
---button-bg-hover: var(--color-accent-hover);
---button-bg-active: var(--color-accent-active);
---button-text: var(--color-text);
---button-border: var(--color-borders);
---button-disabled-bg: var(--color-surface);
---button-disabled-text: var(--color-text-muted);
-
---card-bg: var(--color-surface);
---card-border: var(--color-borders);
---card-shadow: var(--shadow-md);
-
---input-bg: var(--color-surface);
---input-border: var(--color-borders);
---input-focus-ring: var(--color-accent);
---input-placeholder: var(--color-text-muted);
-
---link-text: var(--color-accent);
---link-hover: var(--color-accent-hover);
---link-active: var(--color-accent-active);
-
 }
+
+/* Typography tokens making use of clamp for responsive sizing */
+h1 {
+  font-size: clamp(var(--font-size-2xl), 4vw + var(--font-size-md), var(--font-size-5xl));
+  
 }
+
+h2 {
+  font-size: clamp(var(--font-size-1xl), 3vw + var(--font-size-md), var(--font-size-4xl));
+}
+
+p {
+  font-size: clamp(var(--font-size-md), 2vw + var(--font-size-md), var(--font-size-3xl));
+}
+
+#small {
+  font-size: clamp(var(--font-size-sm), 1.5vw + var(--font-size-xs), var(--font-size-2xxl));
+}
+
+/*remove browser default margin and padding, set background color */
 body {
-  margin: 0;
-  padding: 0;
+  margin: var(--margin-0);
+  background-color: var(--color-bg);
+  padding: var(--padding-0);
+
 }
 
+#hero h1, #hero h2 {
+  font-family: var(--font-primary), sans-serif;
+  color: #955003;
+
+
+  display: inline-block;
+  padding: var(--padding-1) var(--padding-4);
+  /*WebKit implementations, improving the user experience and compatibility for individuals on older devices.*/
+  -webkit-backdrop-filter: blur(var(--space-1));
+  backdrop-filter: blur(var(--space-1));
+  background: rgba(0, 0, 0, 0.1); /* tweak as needed */
+  border-radius: var(--radius-lg);
+}
 
 /* Full-width navbar fixed navbar */
+/* The nav-wrapper is positioned absolutely to allow the nav-sheet to expand without affecting the layout of the rest of the page. */
+/*making use of % for left and right to ensure the navbar is centered and responsive, with some breathing room on the sides. */
+.nav-wrapper {
+  position: fixed;
+  top: 2.0833%;
+  left: 4.1667%;
+  right: 4.1667%;
+  z-index: 100;
+}
+
 .navbar {
-  position: absolute;
-  top: 2.0833%;       /*40px on 1920 baseline */
-  left: 4.1667%;      /*80px on 1920 baseline */
-  right: 4.1667%;     /*80px on 1920 baseline */
-
-  height: 80px;
+  position: relative;
+  height: 100px;
+  z-index: 10;
   background: var(--color-surface);
-
-  border-radius: 20px;
-  z-index: 9999;
-
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  padding: 0 20px;   /* inner breathing room */
+  padding: var(--space-0) var(--space-5);
+  /* inner breathing room */
+  ;
 }
-
 .nav-center {
   display: flex;
-  gap: 4px;
+  gap: var(--space-1);
 }
+/* navbar toggle open and close*/
+#navbar {
+  border-top: 1px solid var(--color-borders);
+  border-left: 1px solid var(--color-borders);
+  border-right: 1px solid var(--color-borders);
+  border-bottom: 1px solid var(--color-borders);
+  border-radius: var(--radius-xl) var(--radius-xl) var(--radius-xl) var(--radius-xl)
+}
+#navbar.open {
+  border-bottom: none;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+/* end navbar toggle open and close */
+/* end of navbar styles */
+
+
+/* navbar button styles */
 .nav-center button:first-child {
-  border-radius: 0.5rem 0 0 0.5rem;
+  border-radius: var(--radius-md) var(--space-0) var(--space-0) var(--radius-md);
 }
 
 .nav-center button:last-child {
-  border-radius: 0 0.5rem 0.5rem 0;
+  border-radius: var(--space-0) var(--radius-md) var(--radius-md) var(--space-0);
 }
+
 .nav-center button {
-  padding: 10px 20px;
-  /*border-radius: 10px;*/
+  padding: var(--padding-3) var(--padding-5);
   width: clamp(140px, 10.4vw, 220px);
+  margin: var(--margin-0);
+  border: 1px solid tan;
   border: 1px solid var(--button-border);
+
+
   font-family: "Sofia Pro", sans-serif;
-  font-size: clamp(var(--font-size-sm), 1.5vw + var(--font-size-xs), var(--font-size-md));
-  margin:0;
+  font-size: clamp(var(--font-size-sm), 1.5vw + var(--font-size-xs), var(--font-size-lg));
+  font-weight: var(--weight-secondary-medium);
+
+  color: var(--button-text);
   background-color: var(--button-bg);
 }
 
-/* Logo styles */
-:root{
-  --step-5: clamp(var(--font-size-2xl), 4vw + var(--font-size-md), var(--font-size-5xl));
+.nav-center button:hover {
+  background-color: var(--button-bg-hover);
 }
 
+/* end of navbar button styles */
+/* navbar dropdown panel styles */
+.nav-sheet {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  right: 0;
+  padding-left: var(--padding-5);
+  padding-right: var(--padding-5);
+  padding-top: clamp(var(--padding-11), 3vw + var(--padding-6), var(--padding-6));
+  max-height: 0;
+  overflow: hidden;
+  background:var(--color-surface);
+  transition: max-height 0.3s ease;
+  z-index: 5;
+  border-radius: var(--radius-lg);
+  
+}
+
+.nav-wrapper .nav-sheet.open {
+  max-height: 3000px;
+  border: 1px solid var(--color-borders);
+}
+/* end of navbar dropdown panel styles */
+
+/* end of navbar styles */
+/* Logo styles */
+
+/* hard coded colours to keep the logo distinct from the rest of the design, while still using the same font sizing and spacing tokens for consistency. */
 .logo {
   font-family: "Modak", sans-serif;
-  font-size: var(--step-5);
-  color:tan;
-  line-height: 1;
-  letter-spacing: -0.02em;
+  font-size: clamp(var(--font-size-2xl), 4vw + var(--font-size-md), var(--font-size-5xl));
+  color: tan;
+  line-height: clamp(0.5, 1.25, var(--line--tight));
+  letter-spacing: var(--letter-spacing-wide);
 }
+
+.logo:hover {
+  color: coral;
+}
+
 .logotext {
-  font-family: "Sofia Pro", sans-serif;
+  font-family: var(--font-secondary), sans-serif;
   font-size: clamp(var(--font-size-xxs), 1.5vw + var(--font-size-xxs), var(--font-size-1xl));
   color: var(--color-text);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: clamp(0.5, 1.25, var(--line--tight));
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+/* clear default link styles for the navbar links, while still allowing them to be interactive and styled with the tokens. */
+.navbar a {
+  all: unset;
+  cursor: pointer;
 }
 /*end of logo styles */
-
-
-
-
-
-
+.hero {
+  position: relative;
+  padding: var(--space-8) 0;
+  background-color: var(--color-surface);
+  color: var(--color-heading);
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../images/b1.png");
+  min-height: 100vh;
+}
+.overlay {
+  margin: 0;
+  border:0;
+  padding-top: clamp(50px, 7vw, 60px);
+}

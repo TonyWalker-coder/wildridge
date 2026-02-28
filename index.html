@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body style="background-color: blue;">
 
-<nav class="navbar">
-  <div class="nav-left"><span class="logo">WR</span>
-    <span class="logotext" id="small">WildRidge Adventures</span>
+<body>
+
+  <div class="nav-wrapper">
+
+    <nav id="navbar" class="navbar">
+      <div class="nav-left"><a href="../index.html"><span class="logo">WR</span></a>
+        <span class="logotext" id="small">WildRidge Adventures</span>
+      </div>
+
+      <div class="nav-center">
+        <button type="button" id="toggle">Our packages</button>
+        <button type="button">Contact us</button>
+      </div>
+
+      <div class="nav-right"></div>
+    </nav>
+    <div class="nav-sheet">
+      <p>test</p>
+      <h1>more testing</h1>
+      <h2>even more testing</h2>
+
+      <!-- optional content -->
+    </div>
+
+
+  </div>
+  <div id="hero" class="hero">  
+    <div class="overlay"></div>
+    <h1>Welcome to WildRidge Adventures</h1>
+    <p>Discover the thrill of outdoor adventures with us!</p>
   </div>
 
-  <div class="nav-center">
-    <button type="button">Our packages</button>
-    <button type="button">Contact us</button>
-  </div>
 
-  <div class="nav-right"></div>
-</nav>
 
-   
 </body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="assets/js/script.js"></script>
+
 </html>

@@ -1,5 +1,5 @@
 <STYLE>
-      @font-face {
+@font-face {
     font-family: "New Kansas";
     src: url("assets/fonts/New-Kansas-Semi-Bold.otf") format("opentype");
     font-weight: 600;
@@ -21,6 +21,15 @@
 - [Colour Palette](#color-palette)
 - [Typography](#typography)
 - [Design Tokens and System Consistency](#tokens)
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- [Acknowledgments](#Acknowledgments)
 
 
 ## user stories
@@ -144,10 +153,15 @@ The site can integrate external APIs to provide additional real‑time or contex
 - HTML5
 - CSS3
 - JavaScript
+- JQuery
 - GitHub Pages (deployment)
 - GitHub Project (user stories)
+- Balsamiq.com (wireframes)
+- canva.com (image editing)
+
+
+
 - Copilot (website text articles)
-- Balsamiq (wireframes)
 - Code Institute (forms return status)
 - w3.org (validators)
 
@@ -231,3 +245,13 @@ A clean, versatile sans‑serif chosen for clarity and comfort, ideal for longer
 ## Design Tokens and System Consistency
 
 A token set gives your project a single source of truth for every reusable value, so colours, spacing, typography, and component behaviour all stay consistent no matter where they’re used. Instead of scattering hex codes, font weights, or layout numbers across different files, each value is defined once and referenced everywhere, which makes the system predictable and easy to maintain. When you update a token, the entire interface updates with it, keeping the design coherent as the project grows. Tokens also make dark and light themes straightforward, because each theme simply swaps out its own set of values while the components continue to reference the same names. This approach turns the design into a structured system rather than a collection of ad‑hoc choices, and it ensures that every part of the site speaks the same visual language.
+
+## Acknowledgments
+
+Public‑domain photos play a key role in bringing this project’s spirit to life. Their open availability makes it possible to showcase the drama and intensity of extreme environments, helping to express the sense of challenge, risk, and possibility at the heart of the site’s concept.
+
+This site uses public‑domain imagery from [pixabay][pd].
+
+[pd]: https://pixabay.com/
+
+

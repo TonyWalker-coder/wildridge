@@ -64,20 +64,57 @@
 
 
     /* Spacing scale */
---space-0: 0rem
+--space-0: 0rem;
 --space-1: 0.25rem;
 --space-2: 0.5rem;
 --space-3: 0.75rem;
 --space-4: 1rem;
---space-5: 1.5rem;
---space-6: 2rem;
+--space-5: 1.25rem;
+--space-6: 1.5rem;
+--space-7: 2rem;
 --space-8: 3rem;
---space-10: 4rem;
+--space-9: 4rem;
+--space-10: 5rem;
+
+/* padding scale */
+--padding-0: 0rem;
+--padding-1: 0.25rem;
+--padding-2: 0.5rem;
+--padding-3: 0.75rem;
+--padding-4: 1rem;
+--padding-5: 1.25rem;
+--padding-6: 1.5rem;
+--padding-7: 2rem;
+--padding-8: 3rem;
+--padding-9: 4rem;
+--padding-10: 5rem;
+--padding-11: 6rem;
+
+/* margin scale */
+--margin-0: 0rem;
+--margin-1: 0.25rem;
+--margin-2: 0.5rem;
+--margin-3: 0.75rem;
+--margin-4: 1rem;
+--margin-5: 1.25rem;
+--margin-6: 1.5rem;
+--margin-7: 2rem;
+--margin-8: 3rem;
+--margin-9: 4rem;
+--margin-10: 5rem;
+
+/* border width scale */
+--border-0: 0rem;
+--border-1: 0.0625rem; /* 1px */
+--border-2: 0.12rem; /* 2px */
+--border-3: 0.1875rem; /* 3px */
 
 /* Radius */
+--radius-0: 0;
 --radius-sm: 4px;
 --radius-md: 8px;
 --radius-lg: 16px;
+--radius-xl: 20px;
 
 /* Shadows */
 --shadow-sm: 0 1px 2px rgba(0,0,0,0.1);
