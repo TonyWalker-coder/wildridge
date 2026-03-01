@@ -1,13 +1,31 @@
 //toggle the navbar drop down
+$('#toggle').on('click', function () {
+  const sheet = $('.nav-sheet');
+  const navbar = $('#navbar');
 
-console.log("script.js loaded");
+  const isOpen = sheet.hasClass('open');
 
-console.log("sheet count:", $('.nav-sheet').length);
+  if (isOpen) {
+    // Phase 1: prepare for closing
+    sheet.addClass('closing'); // optional helper class
 
+    // Phase 2: trigger the CSS close animation
+    sheet.removeClass('open');
+    navbar.removeClass('open');
 
-$('#toggle').on('click', function() {
-  console.log("button clicked");
+    // Phase 3: wait for CSS to finish, then clean up
+    
+    sheet.one('transitionend', function () {
+      sheet.removeClass('closing');
+      sheet.find('.content').empty(); // or whatever you need
+    });
 
-  $('.nav-sheet').toggleClass('open');
-  $('#navbar').toggleClass('open');
+  } else {
+    // Opening: add content before animation
+    sheet.find('.content').html('New content here');
+    sheet.addClass('open');
+    navbar.addClass('open');
+  }
 });
+
+

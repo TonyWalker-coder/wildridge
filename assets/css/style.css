@@ -161,7 +161,7 @@
 /* Typography tokens making use of clamp for responsive sizing */
 h1 {
   font-size: clamp(var(--font-size-2xl), 4vw + var(--font-size-md), var(--font-size-5xl));
-  
+
 }
 
 h2 {
@@ -184,19 +184,7 @@ body {
 
 }
 
-#hero h1, #hero h2 {
-  font-family: var(--font-primary), sans-serif;
-  color: #955003;
 
-
-  display: inline-block;
-  padding: var(--padding-1) var(--padding-4);
-  /*WebKit implementations, improving the user experience and compatibility for individuals on older devices.*/
-  -webkit-backdrop-filter: blur(var(--space-1));
-  backdrop-filter: blur(var(--space-1));
-  background: rgba(0, 0, 0, 0.1); /* tweak as needed */
-  border-radius: var(--radius-lg);
-}
 
 /* Full-width navbar fixed navbar */
 /* The nav-wrapper is positioned absolutely to allow the nav-sheet to expand without affecting the layout of the rest of the page. */
@@ -214,7 +202,7 @@ body {
   height: 100px;
   z-index: 10;
   background: var(--color-surface);
-  
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -222,10 +210,12 @@ body {
   /* inner breathing room */
   ;
 }
+
 .nav-center {
   display: flex;
   gap: var(--space-1);
 }
+
 /* navbar toggle open and close*/
 #navbar {
   border-top: 1px solid var(--color-borders);
@@ -234,10 +224,17 @@ body {
   border-bottom: 1px solid var(--color-borders);
   border-radius: var(--radius-xl) var(--radius-xl) var(--radius-xl) var(--radius-xl)
 }
+
 #navbar.open {
   border-bottom: none;
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
+
+#navbar.open .chevron-btn::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+
 /* end navbar toggle open and close */
 /* end of navbar styles */
 
@@ -271,6 +268,28 @@ body {
   background-color: var(--button-bg-hover);
 }
 
+.chevron-btn {
+  position: relative;
+  padding-right: calc(var(--padding-5) + 20px);
+  /* space for the icon */
+}
+
+.chevron-btn::after {
+  content: "⌄";
+  /* down chevron */
+  position: absolute;
+  right: var(--padding-3);
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease;
+  font-size: 1.2em;
+  pointer-events: none;
+}
+
+.chevron-btn.open::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
 /* end of navbar button styles */
 /* navbar dropdown panel styles */
 .nav-sheet {
@@ -283,23 +302,26 @@ body {
   padding-top: clamp(var(--padding-11), 3vw + var(--padding-6), var(--padding-6));
   max-height: 0;
   overflow: hidden;
-  background:var(--color-surface);
-  transition: max-height 0.3s ease;
+  background: var(--color-surface);
+  transition: max-height;
+  /* 0.3s ease;*/
   z-index: 5;
   border-radius: var(--radius-lg);
-  
+
 }
 
 .nav-wrapper .nav-sheet.open {
   max-height: 3000px;
   border: 1px solid var(--color-borders);
 }
+
 /* end of navbar dropdown panel styles */
 
 /* end of navbar styles */
 /* Logo styles */
 
-/* hard coded colours to keep the logo distinct from the rest of the design, while still using the same font sizing and spacing tokens for consistency. */
+/* hard coded colours to keep the logo distinct from the rest of the design,
+while still using the same font sizing and spacing tokens for consistency. */
 .logo {
   font-family: "Modak", sans-serif;
   font-size: clamp(var(--font-size-2xl), 4vw + var(--font-size-md), var(--font-size-5xl));
@@ -320,12 +342,15 @@ body {
   letter-spacing: var(--letter-spacing-tight);
 }
 
-/* clear default link styles for the navbar links, while still allowing them to be interactive and styled with the tokens. */
+/* clear default link styles for the navbar links,
+while still allowing them to be interactive and styled with the tokens. */
 .navbar a {
   all: unset;
   cursor: pointer;
 }
+
 /*end of logo styles */
+/* Hero section styles */
 .hero {
   position: relative;
   padding: var(--space-8) 0;
@@ -334,11 +359,102 @@ body {
   text-align: center;
   background-size: cover;
   background-position: center;
-  background-image: url("../images/b1.png");
+  background-image: url("../images/b1.webp");
   min-height: 100vh;
 }
+
 .overlay {
   margin: 0;
-  border:0;
+  border: 0;
   padding-top: clamp(50px, 7vw, 60px);
 }
+/* Using backdrop-filter to create a frosted glass effect on the text,
+allowing the background image to show through while still ensuring readability.
+The rgba background provides a subtle tint to enhance contrast. */
+#hero h1,
+#hero h2 {
+  font-family: var(--font-primary), sans-serif;
+  color: #955003;
+  display: inline-block;
+  padding: var(--padding-1) var(--padding-4);
+  /*WebKit implementations, improving the user experience and compatibility for individuals on older devices.*/
+  -webkit-backdrop-filter: blur(var(--space-1));
+  backdrop-filter: blur(var(--space-1));
+  background: rgba(0, 0, 0, 0.1);
+  /* tweak as needed */
+  border-radius: var(--radius-lg);
+}
+#hero p {
+  font-family: var(--font-secondary), sans-serif;
+  color: var(--color-text);
+  display: block;
+
+  width: fit-content;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+
+
+  padding: var(--padding-1) var(--padding-4);
+  -webkit-backdrop-filter: blur(var(--space-1));
+  backdrop-filter: blur(var(--space-1));
+  background: rgba(0, 0, 0, 0.1);
+  /* tweak as needed */
+  border-radius: var(--radius-lg);
+}
+/* end of hero section styles */
+/* Grid system styles */
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+.container div {
+  height: auto;
+  padding: 1rem;
+}
+
+
+
+
+.col-1  { grid-column: span 1; }
+.col-2  { grid-column: span 2; }
+.col-3  { grid-column: span 3; }
+.col-4  { grid-column: span 4; }
+.col-5  { grid-column: span 5; }
+.col-6  { grid-column: span 6; }
+.col-7  { grid-column: span 7; }
+.col-8  { grid-column: span 8; }
+.col-9  { grid-column: span 9; }
+.col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; }
+.col-12 { grid-column: span 12; }
+/* Responsive grid adjustments */
+@media (min-width: 400px) {
+  .col-sm-12 { grid-column: span 12; }
+  .container div{
+  background-color: blue;
+  height: 5rem;
+}
+}
+
+@media (min-width: 768px) {
+  .col-md-6 { grid-column: span 6; }
+  .col-md-6 { grid-column: span 6; }
+  .container div{
+  background-color: green;
+  height: 5rem;
+}
+}
+
+@media (min-width: 992px) {
+  .col-lg-3 { grid-column: span 3; }
+  .col-lg-3 { grid-column: span 3; }
+  .col-lg-3 { grid-column: span 3; }
+  .col-lg-3 { grid-column: span 3; }
+  .container div{
+  background-color: yellow;
+  height: 5rem;
+}
+}
+/* end of grid system styles */

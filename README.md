@@ -15,6 +15,7 @@
 ## Table of Contents
 
 - [User Stories](#user-stories)
+- [GitHub Projects](#github-projects)
 - [Supporting Documentation](#supporting-documentation)
 - [Tech Stack](#tech-stack)
 - [Folder Structure](#folder-structure)
@@ -144,7 +145,15 @@ The site can integrate external APIs to provide additional real‑time or contex
 * If an API fails or returns no data, the site displays a graceful fallback message.
 * API data updates automatically without requiring manual content changes.
 
-### Supporting Documentation
+## GitHub Projects
+
+This project is managed using GitHub Projects to mirror real‑world development practices. Even though I’m working solo, the project board helps me organise tasks, track progress, and maintain a clear development workflow. Using issues, milestones, and a structured board keeps the work transparent and makes the project easier to maintain and extend over time.
+
+[Project workflow][pd]
+
+[pd]:screenshots/projects.png
+
+## Supporting Documentation
 
 [Wire Frames](docs/wireframe.pdf)
 
@@ -172,6 +181,7 @@ The site can integrate external APIs to provide additional real‑time or contex
 └── 📁familyfarm
     └── 📁assets
         └── 📁css
+            ├── takons.css
             └── style.css
         └── 📁favicon
         └── 📁fonts
@@ -187,7 +197,7 @@ The site can integrate external APIs to provide additional real‑time or contex
         └── testing.md
     └── 📁testing
     ├── .gitignore
-    ├── about.html
+    ├── index.html
     ├── activities.html
     └── shopandcafe.html
 ```
