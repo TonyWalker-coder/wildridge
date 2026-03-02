@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>index</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -12,23 +12,27 @@
 
   <div class="nav-wrapper">
 
-    <nav id="navbar" class="navbar">
+    <nav id="navbar" class="navbar" aria-label="Main navigation">
       <div class="nav-left"><a href="index.html"><span class="logo">WR</span></a>
         <span class="logotext" id="small">WildRidge Adventures</span>
       </div>
 
       <div class="nav-center">
-        <button type="button" id="toggle" class="chevron-btn">Contact us</button>
+        <button type="button" id="toggle" class="chevron-btn" aria-expanded="false" aria-controls="contact-panel">
+          Contact us
+        </button>
+
+
         <button type="button">Our packages</button>
       </div>
 
       <div class="nav-right"></div>
     </nav>
-    <div class="nav-sheet">
+    <div class="nav-sheet" id="contact-panel" role="complementary" aria-label="Contact information panel">
       <!-- optional content -->
       <div class="container">
         <div class="col-12 col-md-6 col-lg-3">
-          <img src="assets/images/22.jpg" alt="male member of staff" class="staff-img">
+          <img src="assets/images/22.webp" alt="David Sole, Tour Guide" class="staff-img">
           <p>David Sole - Tour Guide</p>
           <p>Phone: 123-456-7891</p>
           <p>Email: david.sole@wildridge.com</p>
@@ -74,13 +78,13 @@
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-3">
-          <img src="assets/images/33.jpg" alt="male member of staff" class="staff-img">
+          <img src="assets/images/33.webp" alt="Mark Heart - Sales" class="staff-img">
           <p>Mark Heart - Sales</p>
           <p>Phone: 123-456-7892</p>
           <p>Email: mark.heart@wildridge.com</p>
         </div>
         <div class="col-12 col-md-6 col-lg-3">
-<img src="assets/images/11.jpg" alt="male member of staff" class="staff-img">
+          <img src="assets/images/11.webp" alt="Jane Doe - Sales" class="staff-img">
           <p>Jane Doe - Sales</p>
           <p>Phone: 123-456-7893</p>
           <p>Email: jane.doe@wildridge.com</p>
@@ -90,21 +94,24 @@
 
 
   </div>
+  <main>
+    <section id="hero" class="hero" aria-label="Welcome section">
+      <div class="overlay">
+        <h1>Welcome to WildRidge Adventures</h1>
+      </div>
+      <div class="overlay">
+        <p>Dare to explore!</p>
+        <p>Discover the thrill of outdoor adventures with us!</p>
+      </div>
+    </section>
 
-  <div id="hero" class="hero">
-    <div class="overlay">
-      <h1>Welcome to WildRidge Adventures</h1>
-    </div>
-    <div class="overlay">
-      <p>Dare to explore!</p>
-      <p>Discover the thrill of outdoor adventures with us!</p>
-    </div>
-  </div>
+
+  </main>
 
 
 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="assets/js/script.js"></script>
 
 </html>
