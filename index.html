@@ -4,12 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="WildRidge Adventures offers guided outdoor experiences, thrilling adventure packages, and expert-led tours for explorers who want to push their limits and discover the wild.">
+  <meta name="description"
+    content="WildRidge Adventures offers guided outdoor experiences, thrilling adventure packages, and expert-led tours for explorers who want to push their limits and discover the wild.">
   <title>index</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+  <!-- Navigation -->
 
   <div class="nav-wrapper">
 
@@ -19,18 +21,34 @@
       </div>
 
       <div class="nav-center">
+        <!-- The "Contact us" button is designed to toggle the visibility of the contact information panel. It has ARIA attributes to indicate its expanded state and the panel it controls for accessibility purposes. -->
         <button type="button" id="toggle" class="chevron-btn" aria-expanded="false" aria-controls="contact-panel">
           Contact us
         </button>
 
 
-        <button type="button">Our packages</button>
+<!--div class="cta">
+  <a  
+    href="packages.html"  
+    class="packages-btn"
+    role="button"
+    aria-label="View our packages">
+    View Packages
+  </a>
+</div-->
+
+
+
+        <button type="button" class="packages-btn" aria-label="View our packages"
+          onclick="window.location.href='packages.html'">
+          View Packages
+        </button>
       </div>
 
       <div class="nav-right"></div>
     </nav>
+    <!-- Contact information panel -->
     <div class="nav-sheet" id="contact-panel" role="complementary" aria-label="Contact information panel">
-      <!-- optional content -->
       <div class="container">
         <div class="col-12 col-md-6 col-lg-3">
           <img src="assets/images/22.webp" alt="David Sole, Tour Guide" class="staff-img">
@@ -96,6 +114,7 @@
 
   </div>
   <main>
+    <!-- The hero section is designed to welcome visitors to the website and provide a brief introduction to the brand. It includes a heading and two paragraphs of text, all contained within an overlay for visual emphasis. The section is labeled with ARIA attributes for accessibility. -->
     <section id="hero" class="hero" aria-label="Welcome section">
       <div class="overlay">
         <h1>Welcome to WildRidge Adventures</h1>
@@ -110,7 +129,7 @@
   </main>
 
 
-
+  <!-- javascript files should be placed at the end of the body to ensure that the HTML content loads first, improving page load performance and user experience. -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="assets/js/script.js"></script>
 </body>

@@ -244,11 +244,15 @@ body {
   border-radius: var(--radius-md) var(--space-0) var(--space-0) var(--radius-md);
 }
 
-.nav-center button:last-child {
+.nav-center .packages-btn {
+  border-radius: var(--space-0) var(--radius-md) var(--radius-md) var(--space-0);
+}
+.nav-center a:last-child {
   border-radius: var(--space-0) var(--radius-md) var(--radius-md) var(--space-0);
 }
 
-.nav-center button {
+
+.nav-center button, .nav-center .packages-btn {
   padding: var(--padding-3) var(--padding-5);
   width: clamp(140px, 10.4vw, 220px);
   margin: var(--margin-0);
@@ -264,7 +268,7 @@ body {
   background-color: var(--button-bg);
 }
 
-.nav-center button:hover {
+.nav-center button:hover, .nav-center .packages-btn:hover {
   background-color: var(--button-bg-hover);
 }
 
@@ -498,3 +502,4 @@ The rgba background provides a subtle tint to enhance contrast. */
   flex-shrink: 0;
 }
 /* end of social media links styles */
+
