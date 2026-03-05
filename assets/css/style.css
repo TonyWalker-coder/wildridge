@@ -319,7 +319,7 @@ padding: 0;
 }
 
 .nav-wrapper .nav-sheet.open {
-  max-height: 300px; /* adjust as needed for content */
+  max-height: 700px; /* adjust as needed for content */
   border-bottom: 1px solid var(--color-borders);
   border-left: 1px solid var(--color-borders);
   border-right: 1px solid var(--color-borders);
@@ -519,18 +519,6 @@ The rgba background provides a subtle tint to enhance contrast. */
 }
 /* end of social media links styles */
 
-.card__image-wrapper {
-  /*position: relative;
-  /*top: -135px;*/
-  /*left: 50%;
-  transform: translateX(-50%);
-  /*width: 400px; /* slightly wider for rectangle */
-  /*height: 210px; /* rectangular shape */
-  /*overflow: hidden;
-  border: 6px solid var(--color-surface);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25); /* same lift */
-  
-}
 
 /* Using CSS Grid to create a responsive layout for the package cards, allowing for easy alignment and spacing across different screen sizes. */
 #packages h2 {
@@ -582,10 +570,7 @@ The rgba background provides a subtle tint to enhance contrast. */
 
 
 }
-/*
-.card-container > div:nth-child(1) .packages-card {
-  margin-left: 2rem;
-}*/
+
 /*card image wrapper provides consistent padding around the image, ensuring it fits well within the card layout and maintains a clean, polished appearance. */
 
 .card_image_wrapper {
