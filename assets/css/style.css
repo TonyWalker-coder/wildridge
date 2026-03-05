@@ -301,9 +301,7 @@ body {
   top: +100%;
   left: 0;
   right: 0;
-  padding-left: var(--padding-5);
-  padding-right: var(--padding-5);
-  padding-top: clamp(var(--padding-2), 3vw + var(--padding-6), var(--padding-6));
+  
   max-height: 0;
   overflow: hidden;
   
@@ -312,6 +310,12 @@ body {
   z-index: 5;
   border-radius: var(--radius-lg);
 
+
+
+  /*transform: translateY(-100%);
+  transition: transform 0.3s ease;*/
+
+padding: 0;
 }
 
 .nav-wrapper .nav-sheet.open {
@@ -323,6 +327,16 @@ body {
   scrollbar-gutter: stable; /* prevent layout shift when scrollbar appears */
   background: var(--color-surface);
   border-radius: 0 0 var(--radius-lg)  var(--radius-lg) ;
+
+
+
+  padding-left: var(--padding-5);
+  padding-right: var(--padding-5);
+  padding-top: clamp(var(--padding-2), 3vw + var(--padding-6), var(--padding-6));
+
+
+  /*transform: translateY(0);*/
+
 }
 
 /* end of navbar dropdown panel styles */
@@ -419,7 +433,7 @@ The rgba background provides a subtle tint to enhance contrast. */
   grid-template-columns: repeat(12, 1fr);
   gap: 1rem;
 }
-.container > div {
+.container  > div {
   height: auto;
   padding: 0;
 }
@@ -436,14 +450,17 @@ The rgba background provides a subtle tint to enhance contrast. */
 .col-10 { grid-column: span 10; }
 .col-11 { grid-column: span 11; }
 .col-12 { grid-column: span 12; }
-/* Responsive grid adjustments */
+
+
+.col-sm-12 { grid-column: span 12; }
+/* Responsive grid adjustments 
 @media (min-width: 400px) {
   .col-sm-12 { grid-column: span 12; }
-}
+}*/
 
 @media (min-width: 768px) {
   .col-md-6 { grid-column: span 6; }
-  .col-md-6 { grid-column: span 6; }
+/*  .col-md-6 { grid-column: span 6; }*/
   .container p {
   font-size: clamp(1.75rem, 1vw + 0.5rem, 5rem);
 }
@@ -451,9 +468,9 @@ The rgba background provides a subtle tint to enhance contrast. */
 
 @media (min-width: 992px) {
   .col-lg-3 { grid-column: span 3; }
+/*  .col-lg-3 { grid-column: span 3; }
   .col-lg-3 { grid-column: span 3; }
-  .col-lg-3 { grid-column: span 3; }
-  .col-lg-3 { grid-column: span 3; }
+  .col-lg-3 { grid-column: span 3; }*/
 
   .container p {
   font-size: clamp(0.8rem, 1vw + 0.5rem, 2rem);
@@ -530,16 +547,24 @@ The rgba background provides a subtle tint to enhance contrast. */
  gap: 2rem;
  padding: 10rem 2rem 0 2rem;
   align-items: stretch;
+  row-gap: 2rem;
 
 
 }
+
+#packages .col-12,
+#packages .col-md-6,
+#packages .col-lg-3 {
+  display: flex;
+}
+
+
 /*packages card */
 .packages-card {
 
   /* Using flexbox to create a column layout for the card content, allowing for easy vertical stacking and spacing of elements. */
   display: flex;
   flex-direction: column;
-  height: 100%;
 
 
   background: var(--card-bg);
@@ -554,6 +579,7 @@ The rgba background provides a subtle tint to enhance contrast. */
   box-shadow:
     0 2px 4px rgba(0, 0, 0, 0.06),
     0 12px 28px rgba(0, 0, 0, 0.08);
+
 
 }
 /*
@@ -574,4 +600,23 @@ The rgba background provides a subtle tint to enhance contrast. */
   object-fit: cover;
   border-radius: var(--radius-md);
 }
-/*end of about card*/
+/* Styling the call-to-action button within the package cards, 
+using the design tokens for colors and spacing to maintain consistency 
+with the overall design system. */
+#packages .btn {
+  display: inline-block;
+  padding: var(--padding-2) var(--padding-4);
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-borders);
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+#packages .btn:hover {
+  background-color: var(--dark-color-accent-hover);
+}
+
+/*end of packages card*/

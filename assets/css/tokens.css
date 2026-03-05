@@ -85,10 +85,11 @@
 --padding-5: 1.25rem;
 --padding-6: 1.5rem;
 --padding-7: 2rem;
---padding-8: 3rem;
---padding-9: 4rem;
---padding-10: 5rem;
---padding-11: 6rem;
+--padding-8: 4rem;
+--padding-9: 8rem;
+--padding-10: 16rem;
+--padding-11: 20rem;
+--padding-12: 24rem;
 
 /* margin scale */
 --margin-0: 0rem;

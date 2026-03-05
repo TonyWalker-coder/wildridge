@@ -8,8 +8,8 @@ $('#toggle').on('click', function () {
 
   if (isOpen) {
 
-    // Reset scroll so no painted slice remains
-    content.scrollTop(0);
+    // Reset scroll so the panel always closes cleanly
+    sheet.scrollTop(0);
 
     // Trigger close animation
     sheet.removeClass('open');
@@ -24,6 +24,10 @@ $('#toggle').on('click', function () {
 
     // Opening: load content before animation
     content.html('New content here');
+
+    // Reset scroll so it always opens at the top
+    sheet.scrollTop(0);
+
     sheet.addClass('open');
     navbar.addClass('open');
   }
