@@ -180,7 +180,7 @@ p {
 body {
   margin: var(--margin-0);
   background-color: var(--color-bg);
-  padding: var(--padding-0);
+   padding: var(--padding-0);
 
 }
 
@@ -326,10 +326,9 @@ body {
 }
 
 /* end of navbar dropdown panel styles */
-
 /* end of navbar styles */
-/* Logo styles */
 
+/* Logo styles */
 /* hard coded colours to keep the logo distinct from the rest of the design,
 while still using the same font sizing and spacing tokens for consistency. */
 .logo {
@@ -420,7 +419,7 @@ The rgba background provides a subtle tint to enhance contrast. */
   grid-template-columns: repeat(12, 1fr);
   gap: 1rem;
 }
-.container div {
+.container > div {
   height: auto;
   padding: 0;
 }
@@ -503,3 +502,76 @@ The rgba background provides a subtle tint to enhance contrast. */
 }
 /* end of social media links styles */
 
+.card__image-wrapper {
+  /*position: relative;
+  /*top: -135px;*/
+  /*left: 50%;
+  transform: translateX(-50%);
+  /*width: 400px; /* slightly wider for rectangle */
+  /*height: 210px; /* rectangular shape */
+  /*overflow: hidden;
+  border: 6px solid var(--color-surface);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25); /* same lift */
+  
+}
+
+/* Using CSS Grid to create a responsive layout for the package cards, allowing for easy alignment and spacing across different screen sizes. */
+#packages h2 {
+  font-size: clamp(var(--font-size-lg), 3vw + var(--font-size-md), var(--font-size-1xl));
+  font-weight: var(--font-primary);
+  color: var(--color-text);
+}
+#packages p {
+  font-size: clamp(var(--font-size-sm), 2vw + var(--font-size-md), var(--font-size-lg));
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+ gap: 2rem;
+ padding: 10rem 2rem 0 2rem;
+  align-items: stretch;
+
+
+}
+/*packages card */
+.packages-card {
+
+  /* Using flexbox to create a column layout for the card content, allowing for easy vertical stacking and spacing of elements. */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 1rem;
+
+  border-radius: var(--radius-md) var(--radius-md) var(--radius-md) var(--radius-md);
+
+  position: relative;
+  text-align: center;
+
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 12px 28px rgba(0, 0, 0, 0.08);
+
+}
+/*
+.card-container > div:nth-child(1) .packages-card {
+  margin-left: 2rem;
+}*/
+/*card image wrapper provides consistent padding around the image, ensuring it fits well within the card layout and maintains a clean, polished appearance. */
+
+.card_image_wrapper {
+  padding: .25rem;
+}
+
+.card_image{
+
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+/*end of about card*/

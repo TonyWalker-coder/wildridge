@@ -1,31 +1,30 @@
-//toggle the navbar drop down
+// Toggle the navbar drop down
 $('#toggle').on('click', function () {
   const sheet = $('.nav-sheet');
   const navbar = $('#navbar');
+  const content = sheet.find('.content');
 
   const isOpen = sheet.hasClass('open');
 
   if (isOpen) {
-    // Phase 1: prepare for closing
-    sheet.addClass('closing'); // optional helper class
 
-    // Phase 2: trigger the CSS close animation
+    // Reset scroll so no painted slice remains
+    content.scrollTop(0);
+
+    // Trigger close animation
     sheet.removeClass('open');
     navbar.removeClass('open');
 
-    // Phase 3: wait for CSS to finish, then clean up
-    
+    // After transition, clear content
     sheet.one('transitionend', function () {
-      sheet.removeClass('closing');
-      sheet.find('.content').empty(); // or whatever you need
+      content.empty();
     });
 
   } else {
-    // Opening: add content before animation
-    sheet.find('.content').html('New content here');
+
+    // Opening: load content before animation
+    content.html('New content here');
     sheet.addClass('open');
     navbar.addClass('open');
   }
 });
-
-

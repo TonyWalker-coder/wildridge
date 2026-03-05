@@ -260,8 +260,8 @@ A token set gives your project a single source of truth for every reusable value
 
 Public‑domain photos play a key role in bringing this project’s spirit to life. Their open availability makes it possible to showcase the drama and intensity of extreme environments, helping to express the sense of challenge, risk, and possibility at the heart of the site’s concept.
 
-This site uses public‑domain imagery from [pixabay][pd].
+This site uses public‑domain imagery from [pixabay][pb].
 
-[pd]: https://pixabay.com/
+[pb]: https://pixabay.com/
 
 
