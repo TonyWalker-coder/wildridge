@@ -175,7 +175,18 @@ p {
 #small {
   font-size: clamp(var(--font-size-sm), 1.5vw + var(--font-size-xs), var(--font-size-2xxl));
 }
-
+/* Utility class for visually hidden content, ensuring accessibility while keeping the content hidden from sighted users. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 /*remove browser default margin and padding, set background color */
 body {
   margin: var(--margin-0);
