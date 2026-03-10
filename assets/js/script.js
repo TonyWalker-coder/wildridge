@@ -32,3 +32,23 @@ $('#toggle').on('click', function () {
     navbar.addClass('open');
   }
 });
+
+
+function initNavbar() {
+  $('#toggle').on('click', function () {
+    const sheet = $('.nav-sheet');
+    const navbar = $('#navbar');
+
+    const isOpen = sheet.hasClass('open');
+
+    if (isOpen) {
+      sheet.scrollTop(0);
+      sheet.removeClass('open');
+      navbar.removeClass('open');
+    } else {
+      sheet.scrollTop(0);
+      sheet.addClass('open');
+      navbar.addClass('open');
+    }
+  });
+}
