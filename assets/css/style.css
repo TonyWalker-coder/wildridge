@@ -273,12 +273,9 @@ body {
   margin: var(--margin-0);
   border: 1px solid tan;
   border: 1px solid var(--button-border);
-
-
   font-family: "Sofia Pro", sans-serif;
   font-size: clamp(var(--font-size-sm), 1.5vw + var(--font-size-xs), var(--font-size-lg));
   font-weight: var(--weight-secondary-medium);
-
   color: var(--button-text);
   background-color: var(--button-bg);
 }
@@ -319,20 +316,13 @@ body {
   top: +100%;
   left: 0;
   right: 0;
-
   max-height: 0;
   overflow: hidden;
-
   transition: max-height;
-  /* 0.3s ease;*/
   z-index: 5;
   border-radius: var(--radius-lg);
-
   padding: 0;
 }
-
-
-
 
 .nav-wrapper .nav-sheet.open {
   max-height: 700px;
@@ -346,16 +336,21 @@ body {
   /* prevent layout shift when scrollbar appears */
   background: var(--color-surface);
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-
-
-
   padding-left: var(--padding-5);
   padding-right: var(--padding-5);
   padding-top: clamp(var(--padding-2), 3vw + var(--padding-6), var(--padding-6));
-
 }
 
 /* end of navbar dropdown panel styles */
+/*hidden navbar so we can keep it DRY*/
+#exnavbar {
+  visibility: hidden;
+}
+
+#exnavbar.loaded {
+  visibility: visible;
+}
+
 /* end of navbar styles */
 
 /* Logo styles */
@@ -372,7 +367,7 @@ while still using the same font sizing and spacing tokens for consistency. */
 .logo:hover {
   color: coral;
 
-  
+
 }
 
 .logotext {
@@ -520,7 +515,8 @@ The rgba background provides a subtle tint to enhance contrast. */
   }
 
   #socialmedia a,
-.socialmedia a, .container p {
+  .socialmedia a,
+  .container p {
     font-size: clamp(1.75rem, 1vw + 0.5rem, 5rem);
   }
 }
@@ -531,10 +527,11 @@ The rgba background provides a subtle tint to enhance contrast. */
   }
 
   #socialmedia a,
-.socialmedia a, .container p {
+  .socialmedia a,
+  .container p {
     font-size: clamp(0.8rem, 1vw + 0.5rem, 2rem);
   }
-  
+
 
 }
 
@@ -570,14 +567,14 @@ The rgba background provides a subtle tint to enhance contrast. */
   text-decoration: none;
   padding-right: var(--space-2);
   font-size: clamp(1.5rem, 1vw + 0.5rem, 2rem);
-  
+
 }
 
 #socialmedia a:hover,
 .socialmedia a:hover {
   color: var(--color-accent-hover);
 
-      
+
 
 }
 
@@ -686,6 +683,3 @@ with the overall design system. */
 }
 
 /*end of packages card*/
-
-.socialicon{color: red;
-  font-size: 2rem;}
