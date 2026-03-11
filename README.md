@@ -31,6 +31,9 @@
 - []
 - []
 - [Acknowledgments](#Acknowledgments)
+- [Local Deployment](#local-deployment)
+- [Testing](#testing)
+- [Bugs / Design Features](#bugs)
 
 
 ## user stories
@@ -181,13 +184,13 @@ This project is managed using GitHub Projects to mirror real‑world development
 └── 📁familyfarm
     └── 📁assets
         └── 📁css
-            ├── takons.css
+            ├── tokens.css
             └── style.css
         └── 📁favicon
         └── 📁fonts
-        └── 📁gallery
         └── 📁images
-        └── 📁svg
+        └── 📁js
+            └── script.js
     └── 📁docs
         ├── Changelog.md
         ├── Design.md
@@ -198,8 +201,12 @@ This project is managed using GitHub Projects to mirror real‑world development
     └── 📁testing
     ├── .gitignore
     ├── index.html
-    ├── activities.html
-    └── shopandcafe.html
+    ├── packages.html
+    ├── navbar.html
+    ├── driving.html
+    ├── climbing.html
+    ├── skiing.html
+    └── hiking.html
 ```
 <a id="color-palette"></a>
 ## Colour Palette
@@ -264,4 +271,19 @@ This site uses public‑domain imagery from [pixabay][pb].
 
 [pb]: https://pixabay.com/
 
+## Local Deployment
 
+1. Clone the [repository.](https://github.com/TonyWalker-coder/wildridge)
+2. Open index.html in your browser or IDE.
+3. Consult /README.md & /docs/Design.md
+
+## Testing
+
+<a id="bugs"></a>
+
+## Bugs / Design Features
+
+### Initial load behaviour of the navigation component
+
+The navigation bar is loaded dynamically on each page. During the first visit, the browser must fetch and parse the external component before rendering it, which introduces a brief one‑time delay. After this initial request, the component is cached by the browser, and all subsequent page loads display the navigation immediately.
+This behaviour is an intentional design choice. Centralising the navigation logic ensures the codebase remains DRY, reduces duplication across pages, and simplifies long‑term maintenance. The minor first‑load delay is an expected consequence of this architecture and is not indicative of a performance issue.
