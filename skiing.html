@@ -13,13 +13,23 @@
 <body>
   <!-- Navigation -->
 
-  <div id="exnavbar" >
+  <div id="exnavbar">
 
   </div>
   <main>
     <!-- skiing package section -->
     <section id="skiing" aria-label="Driving section">
-
+      <div class="card-container packagewrapper" role="list">
+        <div class="col-12 col-lg-4" role="listitem">
+          <img src="assets/images/left.jpg" width="100%" alt="convoy of 4x4 driving through a muddy ditch">
+        </div>
+        <div class="col-12 col-lg-4" role="listitem">
+          <img src="assets/images/driving centre1.png" width="100%" alt="old well loved green land rover">
+        </div>
+        <div class="col-12 col-lg-4" role="listitem">
+          <img src="assets/images/right.jpg" width="100%" alt="back off a 4x4 climbing a gravel bank">
+        </div>
+      </div>
     </section>
   </main>
 
@@ -27,18 +37,18 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="assets/js/script.js"></script>
 
-<script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
   <script>
-  fetch('/navbar.html')
-    .then(r => r.text())
-    .then(html => {
-      const nav = document.getElementById('exnavbar');
-      nav.innerHTML = html;
-      nav.classList.add('loaded');
+    fetch('/navbar.html')
+      .then(r => r.text())
+      .then(html => {
+        const nav = document.getElementById('exnavbar');
+        nav.innerHTML = html;
+        nav.classList.add('loaded');
 
-      initNavbar(); // navbar now exists → safe to bind events
-    });
-</script>
+        initNavbar(); // navbar now exists → safe to bind events
+      });
+  </script>
 
 
 

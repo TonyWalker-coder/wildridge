@@ -525,6 +525,9 @@ The rgba background provides a subtle tint to enhance contrast. */
   .col-lg-3 {
     grid-column: span 3;
   }
+  .col-lg-4 {
+    grid-column: span 4;
+  }
 
   #socialmedia a,
   .socialmedia a,
@@ -683,3 +686,8 @@ with the overall design system. */
 }
 
 /*end of packages card*/
+.packagewrapper img{
+  border-radius: var(--radius-lg);
+  border: 3px solid wheat;
+
+}

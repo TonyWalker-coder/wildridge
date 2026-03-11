@@ -170,9 +170,6 @@ This project is managed using GitHub Projects to mirror real‑world development
 - GitHub Project (user stories)
 - Balsamiq.com (wireframes)
 - canva.com (image editing)
-
-
-
 - Copilot (website text articles)
 - Code Institute (forms return status)
 - w3.org (validators)
