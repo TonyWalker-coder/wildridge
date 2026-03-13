@@ -18,16 +18,16 @@
   </div>
   <main>
     <!-- driving package section -->
-    <section id="driving package" aria-label="Driving section">
+    <section  id="drivingpackage" class="package-section" aria-label="Driving section">
       <div class="card-container packagewrapper" role="list">
         <div class="col-12 col-lg-4" role="listitem">
-          <img src="assets/images/leftd.jpg" width="100%" alt="convoy of 4x4 driving through a muddy ditch">
+          <img src="assets/images/leftd.jpg"  alt="convoy of 4x4 driving through a muddy ditch">
         </div>
         <div class="col-12 col-lg-4" role="listitem">
-          <img src="assets/images/driving centre1.png" width="100%" alt="old well loved green land rover">
+          <img src="assets/images/driving centre1.png" alt="old well loved green land rover">
         </div>
         <div class="col-12 col-lg-4" role="listitem">         
-          <img src="assets/images/rightd.jpg" width="100%" alt="back off a 4x4 climbing a gravel bank">
+          <img src="assets/images/rightd.jpg" alt="back off a 4x4 climbing a gravel bank">
         </div>
       </div>
 
@@ -49,26 +49,22 @@
 
     </section>
   </main>
-
-  <!-- javascript files should be placed at the end of the body to ensure that the HTML content loads first, improving page load performance and user experience. -->
+  <!-- javascript files should be placed at the end of the body to ensure that the HTML content loads first, 
+   improving page load performance and user experience. -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="assets/js/script.js"></script>
-
+  <!-- load fontawsome kit for social media icons -->
   <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
+  <!-- load the DRY navbar-->
   <script>
-    fetch('navbar.html')
-      .then(r => r.text())
-      .then(html => {
-        const nav = document.getElementById('exnavbar');
-        nav.innerHTML = html;
-        nav.classList.add('loaded');
-
-        initNavbar(); // navbar now exists → safe to bind events
-      });
-  </script>
-
-
-
+  fetch('navbar.html')
+    .then(r => r.text())
+    .then(html => {
+      const nav = document.getElementById('exnavbar');
+      nav.innerHTML = html;
+      nav.classList.add('loaded');
+      initNavbar(); 
+    });
+</script>
 </body>
-
 </html>

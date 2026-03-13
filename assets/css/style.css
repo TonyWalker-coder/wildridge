@@ -689,8 +689,14 @@ with the overall design system. */
 .packagewrapper img{
   border-radius: var(--radius-lg);
   border: 3px solid wheat;
+  width: 80%;
 
 }
+.package-section .packagewrapper .col-12.col-lg-4 {
+  display: flex;
+  justify-content: center;
+}
+
 /*modal to load <p><a> linked image*/
 .modal {
   display: none;
