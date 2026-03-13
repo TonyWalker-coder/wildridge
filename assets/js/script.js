@@ -33,7 +33,7 @@ $('#toggle').on('click', function () {
   }
 });
 
-
+// Load the DRY 
 function initNavbar() {
   $('#toggle').on('click', function () {
     const sheet = $('.nav-sheet');
@@ -52,3 +52,17 @@ function initNavbar() {
     }
   });
 }
+//* load a modal gallery image for <p><a>
+document.querySelectorAll('.img-link').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const imgSrc = this.getAttribute('data-img');
+    document.getElementById('modalImage').src = imgSrc;
+    document.getElementById('imageModal').classList.add('open');
+  });
+});
+
+document.querySelector('#imageModal .close').addEventListener('click', () => {
+  document.getElementById('imageModal').classList.remove('open');
+});
+
