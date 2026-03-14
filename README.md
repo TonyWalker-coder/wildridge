@@ -172,6 +172,7 @@ This project is managed using GitHub Projects to mirror real‑world development
 - canva.com (image editing)
 - Copilot (website text articles)
 - Code Institute (forms return status)
+- fontawesome
 - w3.org (validators)
 
 ## Folder Structure

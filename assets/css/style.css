@@ -686,15 +686,49 @@ with the overall design system. */
 }
 
 /*end of packages card*/
+/*styles for the package sections and pages 
+add a mobile @media here if the images get
+to small on the mobile layout*/
 .packagewrapper img{
   border-radius: var(--radius-lg);
   border: 3px solid wheat;
   width: 80%;
 
 }
+/*centre the images on the package page
+adding selectors to keep this tight and
+local to the package sections */
 .package-section .packagewrapper .col-12.col-lg-4 {
   display: flex;
   justify-content: center;
+}
+.package-section .article h2 {
+
+  color: red;
+  font-size: clamp(var(--font-size-2xl), 2vw + var(--font-size-lg), var(--font-size-2xxl));
+}
+.package-section .article h3 {
+
+  color: greenyellow;
+  font-size: clamp(var(--font-size-lg), 2vw + var(--font-size-md), var(--font-size-1xl));
+}
+.package-section .article p {
+
+  color: var(--color-text);
+  font-size: clamp(var(--font-size-md), 2vw + var(--font-size-md), var(--font-size-lg));
+}
+.package-section .article a {
+
+  color: var(--link-text);
+  font-size: clamp(var(--font-size-md), 2vw + var(--font-size-md), var(--font-size-lg));
+}
+.package-section .article a:hover {
+
+  color: var(--link-hover);
+  font-size: clamp(var(--font-size-md), 2vw + var(--font-size-md), var(--font-size-lg));
+}
+.package-section .article{
+  padding: 0 var(--padding-7);
 }
 
 /*modal to load <p><a> linked image*/
@@ -706,6 +740,7 @@ with the overall design system. */
   justify-content: center;
   align-items: center;
   padding: 20px;
+  z-index: 200;
 }
 
 .modal.open {
