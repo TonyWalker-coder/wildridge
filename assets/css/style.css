@@ -360,7 +360,7 @@ while still using the same font sizing and spacing tokens for consistency. */
   font-family: "Modak", sans-serif;
   font-size: clamp(var(--font-size-2xl), 4vw + var(--font-size-md), var(--font-size-5xl));
   color: tan;
-  line-height: clamp(0.5, 1.25, var(--line--tight));
+  line-height: clamp(0.5, 1.25, var(--line-tight));
   letter-spacing: var(--letter-spacing-wide);
 }
 
@@ -374,7 +374,7 @@ while still using the same font sizing and spacing tokens for consistency. */
   font-family: var(--font-secondary), sans-serif;
   font-size: clamp(var(--font-size-xxs), 1.5vw + var(--font-size-xxs), var(--font-size-1xl));
   color: var(--color-text);
-  line-height: clamp(0.5, 1.25, var(--line--tight));
+  line-height: clamp(0.5, 1.25, var(--line-tight));
   letter-spacing: var(--letter-spacing-tight);
 }
 
@@ -525,6 +525,7 @@ The rgba background provides a subtle tint to enhance contrast. */
   .col-lg-3 {
     grid-column: span 3;
   }
+
   .col-lg-4 {
     grid-column: span 4;
   }
@@ -689,12 +690,12 @@ with the overall design system. */
 /*styles for the package sections and pages 
 add a mobile @media here if the images get
 to small on the mobile layout*/
-.packagewrapper img{
+.packagewrapper img {
   border-radius: var(--radius-lg);
   border: 3px solid wheat;
   width: 80%;
-
 }
+
 /*centre the images on the package page
 adding selectors to keep this tight and
 local to the package sections */
@@ -702,33 +703,54 @@ local to the package sections */
   display: flex;
   justify-content: center;
 }
-.package-section .article h2 {
 
+.article h2 {
   color: red;
   font-size: clamp(var(--font-size-2xl), 2vw + var(--font-size-lg), var(--font-size-2xxl));
 }
-.package-section .article h3 {
 
+.article h3 {
   color: greenyellow;
   font-size: clamp(var(--font-size-lg), 2vw + var(--font-size-md), var(--font-size-1xl));
+  margin-bottom: -1rem;
 }
-.package-section .article p {
 
+.article p {
   color: var(--color-text);
   font-size: clamp(var(--font-size-md), 2vw + var(--font-size-md), var(--font-size-lg));
+  line-height: var(--line-normal);
 }
-.package-section .article a {
 
+.article a {
   color: var(--link-text);
   font-size: clamp(var(--font-size-md), 2vw + var(--font-size-md), var(--font-size-lg));
 }
-.package-section .article a:hover {
 
+.article a:hover {
   color: var(--link-hover);
   font-size: clamp(var(--font-size-md), 2vw + var(--font-size-md), var(--font-size-lg));
 }
-.package-section .article{
+
+.article {
   padding: 0 var(--padding-7);
+}
+
+.article p span {
+  display: block;
+  margin-left: 1em;
+  line-height: .25;
+}
+
+.inline-list span {
+  display: block;
+  padding-left: 1em;
+  position: relative;
+}
+
+.inline-list span::before {
+  content: "•";
+  position: absolute;
+  left: 0;
 }
 
 /*modal to load <p><a> linked image*/
@@ -736,7 +758,7 @@ local to the package sections */
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -761,4 +783,5 @@ local to the package sections */
   color: #fff;
   cursor: pointer;
 }
+
 /*end of modal*/
