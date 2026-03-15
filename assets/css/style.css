@@ -114,6 +114,7 @@
     /* Global tokens */
     --color-bg: var(--dark-color-bg);
     --color-text: var(--dark-color-text);
+    --color-heading: var(--dark-color-heading);
 
     /* A surface should be lighter than bg but still in the dark palette.
      Using a slightly desaturated, lifted version of your bg works well. */
@@ -577,9 +578,6 @@ The rgba background provides a subtle tint to enhance contrast. */
 #socialmedia a:hover,
 .socialmedia a:hover {
   color: var(--color-accent-hover);
-
-
-
 }
 
 .icon {
@@ -683,7 +681,7 @@ with the overall design system. */
 }
 
 #packages .btn:hover {
-  background-color: var(--dark-color-accent-hover);
+  background-color: var(--color-accent-hover);
 }
 
 /*end of packages card*/
@@ -705,12 +703,12 @@ local to the package sections */
 }
 
 .article h2 {
-  color: red;
+  color: var(--color-heading);
   font-size: clamp(var(--font-size-2xl), 2vw + var(--font-size-lg), var(--font-size-2xxl));
 }
 
 .article h3 {
-  color: greenyellow;
+  color: var(--color-heading);
   font-size: clamp(var(--font-size-lg), 2vw + var(--font-size-md), var(--font-size-1xl));
   margin-bottom: -1rem;
 }
@@ -732,7 +730,7 @@ local to the package sections */
 }
 
 .article {
-  padding: 0 var(--padding-7);
+  padding: var(--padding-7);
 }
 
 .article p span {
@@ -755,6 +753,7 @@ local to the package sections */
 
 /*modal to load <p><a> linked image*/
 .modal {
+  outline: none;
   display: none;
   position: fixed;
   inset: 0;
@@ -785,3 +784,57 @@ local to the package sections */
 }
 
 /*end of modal*/
+/*floating button to call booking form*/
+.fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 14px 20px;
+  border-radius: 50px;
+  background: #e63946;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 199;
+}
+/*end button*/
+/*booking modal*/
+#appModal .modal-content {
+  background:var(--color-surface);
+  color: var(--color-heading);
+  padding: var(--padding-6);
+  border-radius: var(--radius-md);
+  max-width: 420px;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  border: 5px solid var(--color-borders);
+}
+
+#appModal h2 {
+  margin-top: 0;
+  color: var(--color-heading);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-2xl);
+}
+
+#appModal input,
+#appModal textarea,
+#appModal button {
+  width: 90%;
+  margin-bottom: var(--margin-3);
+  padding: var(--padding-2);
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-borders);
+}
+
+#appModal button {
+  background: var(--color-accent);
+  color:var(--color-text);
+  cursor: pointer;
+}
+#appModal button:hover {
+  background: var(--color-accent-hover);
+  color: var(--color-text-muted);
+}
+/*end of booking modal*/
