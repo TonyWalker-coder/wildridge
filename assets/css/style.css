@@ -734,13 +734,13 @@ local to the package sections */
 }
 
 .article p span {
-  display: block;
+  /*display: block;*/
   margin-left: 1em;
-  line-height: .25;
+  /*line-height: .25;*/
 }
 
 .inline-list span {
-  display: block;
+  /*display: block;*/
   padding-left: 1em;
   position: relative;
 }
