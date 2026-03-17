@@ -8,6 +8,36 @@
     content="WildRidge Adventures offers guided outdoor experiences, thrilling adventure packages, and expert-led tours for explorers who want to push their limits and discover the wild.">
   <title>skiing</title>
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+
+ .map-card {
+  background: var(--color-surface);
+  border: 2px solid var(--color-borders);
+  border-radius: var(--radius-sm);
+  padding: var(--padding-3);
+  margin: var(--margin-4) auto;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  width: 10%;
+}
+
+.map-card a {
+  display: inline-block;
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-xl);
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.maplink:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+  </style>
 </head>
 
 <body>
@@ -30,6 +60,48 @@
           <img src="assets/images/rights.webp" width="100%" alt="skier working his way up a ridge">
         </div>
       </div>
+      <div class="article">
+        <h2>La Grave</h2>
+        <h3>The Scene</h3>
+        <p><a target="_blank" rel="noopener noreferrer" href="https://maps.google.com/maps?ll=45.044295,6.302933&z=13&t=m&hl=en&gl=US&mapclient=embed">La Grave</a> 
+          sits high in the Southern French Alps beneath the jagged face of La Meije,
+          a mountain that dominates the skyline and sets the tone for everything that happens here.
+          This isn’t a resort in the usual sense — it’s a wild, open mountainscape where the terrain
+          has been left almost entirely untouched. The cable car lifts you straight into a world of rock,
+          ice, and deep alpine silence, and from there the descent is yours to shape.
+        </p>
+        <h3>The Vertical Challenge</h3>
+        <p>The mountain drops away for roughly 2,100 metres of vertical, running from glacier to valley in one long,
+          continuous fall. There are no marked pistes, no grooming, and no comforting boundaries. Instead, the slopes
+          are steep,
+          varied, and unpredictable, with couloirs, gullies, powder fields, and exposed traverses that demand full
+          attention.
+          Every run is off‑piste, every line is chosen by the skier, and every descent feels like a small expedition in
+          its own right.
+        </p>
+        <h3>A True Freeride Experience</h3>
+        <p>La Grave has earned its reputation as one of the world’s great freeride destinations. Skiers come here for
+          the challenge,
+          the scale, and the sense of genuine mountain freedom — the kind you only get when the terrain is left in its
+          natural state.
+          It’s a place that rewards skill, confidence, and respect for the environment, offering a raw, unfiltered
+          experience that
+          stays with you long after you reach the bottom.</p>
+      </div>
+
+
+      <div id="imageModal" class="modal" tabindex="-1">
+        <span class="close">&times;</span>
+        <img id="modalImage" src="" alt="">
+      </div>
+      <div id="appModal" class="modal" tabindex="-1">
+        <span class="close">&times;</span>
+        <div class="modal-content"></div>
+      </div>
+      <button type="button" id="bookBtn" class="fab">Book Now</button>
+
+
+
     </section>
   </main>
 

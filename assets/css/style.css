@@ -809,18 +809,26 @@ local to the package sections */
   margin: 0 auto;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   border: 5px solid var(--color-borders);
+  
 }
 
 #appModal h2 {
   margin-top: 0;
   color: var(--color-heading);
   font-family: var(--font-primary);
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-2xl); 
+}
+
+#appModal p{
+  color:var(--color-text);
+ font-family: var(--font-secondary);
+ font-size: var(--font-size-2xl);
 }
 
 #appModal input,
 #appModal textarea,
-#appModal button {
+#appModal button,
+#appModal select {
   width: 90%;
   margin-bottom: var(--margin-3);
   padding: var(--padding-2);
@@ -831,6 +839,8 @@ local to the package sections */
 #appModal button {
   background: var(--color-accent);
   color:var(--color-text);
+  
+  
   cursor: pointer;
 }
 #appModal button:hover {
