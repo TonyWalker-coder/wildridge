@@ -13,7 +13,7 @@
 <body>
   <!-- Navigation -->
 
-  <div id="exnavbar" >
+  <div id="exnavbar">
 
   </div>
   <main>
@@ -25,13 +25,69 @@
           <img src="assets/images/leftc.webp" width="100%" alt="climber climbing a rock face">
         </div>
         <div class="col-12 col-lg-4" role="listitem">
-          <img src="assets/images/climbing centre.webp" width="100%" alt="climbing hat and pick planted in a pile of stones">
+          <img src="assets/images/climbing centre.webp" width="100%"
+            alt="climbing hat and pick planted in a pile of stones">
         </div>
-        <div class="col-12 col-lg-4" role="listitem">         
+        <div class="col-12 col-lg-4" role="listitem">
           <img src="assets/images/rightc.webp" width="100%" alt="climber approaching the next climb">
         </div>
       </div>
-
+      <div class="article">
+        <h2>Trollveggen</h2>
+        <h3>The Troll Wall</h3>
+        <p class="inline-list">Trollveggen — <a target="_blank" rel="noopener noreferrer"
+            href="https://maps.google.com/maps?ll=62.4824,7.7288&z=13&t=m&hl=en&gl=US&mapclient=embed">The Troll
+            Wall</a> —
+          rises out of the <a href="#" class="img-link" data-img="assets/gallery/Romsdalen Valley.jpg">Romsdalen
+            Valley</a> in western Norway as a sheer,
+          jagged fortress of dark rock and <a href="#" class="img-link"
+            data-img="assets/gallery/Trollveggen.jpg">towering spires</a>.
+          It forms part of the <a href="#" class="img-link"
+            data-img="assets/gallery/Trolltindene range.jpg">Trolltindene range</a> and is widely recognised as
+          Europe’s tallest vertical rock face, with roughly 1,000–1,100 metres of near‑vertical and overhanging terrain
+          dropping
+          straight into the valley floor. The wall’s dramatic silhouette and the folklore surrounding it give the whole
+          area
+          an atmosphere that feels ancient, remote, and imposing.</p>
+        <h3>The Vertical Challenge</h3>
+        <p class="inline-list"><a href="#" class="img-link" data-img="assets/gallery/climbing.jpg">Climbing</a> here is
+          not a casual undertaking. Trollveggen has long been a proving ground for elite climbers,
+          with routes that demand technical precision, endurance, and absolute respect for the mountain. The face
+          includes long,
+          complex lines, unstable rock sections, and overhangs of up to 50 metres, making it one of the most serious
+          big‑wall
+          objectives in Europe. Scandinavian mountaineering culture was shaped here, and many of the world’s hardest
+          climbs trace their
+          origins to this valley.</p>
+        <h3>A Landmark of Mountaineering History</h3>
+        <p class="inline-list">The wall became internationally famous in the 1960s as climbers from across the world
+          attempted new
+          lines on its intimidating face. Its reputation grew further through the 70s and 80s, when BASE jumpers began
+          leaping from
+          its upper ledges — a practice later banned after a series of accidents and costly rescue operations. Despite
+          the restrictions,
+          Trollveggen remains a magnet for climbers, hikers, and adventure travellers drawn to its scale and history.
+        </p>
+        <h3>The Experience</h3>
+        <p class="inline-list">Standing beneath Troll Wall, you feel the weight of the mountain above you — a kilometre
+          of vertical
+          stone rising into shifting cloud. The valley is long and narrow, framed by steep peaks on both sides, and the
+          atmosphere
+          changes constantly with the weather. Whether you’re approaching a climbing route, hiking to one of the high
+          viewpoints,
+          or simply exploring the valley floor, the sense of exposure and grandeur is unmistakable. Trollveggen isn’t
+          just a climb;
+          it’s an encounter with one of Europe’s most dramatic natural structures.</p>
+      </div>
+      <div id="imageModal" class="modal" tabindex="-1">
+        <span class="close">&times;</span>
+        <img id="modalImage" src="" alt="">
+      </div>
+      <div id="appModal" class="modal" tabindex="-1">
+        <span class="close">&times;</span>
+        <div class="modal-content"></div>
+      </div>
+      <button type="button" id="bookBtn" class="fab">Book Now</button>
     </section>
   </main>
 
@@ -39,18 +95,18 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="assets/js/script.js"></script>
 
-<script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
   <script>
-  fetch('navbar.html')
-    .then(r => r.text())
-    .then(html => {
-      const nav = document.getElementById('exnavbar');
-      nav.innerHTML = html;
-      nav.classList.add('loaded');
+    fetch('navbar.html')
+      .then(r => r.text())
+      .then(html => {
+        const nav = document.getElementById('exnavbar');
+        nav.innerHTML = html;
+        nav.classList.add('loaded');
 
-      initNavbar(); // navbar now exists → safe to bind events
-    });
-</script>
+        initNavbar(); // navbar now exists → safe to bind events
+      });
+  </script>
 
 
 
