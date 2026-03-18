@@ -57,14 +57,18 @@ document.querySelectorAll(".img-link").forEach((link) => {
     e.preventDefault();
 
     const imgSrc = this.getAttribute("data-img");
+    const imgAlt = this.getAttribute("data-alt") || "";
     const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
 
-    document.getElementById("modalImage").src = imgSrc;
+    modalImage.src = imgSrc;
+    modalImage.alt = imgAlt;
 
     modal.classList.add("open");
     modal.focus();
   });
 });
+
 
 // universal close button for ANY modal
 document.querySelectorAll(".modal .close").forEach((btn) => {
