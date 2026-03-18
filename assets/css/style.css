@@ -232,10 +232,10 @@ body {
 
 /* navbar toggle open and close*/
 #navbar {
-  border-top: 1px solid var(--color-borders);
-  border-left: 1px solid var(--color-borders);
-  border-right: 1px solid var(--color-borders);
-  border-bottom: 1px solid var(--color-borders);
+  border-top: 3px solid var(--color-borders);
+  border-left: 3px solid var(--color-borders);
+  border-right: 3px solid var(--color-borders);
+  border-bottom: 3px solid var(--color-borders);
   border-radius: var(--radius-xl) var(--radius-xl) var(--radius-xl) var(--radius-xl)
 }
 
@@ -328,9 +328,9 @@ body {
 .nav-wrapper .nav-sheet.open {
   max-height: 700px;
   /* adjust as needed for content */
-  border-bottom: 1px solid var(--color-borders);
-  border-left: 1px solid var(--color-borders);
-  border-right: 1px solid var(--color-borders);
+  border-bottom: 3px solid var(--color-borders);
+  border-left: 3px solid var(--color-borders);
+  border-right: 3px solid var(--color-borders);
   overflow-y: auto;
   /* enable vertical scroll when open */
   scrollbar-gutter: stable;

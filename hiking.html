@@ -13,7 +13,7 @@
 <body>
   <!-- Navigation -->
 
-  <div id="exnavbar" >
+  <div id="exnavbar">
 
   </div>
   <main>
@@ -27,11 +27,85 @@
         <div class="col-12 col-lg-4" role="listitem">
           <img src="assets/images/hiking centre.webp" width="100%" alt="backpack laying next to a forrest trail">
         </div>
-        <div class="col-12 col-lg-4" role="listitem">         
-          <img src="assets/images/righth.webp" width="100%" alt="group of hikers out lined against a snow capped mountain">
+        <div class="col-12 col-lg-4" role="listitem">
+          <img src="assets/images/righth.webp" width="100%"
+            alt="group of hikers out lined against a snow capped mountain">
         </div>
       </div>
+      <div class="article">
+        <h2>GR20 in Corsica</h2>
+        <h3>Europe’s Legendary High‑Altitude Adventure</h3>
+        <p class="inline-list"><a target="_blank" rel="noopener noreferrer"
+            href="https://maps.google.com/maps?ll=42.5100,8.8560&z=13&t=m&hl=en&gl=US&mapclient=embed">
+            The GR20</a> is often described as Europe’s toughest long‑distance trail, but hikers who complete it rarely
+          talk about
+          difficulty first—they talk about the sense of freedom, the raw beauty of
+          <a href="#" class="img-link" data-img="assets/gallery/Corsica’s mountains.jpg">Corsica’s mountains</a>, and
+          the feeling
+          of crossing an entire island on foot. Stretching roughly 180 km from
+          <a href="#" class="img-link" data-img="assets/gallery/Calenzana.webp">Calenzana</a>
+          in the north to <a href="#" class="img-link" data-img="assets/gallery/Conca.webp">Conca</a> in the
+          south, the GR20 is a journey through granite spires, alpine lakes, airy ridgelines, and remote shepherd
+          country that feels untouched by time.
+        </p>
 
+        <h3>Wild, Varied, and Unforgettable</h3>
+        <p class="inline-list">The GR20’s magic lies in its constant contrasts. One day you’re scrambling across jagged
+          rock slabs beneath the dramatic peaks of the <a href="#" class="img-link"
+            data-img="assets/gallery/Cirque de la Solitude.jpg">Cirque de la Solitude</a>,
+          the next you’re wandering through pine
+          forests scented with wild herbs. Highlights include:<br>
+          <span><a href="#" class="img-link" data-img="assets/gallery/Lac de Nino.jpg">Lac de Nino</a> — a serene
+            high‑altitude meadow dotted with grazing horses.</span><br>
+          <span><a href="#" class="img-link" data-img="assets/gallery/Monte Cinto region.jpg">Monte Cinto region</a> —
+            rugged, lunar landscapes with sweeping island views.</span><br>
+          <span><a href="#" class="img-link" data-img="assets/gallery/The Southern GR20.jpg">The Southern GR20</a> —
+            smoother trails, sun‑baked ridges, and panoramic horizons stretching to the sea.</span><br>
+          Corsica’s mountains rise sharply from the Mediterranean, so the trail offers a rare combination: alpine drama
+          with glimpses of turquoise coastline.
+        </p>
+
+        <h3>A True Long‑Distance Challenge</h3>
+        <p class="inline-list">The GR20 is not just a hike—it’s a commitment. Daily stages involve steep ascents,
+          technical sections, and exposed ridgelines. But the reward is a deep sense of achievement and a rhythm of life
+          that quickly becomes addictive.<br>
+          Along the way, hikers stay in refuges or bergeries, simple mountain huts where you can enjoy hearty Corsican
+          meals—think charcuterie, cheese, and rustic stews—while sharing stories with fellow trekkers from around the
+          world.</p>
+
+        <h3>Who the GR20 Is For</h3>
+        <p class="inline-list">This route is ideal for hikers who want:<br>
+          <span>A multi‑day challenge with real physical and mental rewards</span><br>
+          <span>A wild, remote environment far from crowds</span><br>
+          <span>A chance to experience Corsican culture in its most authentic form</span><br>
+          <span>A trail that blends technical terrain with Mediterranean charm</span><br>
+          It’s less suited to beginners, but perfect for confident hikers who enjoy scrambling, long days, and dramatic
+          mountain scenery.
+        </p>
+        <h3>Best Time to Go</h3>
+        <p class="inline-list">The prime season runs from June to September, when the snow has melted and refuges are
+          open. Early summer offers cooler temperatures and blooming alpine flowers, while late summer brings stable
+          weather and long, golden evenings.
+        </p>
+        <h3>Why Choose This Hiking Package</h3>
+        <p class="inline-list">A curated GR20 package removes the logistical headaches—refuge bookings, transfers, route
+          planning—so you can focus on the adventure itself. With support in place, you get:<br>
+          <span>Pre‑arranged accommodation in mountain refuges</span><br>
+          <span>Luggage transfer options on selected sections</span><br>
+          <span>Detailed route notes and safety guidance</span><br>
+          <span>Local insights into Corsican nature, food, and culture</span><br>
+          It’s the most seamless way to experience one of Europe’s great trekking achievements.
+        </p>
+      </div>
+      <div id="imageModal" class="modal" tabindex="-1">
+        <span class="close">&times;</span>
+        <img id="modalImage" src="" alt="">
+      </div>
+      <div id="appModal" class="modal" tabindex="-1">
+        <span class="close">&times;</span>
+        <div class="modal-content"></div>
+      </div>
+      <button type="button" id="bookBtn" class="fab">Book Now</button>
     </section>
   </main>
 
@@ -39,18 +113,18 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="assets/js/script.js"></script>
 
-<script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
   <script>
-  fetch('navbar.html')
-    .then(r => r.text())
-    .then(html => {
-      const nav = document.getElementById('exnavbar');
-      nav.innerHTML = html;
-      nav.classList.add('loaded');
+    fetch('navbar.html')
+      .then(r => r.text())
+      .then(html => {
+        const nav = document.getElementById('exnavbar');
+        nav.innerHTML = html;
+        nav.classList.add('loaded');
 
-      initNavbar(); // navbar now exists → safe to bind events
-    });
-</script>
+        initNavbar(); // navbar now exists → safe to bind events
+      });
+  </script>
 
 
 
