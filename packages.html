@@ -4,17 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="WildRidge Adventures offers guided outdoor experiences, thrilling adventure packages, 
+  <meta name="description" content="WildRidge Adventures offers guided outdoor experiences, thrilling adventure packages, 
     and expert-led tours for explorers who want to push their limits and discover the wild.">
   <title>packages</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+  <div id="themeToggle" class="theme-toggle">
+    🌙
+  </div>
   <!-- Navigation -->
 
-  <div id="exnavbar" >
+  <div id="exnavbar">
 
   </div>
   <main>
@@ -41,7 +43,7 @@
                 while enjoying some of the most rugged landscapes the area has to offer. Ideal for both beginners and
                 seasoned off‑road drivers
                 looking for a serious test.</p>
-                
+
             </div>
           </div>
         </div>
@@ -61,7 +63,7 @@
                 They don’t offer shortcuts or comforts. They reward only those willing to earn every metre of ascent.
                 And when you finally reach the ridge, the descent is yours alone: untouched powder, silent valleys,
                 and lines that exist for a moment and then vanish into the wild again.</p>
-                
+
             </div>
           </div>
         </div>
@@ -82,7 +84,7 @@
                 lighting the next section of rock you’ll have to conquer. These routes demand strength, patience, and a
                 taste for the unknown — but they repay
                 you with views and moments you’ll carry for the rest of your life.</p>
-                
+
             </div>
           </div>
         </div>
@@ -94,15 +96,15 @@
               </div>
               <a href="hiking.html" class="btn" aria-label="Hiking Adventures – Dare to hike!">Dare to hike!</a>
               <h3>Hiking Adventures</h3>
-              <p>These hikes take you far beyond the usual viewpoints. They’re long, demanding routes that carry 
-                you through deep valleys, high passes, and stretches of wilderness where the only sound is wind 
-                moving through the rock. The terrain shifts constantly — steep ascents, narrow trails, and ridge 
-                lines that open new horizons with every step. You move at a pace that feels honest, earning each 
-                view rather than arriving at it. When the day ends before the trail does, you camp where the mountain 
-                allows: beside boulder fields, above glacial lakes, or tucked into quiet saddles under a wide, cold sky. 
-                These are hikes for people who want immersion, challenge, and the quiet satisfaction of going further 
+              <p>These hikes take you far beyond the usual viewpoints. They’re long, demanding routes that carry
+                you through deep valleys, high passes, and stretches of wilderness where the only sound is wind
+                moving through the rock. The terrain shifts constantly — steep ascents, narrow trails, and ridge
+                lines that open new horizons with every step. You move at a pace that feels honest, earning each
+                view rather than arriving at it. When the day ends before the trail does, you camp where the mountain
+                allows: beside boulder fields, above glacial lakes, or tucked into quiet saddles under a wide, cold sky.
+                These are hikes for people who want immersion, challenge, and the quiet satisfaction of going further
                 than most ever will.</p>
-                
+
 
             </div>
           </div>
@@ -117,16 +119,56 @@
 
   <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
   <script>
-  fetch('navbar.html')
-    .then(r => r.text())
-    .then(html => {
-      const nav = document.getElementById('exnavbar');
-      nav.innerHTML = html;
-      nav.classList.add('loaded');
+    fetch('navbar.html')
+      .then(r => r.text())
+      .then(html => {
+        const nav = document.getElementById('exnavbar');
+        nav.innerHTML = html;
+        nav.classList.add('loaded');
 
-      initNavbar(); // navbar now exists → safe to bind events
-    });
-</script>
+        initNavbar(); // navbar now exists → safe to bind events
+      });
+    //small script to write home page
+    document.addEventListener('mouseenter', (e) => {
+      if (e.target.matches('.logo')) {
+        document.querySelector('.logotext').textContent = 'Home Page';
+      }
+    }, true);
+
+    document.addEventListener('mouseleave', (e) => {
+      if (e.target.matches('.logo')) {
+        document.querySelector('.logotext').textContent = 'WildRidge Adventures';
+      }
+    }, true);
+      
+
+
+// toggle the light/dark theme
+document.addEventListener("click", (e) => {
+  if (e.target.id === "themeToggle") {
+    const root = document.documentElement;
+    const current = root.getAttribute("data-theme");
+    const next = current === "dark" ? "light" : "dark";
+
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+  }
+});
+
+  // Load saved theme
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const saved = localStorage.getItem("theme");
+  if (saved) {
+    document.documentElement.setAttribute("data-theme", saved);
+  }
+});
+
+
+  </script>
+
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>

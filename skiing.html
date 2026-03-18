@@ -9,38 +9,13 @@
   <title>skiing</title>
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <style>
 
- .map-card {
-  background: var(--color-surface);
-  border: 2px solid var(--color-borders);
-  border-radius: var(--radius-sm);
-  padding: var(--padding-3);
-  margin: var(--margin-4) auto;
-  width: 90%;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-  width: 10%;
-}
-
-.map-card a {
-  display: inline-block;
-  font-family: var(--font-secondary);
-  font-size: var(--font-size-xl);
-  color: var(--color-accent);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.maplink:hover {
-  color: var(--color-accent-hover);
-  text-decoration: underline;
-}
-
-  </style>
 </head>
 
 <body>
+  <div id="themeToggle" class="theme-toggle">
+    🌙
+  </div>
   <!-- Navigation -->
 
   <div id="exnavbar">
@@ -63,25 +38,35 @@
       <div class="article">
         <h2>La Grave</h2>
         <h3>The Scene</h3>
-        <p class="inline-list"><a target="_blank" rel="noopener noreferrer" href="https://maps.google.com/maps?ll=45.044295,6.302933&z=13&t=m&hl=en&gl=US&mapclient=embed">La Grave</a> 
-          sits high in the Southern French Alps beneath the jagged face of 
-          <a href="#" class="img-link"data-img="assets/gallery/la meije.jpg" data-alt="snow capped mountain">La Meije</a>,
+        <p class="inline-list"><a target="_blank" rel="noopener noreferrer"
+            href="https://maps.google.com/maps?ll=45.044295,6.302933&z=13&t=m&hl=en&gl=US&mapclient=embed">La Grave</a>
+          sits high in the Southern French Alps beneath the jagged face of
+          <a href="#" class="img-link" data-img="assets/gallery/la meije.jpg" data-alt="snow capped mountain">La
+            Meije</a>,
           a mountain that dominates the skyline and sets the tone for everything that happens here.
-          This isn’t a resort in the usual sense — it’s a <a href="#" class="img-link"data-img="assets/gallery/wild.webp" data-alt="skiers trekking through the snow">wild</a>, open mountainscape where the terrain
-          has been left almost entirely untouched. The <a href="#" class="img-link"data-img="assets/gallery/cable car.webp" data-alt="different coloured cable cars ">cable car</a> lifts you straight into a world of rock,
+          This isn’t a resort in the usual sense — it’s a <a href="#" class="img-link"
+            data-img="assets/gallery/wild.webp" data-alt="skiers trekking through the snow">wild</a>, open mountainscape
+          where the terrain
+          has been left almost entirely untouched. The <a href="#" class="img-link"
+            data-img="assets/gallery/cable car.webp" data-alt="different coloured cable cars ">cable car</a> lifts you
+          straight into a world of rock,
           ice, and deep alpine silence, and from there the descent is yours to shape.
         </p>
         <h3>The Vertical Challenge</h3>
-        <p class="inline-list">The mountain <a href="#" class="img-link"data-img="assets/gallery/drops away.webp" data-alt="skier skiing down a slope">drops</a> away for roughly 2,100 metres of vertical, running from glacier to valley in one long,
+        <p class="inline-list">The mountain <a href="#" class="img-link" data-img="assets/gallery/drops away.webp"
+            data-alt="skier skiing down a slope">drops</a> away for roughly 2,100 metres of vertical, running from
+          glacier to valley in one long,
           continuous fall. There are no marked pistes, no grooming, and no comforting boundaries. Instead, the slopes
           are steep,
           varied, and unpredictable, with couloirs, gullies, powder fields, and exposed traverses that demand full
           attention.
-          Every run is off‑piste, every line is chosen by the skier, and every descent feels like a small 
-          <a href="#" class="img-link"data-img="assets/gallery/expedition.webp" data-alt="skiers making their way up a slope on foot">expedition</a> in its own right.
+          Every run is off‑piste, every line is chosen by the skier, and every descent feels like a small
+          <a href="#" class="img-link" data-img="assets/gallery/expedition.webp"
+            data-alt="skiers making their way up a slope on foot">expedition</a> in its own right.
         </p>
         <h3>A True Freeride Experience</h3>
-        <p class="inline-list">La Grave has earned its reputation as one of the world’s great freeride destinations. Skiers come here for
+        <p class="inline-list">La Grave has earned its reputation as one of the world’s great freeride destinations.
+          Skiers come here for
           the challenge,
           the scale, and the sense of genuine mountain freedom — the kind you only get when the terrain is left in its
           natural state.
@@ -121,6 +106,41 @@
 
         initNavbar(); // navbar now exists → safe to bind events
       });
+
+    //small script to write home page
+    document.addEventListener('mouseover', (e) => {
+      if (e.target.matches('.logo')) {
+        document.querySelector('.logotext').textContent = 'Home Page';
+      }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+      if (e.target.matches('.logo')) {
+        document.querySelector('.logotext').textContent = 'WildRidge Adventures';
+      }
+    });
+
+    // toggle the light/dark theme
+    document.addEventListener("click", (e) => {
+      if (e.target.id === "themeToggle") {
+        const root = document.documentElement;
+        const current = root.getAttribute("data-theme");
+        const next = current === "dark" ? "light" : "dark";
+
+        root.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+      }
+    });
+
+    // Load saved theme
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("theme");
+      if (saved) {
+        document.documentElement.setAttribute("data-theme", saved);
+      }
+    });
   </script>
 
 

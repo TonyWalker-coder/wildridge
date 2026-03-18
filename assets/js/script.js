@@ -133,3 +133,15 @@ document.addEventListener("click", function (e) {
     document.getElementById("appModal").classList.remove("open");
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+

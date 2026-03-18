@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="WildRidge Adventures offers guided outdoor experiences, thrilling adventure packages, 
+  <meta name="description" content="WildRidge Adventures offers guided outdoor experiences, thrilling adventure packages, 
     and expert-led tours for explorers who want to push their limits and discover the wild.">
   <title>index</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
+  <div id="themeToggle" class="theme-toggle">
+    🌙
+  </div>
+
   <!-- Navigation -->
-  <div id="exnavbar"></div>  
+  <div id="exnavbar"></div>
   <main>
     <!-- The hero section is designed to welcome visitors to the website and provide a brief introduction to the brand. 
      It includes a heading and two paragraphs of text, all contained within an overlay for visual emphasis. 
@@ -34,14 +39,48 @@
   <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
   <!-- load the DRY navbar-->
   <script>
-  fetch('navbar.html')
-    .then(r => r.text())
-    .then(html => {
-      const nav = document.getElementById('exnavbar');
-      nav.innerHTML = html;
-      nav.classList.add('loaded');
-      initNavbar(); 
-    });
-</script>
+    fetch('navbar.html')
+      .then(r => r.text())
+      .then(html => {
+        const nav = document.getElementById('exnavbar');
+        nav.innerHTML = html;
+        nav.classList.add('loaded');
+        initNavbar();
+      });
+    //small script to write home page
+    document.addEventListener('mouseenter', (e) => {
+      if (e.target.matches('.logo')) {
+        document.querySelector('.logotext').textContent = 'Home Page';
+      }
+    }, true);
+
+    document.addEventListener('mouseleave', (e) => {
+      if (e.target.matches('.logo')) {
+        document.querySelector('.logotext').textContent = 'WildRidge Adventures';
+      }
+    }, true);
+
+    // toggle the light/dark theme
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("themeToggle");
+  const root = document.documentElement;
+
+  // Load saved theme
+  const saved = localStorage.getItem("theme");
+  if (saved) root.setAttribute("data-theme", saved);
+
+  if (!toggle) return;
+
+  toggle.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme");
+    const next = current === "dark" ? "light" : "dark";
+
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+  });
+});
+
+  </script>
 </body>
+
 </html>

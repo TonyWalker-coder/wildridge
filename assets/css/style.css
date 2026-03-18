@@ -112,25 +112,25 @@
 
   :root {
     /* Global tokens */
-    --color-bg: var(--dark-color-bg);
-    --color-text: var(--dark-color-text);
-    --color-heading: var(--dark-color-heading);
+    --color-bg: var(--light-color-bg);
+    --color-text: var(--light-color-text);
+    --color-heading: var(--light-color-heading);
 
     /* A surface should be lighter than bg but still in the dark palette.
      Using a slightly desaturated, lifted version of your bg works well. */
-    --color-surface: var(--dark-color-surface);
+    --color-surface: var(--light-color-surface);
 
     /* Borders already mapped */
-    --color-borders: var(--dark-color-accent);
+    --color-borders: var(--light-color-accent);
 
     /* Muted text should be readable but clearly secondary.
      A 70% tint of your main text colour works well. */
-    --color-text-muted: var(--dark-color-text-muted);
+    --color-text-muted: var(--light-color-text-muted);
 
     /* Accent hover can stay the same or brighten slightly.
      Active should be a deeper, more saturated version. */
-    --color-accent-hover: var(--dark-color-accent-hover);
-    --color-accent-active: var(--dark-color-accent-active);
+    --color-accent-hover: var(--light-color-accent-hover);
+    --color-accent-active: var(--light-color-accent-active);
 
 
 
@@ -158,6 +158,24 @@
 
   }
 }
+:root[data-theme="dark"]{
+        --color-bg:var(--dark-color-bg);
+        --color-special-bg:var(--dark-color-special-bg);
+        --color-surface:var(--dark-color-surface);
+        --color-special-surface:var(--dark-color-special-surface);
+        --color-text:var(--dark-color-text);
+        --color-special-text:var(--dark-color-special-text);
+        --color-heading:var(--dark-color-heading);
+        --color-special-heading:var(--dark-color-special-heading);
+        --color-muted:var(--dark-color-text-muted);
+        --color-border:var(--dark-color-border);
+        --color-special-border:var(--dark-color-special-border);
+        --color-accent:var(--dark-color-accent);
+        --color-accent-hover:var(--dark-color-accent-hover);
+        --color-accent-active:var(--dark-color-accent-active);
+        --color-special:var(--dark-color-special);
+
+    }
 
 /* Typography tokens making use of clamp for responsive sizing */
 h1 {
@@ -377,6 +395,8 @@ while still using the same font sizing and spacing tokens for consistency. */
   color: var(--color-text);
   line-height: clamp(0.5, 1.25, var(--line-tight));
   letter-spacing: var(--letter-spacing-tight);
+  transition: opacity 0.9s ease;
+
 }
 
 /* clear default link styles for the navbar links,
@@ -848,3 +868,21 @@ local to the package sections */
   color: var(--color-text-muted);
 }
 /*end of booking modal*/
+/*icon to toggle theme*/
+.theme-toggle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  z-index: 9999;
+  padding: 6px 8px;
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+
+
+
+/*end icon*/
