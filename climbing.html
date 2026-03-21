@@ -97,10 +97,12 @@
         <div class="modal-content"></div>
       </div>
       <button type="button" id="bookBtn" class="fab">Book Now</button>
-      <div class="weather-buttons">
-        <button onclick="showWeather('today', 62.4824, 7.7288, 'Trollveggen')">Today</button>
-        <button onclick="showWeather('3day', 62.4824, 7.7288, 'Trollveggen')">3‑Day</button>
-        <button onclick="showWeather('7day', 62.4824, 7.7288, 'Trollveggen')">7‑Day</button>
+      <div>
+        <div class="weather-buttons"><span>Local weather </span>
+          <button type="button" onclick="showWeather('today', 62.4824, 7.7288, 'Trollveggen')">Today</button>
+          <button type="button" onclick="showWeather('3day', 62.4824, 7.7288, 'Trollveggen')">3‑Day</button>
+          <button type="button" onclick="showWeather('7day', 62.4824, 7.7288, 'Trollveggen')">7‑Day</button>
+        </div>
       </div>
 
 
@@ -109,7 +111,7 @@
 
   <!-- javascript files should be placed at the end of the body to ensure that the HTML content loads first, improving page load performance and user experience. -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="assets/js/script.js"></script>
+  
 
   <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
   <script>
@@ -122,30 +124,9 @@
 
         initNavbar(); // navbar now exists → safe to bind events
       });
-    //small script to write home page
-    document.addEventListener('mouseover', (e) => {
-      if (e.target.matches('.logo')) {
-        document.querySelector('.logotext').textContent = 'Home Page';
-      }
-    });
 
-    document.addEventListener('mouseout', (e) => {
-      if (e.target.matches('.logo')) {
-        document.querySelector('.logotext').textContent = 'WildRidge Adventures';
-      }
-    });
 
-    // toggle the light/dark theme
-    document.addEventListener("click", (e) => {
-      if (e.target.id === "themeToggle") {
-        const root = document.documentElement;
-        const current = root.getAttribute("data-theme");
-        const next = current === "dark" ? "light" : "dark";
 
-        root.setAttribute("data-theme", next);
-        localStorage.setItem("theme", next);
-      }
-    });
 
     // Load saved theme
 
@@ -158,7 +139,7 @@
     });
   </script>
 
-
+<script src="assets/js/script.js"></script>
 
 </body>
 

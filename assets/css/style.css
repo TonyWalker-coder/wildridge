@@ -283,7 +283,7 @@ body {
 .nav-center button,
 .nav-center .packages-btn {
   padding: var(--padding-3) var(--padding-5);
-  width: clamp(140px, 10.4vw, 220px);
+  width: clamp(120px, 10.4vw, 220px);
   margin: var(--margin-0);
   border: 1px solid tan;
   border: 2px solid var(--button-border);
@@ -892,6 +892,21 @@ local to the package sections */
 }
 .weather-buttons button {
     margin-right: 6px;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-size: clamp(var(--font-size-sm), 1.5vw + var(--font-size-xs), var(--font-size-md));
+    color:var(--color-text);
+    background-color: var(--color-surface);
+    width: 4rem;
+}
+.weather-buttons button:hover {
+  background-color: var(--color-accent-hover);
+}
+.weather-buttons span {
+    color:var(--color-heading);
+    font-size: 1.25rem;
+    font-size: clamp(var(--font-size-md), 1.5vw + var(--font-size-xs), var(--font-size-lg));
+    margin-left: 1rem;
 }
 
 /* weather modal content box */

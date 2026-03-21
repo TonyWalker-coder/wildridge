@@ -179,6 +179,7 @@ This project is managed using GitHub Projects to mirror real‑world development
 - Code Institute (forms return status)
 - fontawesome
 - w3.org (validators)
+- 7timer.info (weather API)
 
 ## Folder Structure
 

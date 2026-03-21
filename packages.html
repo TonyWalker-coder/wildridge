@@ -128,18 +128,7 @@
 
         initNavbar(); // navbar now exists → safe to bind events
       });
-    //small script to write home page
-    document.addEventListener('mouseenter', (e) => {
-      if (e.target.matches('.logo')) {
-        document.querySelector('.logotext').textContent = 'Home Page';
-      }
-    }, true);
 
-    document.addEventListener('mouseleave', (e) => {
-      if (e.target.matches('.logo')) {
-        document.querySelector('.logotext').textContent = 'WildRidge Adventures';
-      }
-    }, true);
       
 
 

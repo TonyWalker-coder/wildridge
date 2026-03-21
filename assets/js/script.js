@@ -1,3 +1,36 @@
+//small script to write home page
+document.addEventListener(
+  "mouseenter",
+  (e) => {
+    if (e.target.matches(".logo")) {
+      document.querySelector(".logotext").textContent = "Home Page";
+    }
+  },
+  true,
+);
+
+document.addEventListener(
+  "mouseleave",
+  (e) => {
+    if (e.target.matches(".logo")) {
+      document.querySelector(".logotext").textContent = "WildRidge Adventures";
+    }
+  },
+  true,
+);
+
+// toggle the light/dark theme
+document.addEventListener("click", (e) => {
+  if (e.target.id === "themeToggle") {
+    const root = document.documentElement;
+    const current = root.getAttribute("data-theme");
+    const next = current === "dark" ? "light" : "dark";
+
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+  }
+});
+
 // Toggle the navbar drop down
 $("#toggle").on("click", function () {
   const sheet = $(".nav-sheet");
