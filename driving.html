@@ -97,11 +97,22 @@
           its appeal.
         </p>
       </div>
+      <div class="weather-buttons">
+        <button onclick="showWeather('today', 45.1570, 6.8200, 'Colle Sommeiller')">Today</button>
+        <button onclick="showWeather('3day', 45.1570, 6.8200, 'Colle Sommeiller')">3‑Day</button>
+        <button onclick="showWeather('7day', 45.1570, 6.8200, 'Colle Sommeiller')">7‑Day</button>
+      </div>
+
+
       <div id="imageModal" class="modal" tabindex="-1">
         <span class="close">&times;</span>
         <img id="modalImage" src="" alt="">
       </div>
       <div id="appModal" class="modal" tabindex="-1">
+        <span class="close">&times;</span>
+        <div class="modal-content"></div>
+      </div>
+      <div id="weatherModal" class="modal" tabindex="-1">
         <span class="close">&times;</span>
         <div class="modal-content"></div>
       </div>

@@ -782,6 +782,7 @@ local to the package sections */
   align-items: center;
   padding: 20px;
   z-index: 501;
+  overflow-y: auto;
 }
 
 .modal.open {
@@ -881,5 +882,78 @@ local to the package sections */
   backdrop-filter: blur(6px);
   background: rgba(255, 255, 255, 0.25);
 }
-
 /*end icon*/
+/*fetch weather modal and buttons*/
+.forecast-block {
+    padding: 8px;
+    margin: 6px 0;
+    border-bottom: 1px solid #ccc;
+    background-color: var(--color-bg);
+}
+.weather-buttons button {
+    margin-right: 6px;
+}
+
+/* weather modal content box */
+#weatherModal .modal-content {
+  background: var(--color-bg);
+  padding: 25px 30px;
+  max-width: 650px;
+  width: 80%;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+  animation: weatherFade 0.25s ease-out;
+}
+
+/* smooth fade-in */
+@keyframes weatherFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* weather modal titles */
+#weatherModal h1 {
+  margin-top: 0;
+  font-size: var(--font-size-1xl);
+  font-size: clamp(var(--font-size-md), 1.5vw + var(--font-size-xs), var(--font-size-1xl));
+  font-weight: 700;
+  color:var(--color-heading);
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  font-family: var(--font-primary);
+}
+
+#weatherModal h2 {
+  margin-top: 15px;
+  font-size: var(--font-size-lg);
+  font-size: clamp(var(--font-size-sm), 1.5vw + var(--font-size-xs), var(--font-size-lg));
+  color:var(--color-heading);
+  font-family: var(--font-primary);
+}
+
+/* forecast blocks */
+#weatherModal .forecast-block {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 10px;
+  align-items: center;
+  background: var(--color-surface);
+  border-left: 4px solid #4a90e2;
+  padding: 12px 15px;
+  margin: 12px 0;
+  border-radius: var(--radius-md);
+  color:var(--color-text);
+  font-family: var(--font-secondary);
+}
+
+#weatherModal .forecast-block .icon {
+  font-size: var(--font-size-1xl);
+}
+
+
+
+#weatherModal .forecast-block p {
+  margin: 3px 0;
+  font-size: 15px;
+}

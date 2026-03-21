@@ -69,7 +69,6 @@ document.querySelectorAll(".img-link").forEach((link) => {
   });
 });
 
-
 // universal close button for ANY modal
 document.querySelectorAll(".modal .close").forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -133,12 +132,83 @@ document.addEventListener("click", function (e) {
     document.getElementById("appModal").classList.remove("open");
   }
 });
+//close for modals
+document.querySelectorAll(".modal .close").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    btn.parentElement.style.display = "none";
+  });
+});
 
+// Optional: click outside to close
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+});
 
+// Fetch weather from 7Timer API
+async function fetch7Timer(lat, lon) {
+  const url = `https://www.7timer.info/bin/api.pl?lon=${lon}&lat=${lat}&product=civil&output=json`;
+  const response = await fetch(url);
+  const data = await response.json();
+  return data.dataseries;
+}
 
+// Build the HTML for the forecast modal
+function buildForecastHTML(type, series, locationName) {
+  let sliceCount = 0;
 
+  if (type === "today") sliceCount = 8;
+  if (type === "3day") sliceCount = 24;
+  if (type === "7day") sliceCount = 56;
 
+  const sliced = series.slice(0, sliceCount);
 
+  let html = `
+        <h1>Weather for ${locationName}</h1>
+        <h2>${type.toLowerCase()} Forecast</h2>
+    `;
 
+  sliced.forEach((point) => {
+    html += `
+    <div class="forecast-block">
+        <div class="icon">${getWeatherIcon(point)}</div>
+        <div>
+            <p><strong>+${point.timepoint}h</strong></p>
+            <p>Temp: ${point.temp2m}°C</p>
+            <p>Cloud: ${point.cloudcover}/9</p>
+            <p>Wind: ${point.wind10m.speed} m/s (${point.wind10m.direction})</p>
+            <p>Precip: ${point.prec_type}</p>
+        </div>
+    </div>
+`;
+  });
 
+  return html;
+}
 
+// Show the modal with the correct location + forecast type
+async function showWeather(type, lat, lon, locationName) {
+  const series = await fetch7Timer(lat, lon);
+  const html = buildForecastHTML(type, series, locationName);
+
+  const modal = document.getElementById("weatherModal");
+  modal.querySelector(".modal-content").innerHTML = html;
+  modal.style.display = "block";
+}
+
+// icons for the weather
+function getWeatherIcon(point) {
+  // Precipitation
+  if (point.prec_type === "rain") return "🌧️";
+  if (point.prec_type === "snow") return "❄️";
+  if (point.prec_type === "none") {
+    // Cloud cover scale: 1–9
+    if (point.cloudcover <= 3) return "☀️";
+    if (point.cloudcover <= 6) return "⛅";
+    return "☁️";
+  }
+  return "🌡️";
+}
