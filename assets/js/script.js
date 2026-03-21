@@ -39,6 +39,17 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.setAttribute("data-theme", saved);
   }
 });
+//script to load DRY navbar
+fetch('navbar.html')
+      .then(r => r.text())
+      .then(html => {
+        const nav = document.getElementById('exnavbar');
+        nav.innerHTML = html;
+        nav.classList.add('loaded');
+
+        initNavbar(); // navbar now exists → safe to bind events
+      });
+
 
 // Toggle the navbar drop down
 $("#toggle").on("click", function () {

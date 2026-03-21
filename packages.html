@@ -115,38 +115,9 @@
 
   <!-- javascript files should be placed at the end of the body to ensure that the HTML content loads first, improving page load performance and user experience. -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="assets/js/script.js"></script>
 
   <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
-  <script>
-    fetch('navbar.html')
-      .then(r => r.text())
-      .then(html => {
-        const nav = document.getElementById('exnavbar');
-        nav.innerHTML = html;
-        nav.classList.add('loaded');
-
-        initNavbar(); // navbar now exists → safe to bind events
-      });
-
-      
-
-
-// toggle the light/dark theme
-document.addEventListener("click", (e) => {
-  if (e.target.id === "themeToggle") {
-    const root = document.documentElement;
-    const current = root.getAttribute("data-theme");
-    const next = current === "dark" ? "light" : "dark";
-
-    root.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-  }
-});
-
-
-  </script>
-
+   
   <script src="assets/js/script.js"></script>
 </body>
 

@@ -109,18 +109,6 @@
 
 
   <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
-  <script>
-    fetch('navbar.html')
-      .then(r => r.text())
-      .then(html => {
-        const nav = document.getElementById('exnavbar');
-        nav.innerHTML = html;
-        nav.classList.add('loaded');
-
-        initNavbar(); // navbar now exists → safe to bind events
-      });
-
-  </script>
 
   <script src="assets/js/script.js"></script>
 
