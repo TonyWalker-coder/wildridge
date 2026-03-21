@@ -31,6 +31,15 @@ document.addEventListener("click", (e) => {
   }
 });
 
+  // Load saved theme
+
+document.addEventListener("DOMContentLoaded", () => {
+  const saved = localStorage.getItem("theme");
+  if (saved) {
+    document.documentElement.setAttribute("data-theme", saved);
+  }
+});
+
 // Toggle the navbar drop down
 $("#toggle").on("click", function () {
   const sheet = $(".nav-sheet");
