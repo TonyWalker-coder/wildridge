@@ -126,8 +126,20 @@ document.querySelectorAll(".img-link").forEach((link) => {
 document.querySelectorAll(".modal .close").forEach((btn) => {
   btn.addEventListener("click", () => {
     btn.closest(".modal").classList.remove("open");
+    hidePleaseWait?.();
   });
 });
+
+// click outside to close
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("open");
+      hidePleaseWait?.();
+    }
+  });
+});
+
 
 // load modal booking form
 document.getElementById("bookBtn").addEventListener("click", () => {
@@ -185,21 +197,10 @@ document.addEventListener("click", function (e) {
     document.getElementById("appModal").classList.remove("open");
   }
 });
-//close for modals
-document.querySelectorAll(".modal .close").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    btn.parentElement.style.display = "none";
-  });
-});
 
-// Optional: click outside to close
-document.querySelectorAll(".modal").forEach((modal) => {
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-});
+
+
+
 
 // Fetch weather from 7Timer API
 async function fetch7Timer(lat, lon) {
@@ -249,8 +250,9 @@ async function showWeather(type, lat, lon, locationName) {
 
   const modal = document.getElementById("weatherModal");
   modal.querySelector(".modal-content").innerHTML = html;
-  modal.style.display = "block";
+  modal.classList.add("open");
 }
+
 
 // icons for the weather
 function getWeatherIcon(point) {
@@ -265,3 +267,13 @@ function getWeatherIcon(point) {
   }
   return "🌡️";
 }
+
+//display please wait
+function showPleaseWait() {
+  const pw = document.getElementById("pleasewait");
+  pw.style.display = "block";
+}
+function hidePleaseWait() {
+  document.getElementById("pleasewait").style.display = "none";
+}
+

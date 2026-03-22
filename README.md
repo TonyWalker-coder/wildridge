@@ -301,3 +301,11 @@ Decision: Leaving as-is. Revisit only if the modal gains additional interactive 
 ### Switching between Modals
 
 During visual testing I noted a brief transitional flash between the form modal closing and the success modal opening. The behaviour appears to be part of the standard modal transition sequence and does not indicate a functional issue.
+
+### Delays in loading weather Modal
+
+Because the weather modal relies on an external API, the response time can vary depending on network conditions. During slower fetches, users may click repeatedly because there’s no immediate visual feedback, which can lead to unnecessary or duplicate requests.
+
+### Fix
+
+To prevent this and make the interaction feel more responsive, a “please wait” indicator was added. This provides instant confirmation that the request is in progress and helps guide the user while the data loads.

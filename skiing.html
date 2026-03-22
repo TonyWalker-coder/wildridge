@@ -89,13 +89,15 @@
         <div class="modal-content"></div>
       </div>
       <button type="button" id="bookBtn" class="fab">Book Now</button>
+      <div class="pleasewait" id="pleasewait"> Please wait</div>
       <div>
         <div class="weather-buttons"><span>Local weather </span>
-          <button type="button" onclick="showWeather('today', 45.044295, 6.302933, 'La Grave')">Today</button>
-          <button type="button" onclick="showWeather('3day', 45.044295, 6.302933, 'La Grave')">3‑Day</button>
-          <button type="button" onclick="showWeather('7day', 45.044295, 6.302933, 'La Grave')">7‑Day</button>
+          <button type="button" onclick="showPleaseWait(); showWeather('today', 45.044295, 6.302933, 'La Grave')">Today</button>
+          <button type="button" onclick="showPleaseWait(); showWeather('3day', 45.044295, 6.302933, 'La Grave')">3‑Day</button>
+          <button type="button" onclick="showPleaseWait(); showWeather('7day', 45.044295, 6.302933, 'La Grave')">7‑Day</button>
         </div>
       </div>
+      
 
 
 

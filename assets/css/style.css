@@ -773,6 +773,7 @@ local to the package sections */
 
 /*modal to load <p><a> linked image*/
 .modal {
+  position: relative;
   outline: none;
   display: none;
   position: fixed;
@@ -796,7 +797,7 @@ local to the package sections */
 }
 
 .modal .close {
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 30px;
   font-size: 40px;
@@ -966,9 +967,29 @@ local to the package sections */
   font-size: var(--font-size-1xl);
 }
 
-
-
 #weatherModal .forecast-block p {
   margin: 3px 0;
   font-size: 15px;
+}
+/* end weather modal*/
+/* please wait label*/
+.pleasewait {
+  display:none;
+  width: 6rem;
+  height: 1.5rem;
+  padding-left: .5rem;
+  padding-right: auto;
+  padding-top: .25rem;
+  margin-bottom: 2rem;
+  margin-top: 0;
+  margin-left: 2rem;
+  overflow: hidden;
+  clip:auto;
+  white-space: nowrap;
+  border: 2px solid white;
+  color: var( --alert-warning-text);
+  background-color: var( --alert-warning-bg);
+  font-family: var(--font-secondary);
+  border-radius: var(--radius-md);
+
 }
