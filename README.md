@@ -176,7 +176,6 @@ This project is managed using GitHub Projects to mirror real‑world development
 - Balsamiq.com (wireframes)
 - canva.com (image editing)
 - Copilot (website text articles)
-- Code Institute (forms return status)
 - fontawesome
 - w3.org (validators)
 - 7timer.info (weather API)
@@ -193,6 +192,7 @@ This project is managed using GitHub Projects to mirror real‑world development
         └── 📁favicon
         └── 📁fonts
         └── 📁images
+        └── 📁gallery
         └── 📁js
             └── script.js
     └── 📁docs
@@ -222,12 +222,20 @@ d light colour system designed to feel warm, earthy, and consistent across the s
 
 <div style="display:flex; gap:10px;">
   <div style="width:60px; height:60px; background:#563127; border-radius:6px;"></div>
-  <div style="width:60px; height:60px; background:#fff9eb; border-radius:6px;"></div>
-  <div style="width:60px; height:60px; background:#ff743c; border-radius:6px;"></div>
-  <div style="width:60px; height:60px; background:#6b3d31; border-radius:6px;"></div>
-  <div style="width:60px; height:60px; background:rgba(255, 249, 235, 0.7); border-radius:6px;"></div>
-  <div style="width:60px; height:60px; background:#ff8656; border-radius:6px;"></div>
-  <div style="width:60px; height:60px; background:#e05f2c; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#602718; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#6e3223; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#77392a; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#7e5044; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#f0e8d6; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#d3b670; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#d6a32b; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:rgba(255, 249, 235, 0.4); border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:rgb(180, 126, 28); border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:rgb(236, 173, 56); border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#ac674c; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#ba7e66; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#c46742; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#efdaa8; border-radius:6px;"></div>
 </div>
 
 ### Light Theme
