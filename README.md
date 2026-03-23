@@ -7,7 +7,7 @@
   }
 @font-face {
     font-family: "Sofia Pro";
-    src: url("assets/fonts/Sofia-Pro-Light.woff") format("woff");
+    src: url("assets/fonts/sofia-pro-light.woff") format("woff");
     font-weight: 300;
     font-style: normal;
   }
@@ -186,7 +186,7 @@ This project is managed using GitHub Projects to mirror real‑world development
 
 ```text
 
-└── 📁familyfarm
+└── 📁wildridge
     └── 📁assets
         └── 📁css
             ├── tokens.css
