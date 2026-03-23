@@ -34,6 +34,7 @@
 - [Acknowledgments](#Acknowledgments)
 - [Local Deployment](#local-deployment)
 - [Testing](#testing)
+- [Colour palette](#colours)
 - [Bugs / Design Features](#bugs)
 
 
@@ -179,6 +180,7 @@ This project is managed using GitHub Projects to mirror real‑world development
 - fontawesome
 - w3.org (validators)
 - 7timer.info (weather API)
+- adobe.com (colour contrast analyzer)
 
 ## Folder Structure
 
@@ -241,14 +243,41 @@ d light colour system designed to feel warm, earthy, and consistent across the s
 ### Light Theme
 
 <div style="display:flex; gap:10px;">
-  <div style="width:60px; height:60px; background:#d9cae4; border-radius:6px;"></div>
-  <div style="width:60px; height:60px; background:#563127; border-radius:6px;"></div>
-  <div style="width:60px; height:60px; background:#e98ad8; border-radius:6px;"></div>
-  <div style="width:60px; height:60px; background:#e8dff0; border-radius:6px;"></div>
-  <div style="width:60px; height:60px; background:rgba(86, 49, 39, 0.6); border-radius:6px;"></div>
-  <div style="width:60px; height:60px; background:#f29be0; border-radius:6px;"></div>
-  <div style="width:60px; height:60px; background:#d374c4; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#eece78; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#bb942a; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#eca65b; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#ebc45aad; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#ad2727; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#cb5828; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#700000; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#9e390e; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#ad272793; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#5d0b0b; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#c25f38; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#d1712c; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#cc954d; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#cc824d; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#c93636; border-radius:6px;"></div>
 </div>
+
+### Alert colours
+
+- success background
+- success text
+- warning background
+- warning text
+- error background
+- error text
+
+<div style="display:flex; gap:10px;">
+  <div style="width:60px; height:60px; background:#d8f5d2; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#245b1f; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#fff4d1; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#7a5a00; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#f8d4d4; border-radius:6px;"></div>
+  <div style="width:60px; height:60px; background:#7a1f1f; border-radius:6px;"></div>
+</div>
+
 
 ## Typography
 
@@ -290,6 +319,32 @@ This site uses public‑domain imagery from [pixabay][pb].
 3. Consult /README.md & /docs/Design.md
 
 ## Testing
+
+
+
+<a id="colours"></a>
+
+## Colour palette
+
+### Dark theme
+
+- text / background : 9.23:1
+- text / surface : 7.16:1
+- heading / background : 5.73:1 * suitable for headings
+- heading / surface : 4.45:1 * poor but not likely to be used 
+
+### Light theme
+
+- text / background : 7.4 : 1
+- text / surface : 5.48 : 1
+- heading / background : 8.13:1
+- heading / surface : 6.02:1
+
+### Alert colours
+
+- success : 6.91 : 1
+- warning : 5.81 : 1
+- error : 7.52 : 1
 
 <a id="bugs"></a>
 
