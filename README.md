@@ -320,6 +320,10 @@ This site uses public‑domain imagery from [pixabay][pb].
 
 ## Testing
 
+## Lighthouse testing
+
+
+
 
 
 <a id="colours"></a>

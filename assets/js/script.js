@@ -31,7 +31,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
-  // Load saved theme
+// Load saved theme
 
 document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("theme");
@@ -41,14 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 //script to load DRY navbar
 fetch('navbar.html')
-      .then(r => r.text())
-      .then(html => {
-        const nav = document.getElementById('exnavbar');
-        nav.innerHTML = html;
-        nav.classList.add('loaded');
+  .then(r => r.text())
+  .then(html => {
+    const nav = document.getElementById('exnavbar');
+    nav.innerHTML = html;
+    nav.classList.add('loaded');
 
-        initNavbar(); // navbar now exists → safe to bind events
-      });
+    initNavbar(); // navbar now exists → safe to bind events
+  });
 
 
 // Toggle the navbar drop down
@@ -142,11 +142,13 @@ document.querySelectorAll(".modal").forEach((modal) => {
 
 
 // load modal booking form
-document.getElementById("bookBtn").addEventListener("click", () => {
-  const modal = document.getElementById("appModal");
-  const content = modal.querySelector(".modal-content");
+//document.getElementById("bookBtn").addEventListener("click", () => {
+document.body.addEventListener("click", (e) => {
+  if (e.target.id === "bookBtn") {
+    const modal = document.getElementById("appModal");
+    const content = modal.querySelector(".modal-content");
 
-  content.innerHTML = `
+    content.innerHTML = `
     <h2>Booking Form</h2>
     <form id="bookingForm">
       <input type="text" placeholder="Your name" required>
@@ -164,9 +166,9 @@ document.getElementById("bookBtn").addEventListener("click", () => {
     </form>
   `;
 
-  modal.classList.add("open");
-  modal.focus();
-});
+    modal.classList.add("open");
+    modal.focus();
+  });
 
 // close on submit and load confirmation modal
 document.addEventListener("submit", function (e) {
