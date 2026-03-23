@@ -168,6 +168,7 @@ document.body.addEventListener("click", (e) => {
 
     modal.classList.add("open");
     modal.focus();
+  }
   });
 
 // close on submit and load confirmation modal
