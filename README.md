@@ -12,6 +12,11 @@
     font-style: normal;
   }
 </STYLE>
+![Homepage Screenshot](screenshots/website.png)
+
+[Deployed Website](https://tonywalker-coder.github.io/wildridge/)
+
+
 ## Table of Contents
 
 - [User Stories](#user-stories)
@@ -34,6 +39,7 @@
 - [Acknowledgments](#Acknowledgments)
 - [Local Deployment](#local-deployment)
 - [Testing](#testing)
+- [Lighthouse](#lighthouse)
 - [Colour palette](#colours)
 - [Bugs / Design Features](#bugs)
 
@@ -320,8 +326,10 @@ This site uses public‑domain imagery from [pixabay][pb].
 3. Consult /README.md & /docs/Design.md
 
 ## Testing
-
+<a id="lighthouse"></a>
 ## Lighthouse testing
+
+![Homepage Screenshot](screenshots/lighthouse.png)
 
 
 ## CSS validator
