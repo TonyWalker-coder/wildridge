@@ -40,6 +40,7 @@
 - [Local Deployment](#local-deployment)
 - [Testing](#testing)
 - [Lighthouse](#lighthouse)
+- [Validators](#css)
 - [Colour palette](#colours)
 - [Bugs / Design Features](#bugs)
 
@@ -327,18 +328,28 @@ This site uses public‑domain imagery from [pixabay][pb].
 
 ## Testing
 <a id="lighthouse"></a>
+
 ## Lighthouse testing
 
-![Homepage Screenshot](screenshots/lighthouse.png)
+![Lighthouse testing](screenshots/lighthouse.png)
 
+<a id="css"></a>
 
 ## CSS validator
+
+![CSS testing](screenshots/css.png)
+
+### Errors
 
 ### use of scrollbar-gutter
 Browsers with full support for *scrollbar-gutter* can allocate a persistent gutter in the scroll container’s inline direction, ensuring that layout metrics remain stable even when overflow transitions from non‑scrolling to scrolling states. Engines that lack support simply ignore the declaration, falling back to their default scrollbar behavior without affecting the computed box model. Because the property is non-destructive and gracefully degrades, it functions as a safe progressive enhancement for maintaining predictable layout geometry across heterogeneous rendering environments.
 
+#### *conclusion not an error*
+
 ### use of layer
-The validator reports *@layer* as an unrecognized at‑rule because it predates support for Cascade Layers and therefore cannot parse modern CSS constructs. Despite the warning, *@layer* is fully valid according to the current CSS specification and is implemented in all major browser engines. Since unsupported at‑rules are safely ignored by legacy parsers without affecting the cascade or computed styles, retaining *@layer* ensures proper layering semantics in compliant browsers while maintaining backward compatibility. The warnings reflect validator limitations, not a defect in the stylesheet
+The validator reports *@layer* as an unrecognized at‑rule because it predates support for Cascade Layers and therefore cannot parse modern CSS constructs. Despite the warning, *@layer* is fully valid according to the current CSS specification and is implemented in all major browser engines. Since unsupported at‑rules are safely ignored by legacy parsers without affecting the cascade or computed styles, retaining *@layer* ensures proper layering semantics in compliant browsers while maintaining backward compatibility. The errors reflect validator limitations, not a defect in the stylesheet
+
+#### *conclusion not an error*
 
 ### warnings 125
 
