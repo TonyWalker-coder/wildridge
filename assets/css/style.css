@@ -1,7 +1,8 @@
-@layer tokens, breakpoints;
 @import "tokens.css";
+@layer tokens, breakpoints;
 
 @layer tokens {
+
   @font-face {
     font-family: "New Kansas";
     src: url("../fonts/New-Kansas-Thin.otf") format("opentype");
@@ -104,7 +105,7 @@
   }
 
   :root {
-    
+
     /* Component colour tokens */
     --button-bg: var(--color-surface);
     --button-bg-hover: var(--color-accent-hover);
@@ -129,42 +130,45 @@
 
   }
 }
-:root[data-theme="dark"]{
-        --color-bg:var(--dark-color-bg);
-        --color-special-bg:var(--dark-color-special-bg);
-        --color-surface:var(--dark-color-surface);
-        --color-special-surface:var(--dark-color-special-surface);
-        --color-text:var(--dark-color-text);
-        --color-special-text:var(--dark-color-special-text);
-        --color-heading:var(--dark-color-heading);
-        --color-special-heading:var(--dark-color-special-heading);
-        --color-muted:var(--dark-color-text-muted);
-        --color-borders:var(--dark-color-borders);
-        --color-special-borders:var(--dark-color-special-borders);
-        --color-accent:var(--dark-color-accent);
-        --color-accent-hover:var(--dark-color-accent-hover);
-        --color-accent-active:var(--dark-color-accent-active);
-        --color-special:var(--dark-color-special);
 
-    }
-:root[data-theme="light"]{
-        --color-bg:var(--light-color-bg);
-        --color-special-bg:var(--light-color-special-bg);
-        --color-surface:var(--light-color-surface);
-        --color-special-surface:var(--light-color-special-surface);
-        --color-text:var(--light-color-text);
-        --color-special-text:var(--light-color-special-text);
-        --color-heading:var(--light-color-heading);
-        --color-special-heading:var(--light-color-special-heading);
-        --color-text-muted:var(--light-color-text-muted);
-        --color-borders:var(--light-color-borders);
-        --color-special-borders:var(--light-color-special-borders);
-        --color-accent:var(--light-color-accent);
-        --color-accent-hover:var(--light-color-accent-hover);
-        --color-accent-active:var(--light-color-accent-active);
-        --color-special:var(--light-color-special);
+:root[data-theme="dark"] {
+  --color-bg: var(--dark-color-bg);
+  --color-special-bg: var(--dark-color-special-bg);
+  --color-surface: var(--dark-color-surface);
+  --color-special-surface: var(--dark-color-special-surface);
+  --color-text: var(--dark-color-text);
+  --color-special-text: var(--dark-color-special-text);
+  --color-heading: var(--dark-color-heading);
+  --color-special-heading: var(--dark-color-special-heading);
+  --color-muted: var(--dark-color-text-muted);
+  --color-borders: var(--dark-color-borders);
+  --color-special-borders: var(--dark-color-special-borders);
+  --color-accent: var(--dark-color-accent);
+  --color-accent-hover: var(--dark-color-accent-hover);
+  --color-accent-active: var(--dark-color-accent-active);
+  --color-special: var(--dark-color-special);
 
-    }
+}
+
+:root[data-theme="light"] {
+  --color-bg: var(--light-color-bg);
+  --color-special-bg: var(--light-color-special-bg);
+  --color-surface: var(--light-color-surface);
+  --color-special-surface: var(--light-color-special-surface);
+  --color-text: var(--light-color-text);
+  --color-special-text: var(--light-color-special-text);
+  --color-heading: var(--light-color-heading);
+  --color-special-heading: var(--light-color-special-heading);
+  --color-text-muted: var(--light-color-text-muted);
+  --color-borders: var(--light-color-borders);
+  --color-special-borders: var(--light-color-special-borders);
+  --color-accent: var(--light-color-accent);
+  --color-accent-hover: var(--light-color-accent-hover);
+  --color-accent-active: var(--light-color-accent-active);
+  --color-special: var(--light-color-special);
+
+}
+
 /* Typography tokens making use of clamp for responsive sizing */
 h1 {
   font-size: clamp(var(--font-size-2xl), 4vw + var(--font-size-md), var(--font-size-5xl));
@@ -183,18 +187,6 @@ p {
   font-size: clamp(var(--font-size-sm), 1.5vw + var(--font-size-xs), var(--font-size-2xxl));
 }
 
-/* Utility class for visually hidden content, ensuring accessibility while keeping the content hidden from sighted users. */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
 
 /*remove browser default margin and padding, set background color */
 body {
@@ -203,7 +195,6 @@ body {
   padding: var(--padding-0);
 
 }
-
 
 
 /* Full-width navbar fixed navbar */
@@ -560,7 +551,7 @@ The rgba background provides a subtle tint to enhance contrast. */
 
 .container p {
   overflow-wrap: break-word;
-  word-break: break-word;
+
   hyphens: auto;
   line-height: var(--line-tight);
   color: var(--color-text);
@@ -652,11 +643,10 @@ The rgba background provides a subtle tint to enhance contrast. */
     0 2px 4px rgba(0, 0, 0, 0.06),
     0 12px 28px rgba(0, 0, 0, 0.08);
 
-    color:var(--color-text)
-
+  color: var(--color-text)
 }
 
-.packages-card h3{
+.packages-card h3 {
   color: var(--color-heading);
 }
 
@@ -813,32 +803,33 @@ local to the package sections */
   cursor: pointer;
   z-index: 199;
 }
+
 /*end button*/
 /*booking modal*/
 #appModal .modal-content {
-  background:var(--color-surface);
+  background: var(--color-surface);
   color: var(--color-heading);
   padding: var(--padding-6);
   border-radius: var(--radius-md);
   max-width: 420px;
   width: 90%;
   margin: 0 auto;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   border: 5px solid var(--color-borders);
-  
+
 }
 
 #appModal h2 {
   margin-top: 0;
   color: var(--color-heading);
   font-family: var(--font-primary);
-  font-size: var(--font-size-2xl); 
+  font-size: var(--font-size-2xl);
 }
 
-#appModal p{
-  color:var(--color-text);
- font-family: var(--font-secondary);
- font-size: var(--font-size-2xl);
+#appModal p {
+  color: var(--color-text);
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-2xl);
 }
 
 #appModal input,
@@ -854,15 +845,17 @@ local to the package sections */
 
 #appModal button {
   background: var(--color-accent);
-  color:var(--color-text);
-  
-  
+  color: var(--color-text);
+
+
   cursor: pointer;
 }
+
 #appModal button:hover {
   background: var(--color-accent-hover);
   color: var(--color-text-muted);
 }
+
 /*end of booking modal*/
 /*icon to toggle theme*/
 .theme-toggle {
@@ -874,34 +867,39 @@ local to the package sections */
   z-index: 500;
   padding: 6px 8px;
   border-radius: 8px;
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   background: rgba(255, 255, 255, 0.25);
 }
+
 /*end icon*/
 /*fetch weather modal and buttons*/
 .forecast-block {
-    padding: 8px;
-    margin: 6px 0;
-    border-bottom: 1px solid #ccc;
-    background-color: var(--color-bg);
+  padding: 8px;
+  margin: 6px 0;
+  border-bottom: 1px solid #ccc;
+  background-color: var(--color-bg);
 }
+
 .weather-buttons button {
-    margin-right: 6px;
-    margin-bottom: 2rem;
-    font-size: 1rem;
-    font-size: clamp(var(--font-size-sm), 1.5vw + var(--font-size-xs), var(--font-size-md));
-    color:var(--color-text);
-    background-color: var(--color-surface);
-    width: 4rem;
+  margin-right: 6px;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-size: clamp(var(--font-size-sm), 1.5vw + var(--font-size-xs), var(--font-size-md));
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  width: 4rem;
 }
+
 .weather-buttons button:hover {
   background-color: var(--color-accent-hover);
 }
+
 .weather-buttons span {
-    color:var(--color-heading);
-    font-size: 1.25rem;
-    font-size: clamp(var(--font-size-md), 1.5vw + var(--font-size-xs), var(--font-size-lg));
-    margin-left: 1rem;
+  color: var(--color-heading);
+  font-size: 1.25rem;
+  font-size: clamp(var(--font-size-md), 1.5vw + var(--font-size-xs), var(--font-size-lg));
+  margin-left: 1rem;
 }
 
 /* weather modal content box */
@@ -912,14 +910,21 @@ local to the package sections */
   width: 80%;
   margin: auto;
   border-radius: 12px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
   animation: weatherFade 0.25s ease-out;
 }
 
 /* smooth fade-in */
 @keyframes weatherFade {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* weather modal titles */
@@ -928,7 +933,7 @@ local to the package sections */
   font-size: var(--font-size-1xl);
   font-size: clamp(var(--font-size-md), 1.5vw + var(--font-size-xs), var(--font-size-1xl));
   font-weight: 700;
-  color:var(--color-heading);
+  color: var(--color-heading);
   border-bottom: 2px solid #eee;
   padding-bottom: 10px;
   font-family: var(--font-primary);
@@ -938,7 +943,7 @@ local to the package sections */
   margin-top: 15px;
   font-size: var(--font-size-lg);
   font-size: clamp(var(--font-size-sm), 1.5vw + var(--font-size-xs), var(--font-size-lg));
-  color:var(--color-heading);
+  color: var(--color-heading);
   font-family: var(--font-primary);
 }
 
@@ -953,7 +958,7 @@ local to the package sections */
   padding: 12px 15px;
   margin: 12px 0;
   border-radius: var(--radius-md);
-  color:var(--color-text);
+  color: var(--color-text);
   font-family: var(--font-secondary);
 }
 
@@ -965,25 +970,23 @@ local to the package sections */
   margin: 3px 0;
   font-size: 15px;
 }
+
 /* end weather modal*/
 /* please wait label*/
 .pleasewait {
-  display:none;
+  display: none;
   width: 6rem;
   height: 1.5rem;
   padding-left: .5rem;
-  padding-right: auto;
   padding-top: .25rem;
   margin-bottom: 2rem;
   margin-top: 0;
   margin-left: 2rem;
   overflow: hidden;
-  clip:auto;
   white-space: nowrap;
   border: 2px solid white;
-  color: var( --alert-warning-text);
-  background-color: var( --alert-warning-bg);
+  color: var(--alert-warning-text);
+  background-color: var(--alert-warning-bg);
   font-family: var(--font-secondary);
   border-radius: var(--radius-md);
-
 }
