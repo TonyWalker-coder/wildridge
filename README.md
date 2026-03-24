@@ -7,7 +7,7 @@
   }
 @font-face {
     font-family: "Sofia Pro";
-    src: url("assets/fonts/sofia-pro-light.woff") format("woff");
+    src: url("assets/fonts/Sofia-Pro-Light.woff") format("woff");
     font-weight: 300;
     font-style: normal;
   }
@@ -289,6 +289,7 @@ A strong, expressive serif used for titles and section headers to give the desig
 
 <p style="font-family:'New Kansas'; font-size:24px;">
 The quick brown fox jumps over the lazy dog.
+A clean, versatile sans‑serif chosen for clarity and comfort, ideal for longer passages and general UI text.
 </p>
 
 ### Body Text — Sofia Pro

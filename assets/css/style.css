@@ -57,31 +57,24 @@
     font-weight: 950;
     font-style: normal;
   }
-/*
+
   @font-face {
     font-family: "Sofia Pro";
-    src: url("../fonts/SofiaPro-Thin.woff") format("woff");
-    font-weight: 100;
-    font-style: normal;
-  }
-*/
-  @font-face {
-    font-family: "Sofia Pro";
-    src: url("../fonts/sofia-pro-light.woff") format("woff");
+    src: url("../fonts/Sofia-Pro-Light.woff") format("woff");
     font-weight: 300;
     font-style: normal;
   }
 
   @font-face {
     font-family: "Sofia Pro";
-    src: url("../fonts/sofia-pro-regular.woff") format("woff");
+    src: url("../fonts/Sofia-Pro-Regular.woff") format("woff");
     font-weight: 400;
     font-style: normal;
   }
 
   @font-face {
     font-family: "Sofia Pro";
-    src: url("../fonts/sofia-pro-medium.woff") format("woff");
+    src: url("../fonts/Sofia-Pro-Medium.woff") format("woff");
     font-weight: 500;
     font-style: normal;
   }
@@ -385,7 +378,8 @@ while still using the same font sizing and spacing tokens for consistency. */
 }
 
 .logotext {
-  font-family: var(--font-secondary), sans-serif;
+  /*font-family: var(--font-secondary), sans-serif;*/
+  font-family: var(--font-secondary);
   font-size: clamp(var(--font-size-xxs), 1.5vw + var(--font-size-xxs), var(--font-size-1xl));
   color: var(--color-text);
   line-height: clamp(0.5, 1.25, var(--line-tight));
