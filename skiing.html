@@ -19,7 +19,6 @@
   <!-- Navigation -->
 
   <div id="exnavbar">
-
   </div>
   <main>
     <!-- skiing package section -->
@@ -38,6 +37,8 @@
       <div class="article">
         <h2>La Grave</h2>
         <h3>The Scene</h3>
+        <!--all links are images opening in the modal-->
+        <!--open google maps in its own page-->
         <p class="inline-list"><a target="_blank" rel="noopener noreferrer"
             href="https://maps.google.com/maps?ll=45.044295,6.302933&z=13&t=m&hl=en&gl=US&mapclient=embed">La Grave</a>
           sits high in the Southern French Alps beneath the jagged face of
@@ -75,20 +76,22 @@
           stays with you long after you reach the bottom.</p>
       </div>
 
-
+       <!--modal section images booking and weather-->
       <div id="imageModal" class="modal" tabindex="-1">
         <button type="button"  class="close" aria-label="Close modal">&times;</button>
         <img id="modalImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
       </div>
       <div id="appModal" class="modal" tabindex="-1">
-        <button type="button"  class="close" aria-label="Close modal">&times;</button>
+        <button type="button"  class="close modal-close" aria-label="Close modal">&times;</button>
         <div class="modal-content"></div>
       </div>
       <div id="weatherModal" class="modal" tabindex="-1">
-        <button type="button"  class="close" aria-label="Close modal">&times;</button>
+        <button type="button"    class="close" aria-label="Close modal">&times;</button>
         <div class="modal-content"></div>
       </div>
+      <!--booking form call to action-->
       <button type="button" id="bookBtn" class="fab" aria-label="Book this adventure">Book Now</button>
+      <!--hidden content display on event click-->
       <div class="pleasewait" id="pleasewait"> Please wait</div>
       <div>
         <div class="weather-buttons"><span>Local weather </span>
@@ -97,16 +100,11 @@
           <button type="button" onclick="showPleaseWait(); showWeather('7day', 45.044295, 6.302933, 'La Grave')">7‑Day</button>
         </div>
       </div>
-      
-
-
-
-
-
     </section>
   </main>
 
-  <!-- javascript files should be placed at the end of the body to ensure that the HTML content loads first, improving page load performance and user experience. -->
+  <!-- javascript files should be placed at the end of the body to ensure that the HTML content loads first, 
+   improving page load performance and user experience. -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 

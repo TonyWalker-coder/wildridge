@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="WildRidge Adventures offers guided outdoor experiences, thrilling adventure packages, and expert-led tours for explorers who want to push their limits and discover the wild.">
+    content="WildRidge Adventures offers guided outdoor experiences, thrilling adventure packages, 
+    and expert-led tours for explorers who want to push their limits and discover the wild.">
   <title>hiking</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -38,6 +39,8 @@
       <div class="article">
         <h2>GR20 in Corsica</h2>
         <h3>Europe’s Legendary High‑Altitude Adventure</h3>
+        <!--all links are images opening in the modal-->
+        <!--open google maps in its own page-->
         <p class="inline-list"><a target="_blank" rel="noopener noreferrer"
             href="https://maps.google.com/maps?ll=42.5100,8.8560&z=13&t=m&hl=en&gl=US&mapclient=embed">
             The GR20</a> is often described as Europe’s toughest long‑distance trail, but hikers who complete it rarely
@@ -107,20 +110,23 @@
           It’s the most seamless way to experience one of Europe’s great trekking achievements.
         </p>
       </div>
+      <!--modal section images booking and weather-->
       <div id="imageModal" class="modal" tabindex="-1">
         <button type="button"  class="close" aria-label="Close modal">&times;</button>
         <img id="modalImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
       </div>
       <div id="appModal" class="modal" tabindex="-1">
-        <button type="button"  class="close" aria-label="Close modal">&times;</button>
+        <button type="button"  class="close modal-close" aria-label="Close modal">&times;</button>
         <div class="modal-content"></div>
       </div>
       <div id="weatherModal" class="modal" tabindex="-1">
         <button type="button"  class="close" aria-label="Close modal">&times;</button>
         <div class="modal-content"></div>
       </div>
+      <!--booking form call to action-->
       <button type="button" id="bookBtn" class="fab" aria-label="Book this adventure">Book Now</button>
       <div>
+        <!--hidden content display on event click-->
         <div class="pleasewait" id="pleasewait"> Please wait</div>
         <div class="weather-buttons"><span>Local weather </span>
           <button type="button" onclick="showPleaseWait(); showWeather('today', 42.5100, 8.8560, 'GR20 Corsica')">Today</button>

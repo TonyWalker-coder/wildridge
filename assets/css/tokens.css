@@ -20,20 +20,20 @@
 
    /* Light theme */
         --light-color-bg: #eece78;
-            --light-color-special-bg: #bb942a;
-            --light-color-surface: #eca65b;
-            --light-color-special-surface: #ebc45aad;
-            --light-color-text: #711919;
-            --light-color-special-text: #cb5828;
-            --light-color-heading: #700000;
-            --light-color-special-heading: #9e390e;
-            --light-color-text-muted: #ad272793;
-            --light-color-borders: #5d0b0b;
-            --light-color-special-borders: #c25f38;
-            --light-color-accent: #d1712c;
-            --light-color-accent-hover: #cc954d;
-            --light-color-accent-active: #cc824d;
-            --light-color-special: #c93636;
+        --light-color-special-bg: #bb942a;
+        --light-color-surface: #eca65b;
+        --light-color-special-surface: #ebc45aad;
+        --light-color-text: #711919;
+        --light-color-special-text: #cb5828;
+        --light-color-heading: #700000;
+        --light-color-special-heading: #9e390e;
+        --light-color-text-muted: #ad272793;
+        --light-color-borders: #5d0b0b;
+        --light-color-special-borders: #c25f38;
+        --light-color-accent: #d1712c;
+        --light-color-accent-hover: #cc954d;
+        --light-color-accent-active: #cc824d;
+        --light-color-special: #c93636;
 
     /* Alert tokens */
     --alert-success-bg: #d8f5d2;

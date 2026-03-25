@@ -154,8 +154,6 @@ The site can integrate external APIs to provide additional real‑time or contex
 ## Acceptance Criteria
 * An API interface is implemented to fetch location‑specific information.
 * Relevant data (e.g., weather, elevation, hazards, travel info) is displayed clearly on the tour details page.
-* If an API fails or returns no data, the site displays a graceful fallback message.
-* API data updates automatically without requiring manual content changes.
 
 ## Navbar link to Home Page
 

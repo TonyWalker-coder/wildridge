@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="WildRidge Adventures offers guided outdoor experiences, thrilling adventure packages, and expert-led tours for explorers who want to push their limits and discover the wild.">
+    content="WildRidge Adventures offers guided outdoor experiences, thrilling adventure packages, 
+    and expert-led tours for explorers who want to push their limits and discover the wild.">
   <title>climbing</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -38,6 +39,8 @@
       <div class="article">
         <h2>Trollveggen</h2>
         <h3>The Troll Wall</h3>
+        <!--all links are images opening in the modal-->
+        <!--open google maps in its own page-->
         <p class="inline-list">Trollveggen — <a target="_blank" rel="noopener noreferrer"
             href="https://maps.google.com/maps?ll=62.4824,7.7288&z=13&t=m&hl=en&gl=US&mapclient=embed">The Troll
             Wall</a> —
@@ -84,20 +87,23 @@
           just a climb;
           it’s an encounter with one of Europe’s most dramatic natural structures.</p>
       </div>
+      <!--modal section images booking and weather-->
       <div id="imageModal" class="modal" tabindex="-1">
         <button type="button"  class="close" aria-label="Close modal">&times;</button>
         <img id="modalImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
       </div>
       <div id="appModal" class="modal" tabindex="-1">
-        <button type="button"  class="close" aria-label="Close modal">&times;</button>
+        <button type="button"  class="close modal-close" aria-label="Close modal">&times;</button>
         <div class="modal-content"></div>
       </div>
       <div id="weatherModal" class="modal" tabindex="-1">
         <button type="button"  class="close" aria-label="Close modal">&times;</button>
         <div class="modal-content"></div>
       </div>
+      <!--booking form call to action-->
       <button type="button" id="bookBtn" class="fab" aria-label="Book this adventure">Book Now</button>
       <div>
+        <!--hidden content display on event click-->
         <div class="pleasewait" id="pleasewait"> Please wait</div>
         <div class="weather-buttons"><span>Local weather </span>
           <button type="button" onclick="showPleaseWait(); showWeather('today', 62.4824, 7.7288, 'Trollveggen')">Today</button>
@@ -110,7 +116,8 @@
     </section>
   </main>
 
-  <!-- javascript files should be placed at the end of the body to ensure that the HTML content loads first, improving page load performance and user experience. -->
+  <!-- javascript files should be placed at the end of the body to ensure that the HTML content loads first, 
+   improving page load performance and user experience. -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   
 

@@ -717,7 +717,23 @@ using 1 modal for all the modal actions on this page*/
   font-size: 40px;
   color: #fff;
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: var(--radius-md);
 }
+
+.modal-close{
+  position: fixed;
+  /*fix the close button so the modal can scroll*/
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color:red;
+  cursor: pointer;
+  background:none;
+  border-radius: var(--radius-md);
+}
+
+
 
 /*end of modal*/
 /*floating button to call booking form*/
@@ -732,7 +748,32 @@ using 1 modal for all the modal actions on this page*/
   border: none;
   cursor: pointer;
   z-index: 199;
+  font-size: .75rem;
+  font-family: var(--font-secondary);
   /*sit under the modal*/
+}
+.fab1 {
+  position: fixed;
+  bottom: 20px;
+  padding: 7px 20px;
+  border-radius: 50px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 199;
+  font-size: .75rem;
+  font-family: var(--font-secondary);
+}
+.fab2 {
+  bottom: 60px;
+  right:auto;
+  left: 20px;
+  background: green;
+}
+.fab3{
+  right:auto;
+  background: blue;
+  left: 20px;
 }
 
 /*end button*/
@@ -764,7 +805,7 @@ using 1 modal for all the modal actions on this page*/
 /*keep the same styling through out*/
 #appModal input,
 #appModal textarea,
-#appModal button,
+#appModal button:not(.modal-close),
 #appModal select {
   width: 90%;
   margin-bottom: var(--margin-3);
@@ -773,7 +814,7 @@ using 1 modal for all the modal actions on this page*/
   border: 2px solid var(--color-borders);
 }
 
-#appModal button {
+#appModal button:not(.modal-close) {
   background: var(--color-accent);
   color: var(--color-text);
   cursor: pointer;
@@ -794,8 +835,8 @@ using 1 modal for all the modal actions on this page*/
   cursor: pointer;
   font-size: 1.4rem;
   z-index: 500;
-  padding: 6px 8px;
-  border-radius: 8px;
+  padding: 3px 5px;
+  border-radius: var(--radius-md);
   /*WebKit implementations, improving the user experience and compatibility for individuals on older devices.*/
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
