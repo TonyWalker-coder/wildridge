@@ -188,6 +188,7 @@ This project is managed using GitHub Projects to mirror real‑world development
 - w3.org (validators)
 - 7timer.info (weather API)
 - adobe.com (colour contrast analyzer)
+- google.com (google maps)
 
 ## Folder Structure
 
@@ -320,6 +321,16 @@ This site uses public‑domain imagery from [pixabay][pb].
 
 [pb]: https://pixabay.com/
 
+### Google Maps
+
+This project integrates Google Maps services for location and mapping features.  
+Usage complies with the Google Maps Platform Terms of Service.
+
+### 7timer.info Weather Data
+
+Weather forecasts in this project are sourced from the 7timer.info API.  
+Data is used in accordance with the 7timer.info service terms.
+
 ## Local Deployment
 
 1. Clone the [repository.](https://github.com/TonyWalker-coder/wildridge)
@@ -339,17 +350,17 @@ This site uses public‑domain imagery from [pixabay][pb].
 
 ![CSS testing](screenshots/css.png)
 
-### Errors
+<h2 style=color:red;>Errors</h1>
 
 ### use of scrollbar-gutter
 Browsers with full support for *scrollbar-gutter* can allocate a persistent gutter in the scroll container’s inline direction, ensuring that layout metrics remain stable even when overflow transitions from non‑scrolling to scrolling states. Engines that lack support simply ignore the declaration, falling back to their default scrollbar behavior without affecting the computed box model. Because the property is non-destructive and gracefully degrades, it functions as a safe progressive enhancement for maintaining predictable layout geometry across heterogeneous rendering environments.
-
-#### *conclusion not an error*
+*<p style=color:green;>
+conclusion not an error</p>*
 
 ### use of layer
 The validator reports *@layer* as an unrecognized at‑rule because it predates support for Cascade Layers and therefore cannot parse modern CSS constructs. Despite the warning, *@layer* is fully valid according to the current CSS specification and is implemented in all major browser engines. Since unsupported at‑rules are safely ignored by legacy parsers without affecting the cascade or computed styles, retaining *@layer* ensures proper layering semantics in compliant browsers while maintaining backward compatibility. The errors reflect validator limitations, not a defect in the stylesheet
-
-#### *conclusion not an error*
+*<p style=color:green;>
+conclusion not an error</p>*
 
 ### warnings 125
 
@@ -358,6 +369,34 @@ CSS custom properties resolve at runtime, not at parse time, so static validator
 
 *webkit*
 WebKit-prefixed properties exist to support browsers that still rely on legacy engine behaviour, most notably Safari on macOS and iOS. These prefixes enable features that were originally experimental or implemented before the relevant CSS specifications were finalised. Although modern browsers increasingly use the unprefixed versions, Safari continues to require certain *-webkit-* declarations for full functionality, especially for visual effects like *backdrop-filter*. The warnings simply reflect that prefixed properties fall outside the formal CSS grammar, not that they are incorrect or unsafe to use.
+
+## Markup validator
+
+![index](screenshots/index.png)
+*index*
+
+![packages](screenshots/packages.png)
+*packages*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <a id="colours"></a>
 

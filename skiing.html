@@ -13,8 +13,8 @@
 </head>
 
 <body>
-  <div id="themeToggle" class="theme-toggle">
-    🌙
+  <div>
+    <button type="button" id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </div>
   <!-- Navigation -->
 
@@ -23,7 +23,7 @@
   </div>
   <main>
     <!-- skiing package section -->
-    <section id="skiing" class="package-section" aria-label="Driving section">
+    <section id="skiing" class="package-section">
       <div class="card-container packagewrapper" role="list">
         <div class="col-12 col-lg-4" role="listitem">
           <img src="assets/images/lefts.webp" width="100%" alt="group of skiers posing for a photo">
@@ -77,18 +77,18 @@
 
 
       <div id="imageModal" class="modal" tabindex="-1">
-        <span class="close">&times;</span>
+        <span class="close" aria-label="Close modal">&times;</span>
         <img id="modalImage" src="" alt="">
       </div>
       <div id="appModal" class="modal" tabindex="-1">
-        <span class="close">&times;</span>
+        <span class="close" aria-label="Close modal">&times;</span>
         <div class="modal-content"></div>
       </div>
       <div id="weatherModal" class="modal" tabindex="-1">
-        <span class="close">&times;</span>
+        <span class="close" aria-label="Close modal">&times;</span>
         <div class="modal-content"></div>
       </div>
-      <button type="button" id="bookBtn" class="fab">Book Now</button>
+      <button type="button" id="bookBtn" class="fab" aria-label="Book this adventure">Book Now</button>
       <div class="pleasewait" id="pleasewait"> Please wait</div>
       <div>
         <div class="weather-buttons"><span>Local weather </span>

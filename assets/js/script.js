@@ -1,211 +1,209 @@
-//small script to write home page
-document.addEventListener(
-  "mouseenter",
-  (e) => {
-    if (e.target.matches(".logo")) {
-      document.querySelector(".logotext").textContent = "Home Page";
-    }
-  },
-  true,
-);
+/* ============================================================
+   LOGO HOVER TEXT
+============================================================ */
+document.addEventListener("mouseenter", (e) => {
+  if (e.target.matches(".logo")) {
+    document.querySelector(".logotext").textContent = "Home Page";
+  }
+}, true);
 
-document.addEventListener(
-  "mouseleave",
-  (e) => {
-    if (e.target.matches(".logo")) {
-      document.querySelector(".logotext").textContent = "WildRidge Adventures";
-    }
-  },
-  true,
-);
+document.addEventListener("mouseleave", (e) => {
+  if (e.target.matches(".logo")) {
+    document.querySelector(".logotext").textContent = "WildRidge Adventures";
+  }
+}, true);
 
-// toggle the light/dark theme
+
+/* ============================================================
+   THEME TOGGLE
+============================================================ */
 document.addEventListener("click", (e) => {
   if (e.target.id === "themeToggle") {
     const root = document.documentElement;
-    const current = root.getAttribute("data-theme");
-    const next = current === "dark" ? "light" : "dark";
-
+    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
     root.setAttribute("data-theme", next);
     localStorage.setItem("theme", next);
   }
 });
 
-// Load saved theme
-
 document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("theme");
-  if (saved) {
-    document.documentElement.setAttribute("data-theme", saved);
-  }
+  if (saved) document.documentElement.setAttribute("data-theme", saved);
 });
-//script to load DRY navbar
-fetch('navbar.html')
+
+
+/* ============================================================
+   LOAD NAVBAR (DRY)
+============================================================ */
+fetch("navbar.html")
   .then(r => r.text())
   .then(html => {
-    const nav = document.getElementById('exnavbar');
+    const nav = document.getElementById("exnavbar");
     nav.innerHTML = html;
-    nav.classList.add('loaded');
-
-    initNavbar(); // navbar now exists → safe to bind events
+    nav.classList.add("loaded");
+    initNavbar();
   });
 
-
-// Toggle the navbar drop down
-$("#toggle").on("click", function () {
-  const sheet = $(".nav-sheet");
-  const navbar = $("#navbar");
-  const content = sheet.find(".content");
-
-  const isOpen = sheet.hasClass("open");
-
-  if (isOpen) {
-    // Reset scroll so the panel always closes cleanly
-    sheet.scrollTop(0);
-
-    // Trigger close animation
-    sheet.removeClass("open");
-    navbar.removeClass("open");
-
-    // After transition, clear content
-    sheet.one("transitionend", function () {
-      content.empty();
-    });
-  } else {
-    // Opening: load content before animation
-    content.html("New content here");
-
-    // Reset scroll so it always opens at the top
-    sheet.scrollTop(0);
-
-    sheet.addClass("open");
-    navbar.addClass("open");
-  }
-});
-
-// Load the DRY
 function initNavbar() {
   $("#toggle").on("click", function () {
     const sheet = $(".nav-sheet");
     const navbar = $("#navbar");
-
     const isOpen = sheet.hasClass("open");
 
-    if (isOpen) {
-      sheet.scrollTop(0);
-      sheet.removeClass("open");
-      navbar.removeClass("open");
-    } else {
-      sheet.scrollTop(0);
-      sheet.addClass("open");
-      navbar.addClass("open");
+    sheet.scrollTop(0);
+    sheet.toggleClass("open", !isOpen);
+    navbar.toggleClass("open", !isOpen);
+  });
+}
+
+
+/* ============================================================
+   ACCESSIBLE MODAL SYSTEM (UNIVERSAL)
+============================================================ */
+let lastFocusedElement = null;
+
+function trapFocus(modal) {
+  const selectors = [
+    "button", "[href]", "input", "select", "textarea",
+    "[tabindex]:not([tabindex='-1'])"
+  ];
+  const focusables = modal.querySelectorAll(selectors);
+  if (!focusables.length) return;
+
+  const first = focusables[0];
+  const last = focusables[focusables.length - 1];
+
+  modal.addEventListener("keydown", (e) => {
+    if (e.key !== "Tab") return;
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
     }
   });
 }
-// load a modal gallery image for <p><a>
-// Note: Occasional blue focus flash may appear when clicking rapidly.
-// See README → Modal Testing Notes. Standard mitigations applied; behaviour accepted as-is.
+
+function openModal(modal) {
+  lastFocusedElement = document.activeElement;
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+
+  const closeBtn = modal.querySelector(".close");
+  if (closeBtn) closeBtn.focus();
+
+  trapFocus(modal);
+}
+
+function closeModal(modal) {
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
+
+  hidePleaseWait?.();
+  if (lastFocusedElement) lastFocusedElement.focus();
+}
+
+// Close buttons
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("close")) {
+    closeModal(e.target.closest(".modal"));
+  }
+});
+
+// Click outside to close
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal(modal);
+  });
+
+  modal.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal(modal);
+  });
+});
+
+
+/* ============================================================
+   IMAGE MODAL (GALLERY)
+============================================================ */
 document.querySelectorAll(".img-link").forEach((link) => {
-  link.addEventListener("click", function (e) {
+  link.addEventListener("click", (e) => {
     e.preventDefault();
 
-    const imgSrc = this.getAttribute("data-img");
-    const imgAlt = this.getAttribute("data-alt") || "";
     const modal = document.getElementById("imageModal");
     const modalImage = document.getElementById("modalImage");
 
-    modalImage.src = imgSrc;
-    modalImage.alt = imgAlt;
+    modalImage.src = link.dataset.img;
+    modalImage.alt = link.dataset.alt || "";
 
-    modal.classList.add("open");
-    modal.focus();
-  });
-});
-
-// universal close button for ANY modal
-document.querySelectorAll(".modal .close").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    btn.closest(".modal").classList.remove("open");
-    hidePleaseWait?.();
-  });
-});
-
-// click outside to close
-document.querySelectorAll(".modal").forEach((modal) => {
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.remove("open");
-      hidePleaseWait?.();
-    }
+    openModal(modal);
   });
 });
 
 
-// load modal booking form
-//document.getElementById("bookBtn").addEventListener("click", () => {
+/* ============================================================
+   BOOKING FORM MODAL
+============================================================ */
 document.body.addEventListener("click", (e) => {
   if (e.target.id === "bookBtn") {
     const modal = document.getElementById("appModal");
     const content = modal.querySelector(".modal-content");
 
     content.innerHTML = `
-    <h2>Booking Form</h2>
-    <form id="bookingForm">
-      <input type="text" placeholder="Your name" required>
-      <input type="email" placeholder="Email" required>
-      <input type="number" placeholder="Phone">
-      <input type="date" placeholder="Req date" required>
-      <label for="package">Select your package:</label>
-      <select id="package" name="package">
+      <h2>Booking Form</h2>
+      <form id="bookingForm">
+        <input type="text" placeholder="Your name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="number" placeholder="Phone">
+        <input type="date" required>
+        <label for="package">Select your package:</label>
+        <select id="package" name="package">
           <option value="1">Driving package</option>
           <option value="2">Skiing package</option>
           <option value="3">Climbing package</option>
           <option value="4">Hiking package</option>
-      </select>
-      <button type="submit">Submit</button>
-    </form>
-  `;
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+    `;
 
-    modal.classList.add("open");
-    modal.focus();
+    openModal(modal);
   }
-  });
+});
 
-// close on submit and load confirmation modal
-document.addEventListener("submit", function (e) {
+// Submit → confirmation modal
+document.addEventListener("submit", (e) => {
   if (e.target.id === "bookingForm") {
     e.preventDefault();
 
     const modal = document.getElementById("appModal");
     const content = modal.querySelector(".modal-content");
 
-    modal.classList.remove("open");
+    closeModal(modal);
 
-    // Small delay to avoid flicker
     setTimeout(() => {
       content.innerHTML = `
         <h2>Booking Confirmed</h2>
         <p>Your request has been received.</p>
         <button class="close-confirm">Close</button>
       `;
-      modal.classList.add("open");
-      modal.focus();
+      openModal(modal);
     }, 150);
   }
 });
 
-// close confirmation modal
-document.addEventListener("click", function (e) {
+// Close confirmation
+document.addEventListener("click", (e) => {
   if (e.target.classList.contains("close-confirm")) {
-    document.getElementById("appModal").classList.remove("open");
+    closeModal(document.getElementById("appModal"));
   }
 });
 
 
-
-
-
-// Fetch weather from 7Timer API
+/* ============================================================
+   WEATHER (7Timer API)
+============================================================ */
 async function fetch7Timer(lat, lon) {
   const url = `https://www.7timer.info/bin/api.pl?lon=${lon}&lat=${lat}&product=civil&output=json`;
   const response = await fetch(url);
@@ -213,70 +211,61 @@ async function fetch7Timer(lat, lon) {
   return data.dataseries;
 }
 
-// Build the HTML for the forecast modal
 function buildForecastHTML(type, series, locationName) {
-  let sliceCount = 0;
-
-  if (type === "today") sliceCount = 8;
-  if (type === "3day") sliceCount = 24;
-  if (type === "7day") sliceCount = 56;
-
-  const sliced = series.slice(0, sliceCount);
+  const sliceMap = { today: 8, "3day": 24, "7day": 56 };
+  const sliced = series.slice(0, sliceMap[type]);
 
   let html = `
-        <h1>Weather for ${locationName}</h1>
-        <h2>${type.toLowerCase()} Forecast</h2>
-    `;
+    <h1>Weather for ${locationName}</h1>
+    <h2>${type} Forecast</h2>
+  `;
 
-  sliced.forEach((point) => {
+  sliced.forEach((p) => {
     html += `
-    <div class="forecast-block">
-        <div class="icon">${getWeatherIcon(point)}</div>
+      <div class="forecast-block">
+        <div class="icon">${getWeatherIcon(p)}</div>
         <div>
-            <p><strong>+${point.timepoint}h</strong></p>
-            <p>Temp: ${point.temp2m}°C</p>
-            <p>Cloud: ${point.cloudcover}/9</p>
-            <p>Wind: ${point.wind10m.speed} m/s (${point.wind10m.direction})</p>
-            <p>Precip: ${point.prec_type}</p>
+          <p><strong>+${p.timepoint}h</strong></p>
+          <p>Temp: ${p.temp2m}°C</p>
+          <p>Cloud: ${p.cloudcover}/9</p>
+          <p>Wind: ${p.wind10m.speed} m/s (${p.wind10m.direction})</p>
+          <p>Precip: ${p.prec_type}</p>
         </div>
-    </div>
-`;
+      </div>
+    `;
   });
 
   return html;
 }
 
-// Show the modal with the correct location + forecast type
 async function showWeather(type, lat, lon, locationName) {
   const series = await fetch7Timer(lat, lon);
   const html = buildForecastHTML(type, series, locationName);
 
   const modal = document.getElementById("weatherModal");
   modal.querySelector(".modal-content").innerHTML = html;
-  modal.classList.add("open");
+
+  openModal(modal);
 }
 
-
-// icons for the weather
-function getWeatherIcon(point) {
-  // Precipitation
-  if (point.prec_type === "rain") return "🌧️";
-  if (point.prec_type === "snow") return "❄️";
-  if (point.prec_type === "none") {
-    // Cloud cover scale: 1–9
-    if (point.cloudcover <= 3) return "☀️";
-    if (point.cloudcover <= 6) return "⛅";
+function getWeatherIcon(p) {
+  if (p.prec_type === "rain") return "🌧️";
+  if (p.prec_type === "snow") return "❄️";
+  if (p.prec_type === "none") {
+    if (p.cloudcover <= 3) return "☀️";
+    if (p.cloudcover <= 6) return "⛅";
     return "☁️";
   }
   return "🌡️";
 }
 
-//display please wait
+
+/* ============================================================
+   PLEASE WAIT
+============================================================ */
 function showPleaseWait() {
-  const pw = document.getElementById("pleasewait");
-  pw.style.display = "block";
+  document.getElementById("pleasewait").style.display = "block";
 }
 function hidePleaseWait() {
   document.getElementById("pleasewait").style.display = "none";
 }
-
