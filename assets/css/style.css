@@ -916,3 +916,9 @@ using 1 modal for all the modal actions on this page*/
   font-family: var(--font-secondary);
   border-radius: var(--radius-md);
 }
+/* validators dont understand 100% so use a class to set responsive images*/
+.img-fluid {
+  width: 100%;
+  height: auto;
+  display: block;
+}

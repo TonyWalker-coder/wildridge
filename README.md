@@ -387,6 +387,14 @@ WebKit-prefixed properties exist to support browsers that still rely on legacy e
 ![driving](screenshots/driving.png)
 *driving.html*
 
+![skiing](screenshots/skiing.png)
+*skiing.html*
+
+![climbing](screenshots/climbing.png)
+*climbing.html*
+
+![hiking](screenshots/hiking.png)
+*hiking.html*
 
 
 
