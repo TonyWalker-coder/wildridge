@@ -373,10 +373,20 @@ WebKit-prefixed properties exist to support browsers that still rely on legacy e
 ## Markup validator
 
 ![index](screenshots/index.png)
-*index*
+*index.html*
 
 ![packages](screenshots/packages.png)
-*packages*
+*packages.html*
+
+![driving error](screenshots/error.png)
+
+<p style=color:red;>The validator is correct there can not be a space in a URL unless it is encoded %20</p>
+
+<p style=color:green;>FIX renaming the file is the cleanest option</p>
+
+![driving](screenshots/driving.png)
+*driving.html*
+
 
 
 
@@ -445,6 +455,6 @@ During visual testing I noted a brief transitional flash between the form modal 
 
 Because the weather modal relies on an external API, the response time can vary depending on network conditions. During slower fetches, users may click repeatedly because there’s no immediate visual feedback, which can lead to unnecessary or duplicate requests.
 
-#### Fix
+#### FIX
 
 To prevent this and make the interaction feel more responsive, a “please wait” indicator was added. This provides instant confirmation that the request is in progress and helps guide the user while the data loads.
