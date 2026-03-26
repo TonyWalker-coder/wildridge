@@ -169,7 +169,9 @@ This project is managed using GitHub Projects to mirror real‑world development
 
 ## Supporting Documentation
 
-[Wire Frames](docs/wireframe.pdf)
+![](docs/wireframe.png)
+
+[Wire Frames PDF](docs/wireframe.pdf)
 
 ## Tech Stack
 
