@@ -778,6 +778,8 @@ using 1 modal for all the modal actions on this page*/
 
 /*end button*/
 /*booking modal*/
+#feedModal .modal-content,
+#newsModal .modal-content,
 #appModal .modal-content {
   background: var(--color-surface);
   color: var(--color-heading);
@@ -790,6 +792,8 @@ using 1 modal for all the modal actions on this page*/
   border: 5px solid var(--color-borders);
 }
 
+#feedModal h2,
+#newsModal h2,
 #appModal h2 {
   margin-top: 0;
   color: var(--color-heading);
@@ -797,16 +801,29 @@ using 1 modal for all the modal actions on this page*/
   font-size: var(--font-size-2xl);
 }
 
+#feedModal p,
+#newsModal p,
 #appModal p {
   color: var(--color-text);
   font-family: var(--font-secondary);
   font-size: var(--font-size-2xl);
 }
 /*keep the same styling through out*/
+
 #appModal input,
+#newsModal input,
+#feedModal input,
 #appModal textarea,
+#newsModal textarea,
+#feedModal textarea,
 #appModal button:not(.modal-close),
-#appModal select {
+#newsModal button:not(.modal-close),
+#feedModal button:not(.modal-close),
+#appModal select,
+#newsModal select,
+#feedModal select {
+
+
   width: 90%;
   margin-bottom: var(--margin-3);
   padding: var(--padding-2);
@@ -814,12 +831,16 @@ using 1 modal for all the modal actions on this page*/
   border: 2px solid var(--color-borders);
 }
 
+#feedModal button:not(.modal-close),
+#newsModal button:not(.modal-close),
 #appModal button:not(.modal-close) {
   background: var(--color-accent);
   color: var(--color-text);
   cursor: pointer;
 }
 
+#feedModal button:hover,
+#newsModal button:hover,
 #appModal button:hover {
   background: var(--color-accent-hover);
   color: var(--color-text-muted);

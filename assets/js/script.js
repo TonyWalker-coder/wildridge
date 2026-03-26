@@ -91,17 +91,29 @@ function openModal(modal) {
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
 
-  const closeBtn = modal.querySelector(".close");
-  if (closeBtn) closeBtn.focus();
+  const focusTarget =
+    modal.querySelector(".close") ||
+    modal.querySelector("button") ||
+    modal;
+
+  focusTarget.focus();
+
 
   trapFocus(modal);
 }
 
 function closeModal(modal) {
+  safeHidePleaseWait();
+
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
 
-  hidePleaseWait?.();
+
+  if (document.getElementById("pleasewait")) {
+    hidePleaseWait();
+  }
+
+
   if (lastFocusedElement) lastFocusedElement.focus();
 }
 
@@ -260,6 +272,117 @@ function getWeatherIcon(p) {
 }
 
 
+
+
+/* ============================================================
+   NEWS LETTER MODAL
+============================================================ */
+document.body.addEventListener("click", (e) => {
+  if (e.target.id === "newsBtn") {
+    const modal = document.getElementById("newsModal");
+    const content = modal.querySelector(".modal-content");
+
+    content.innerHTML = `
+      <h2>News Letter</h2>
+      <form id="newsLetter">
+        <input type="text" placeholder="Your name" required>
+        <input type="email" placeholder="Email" required>
+        <button type="submit">Submit</button>
+      </form>
+    `;
+
+    openModal(modal);
+  }
+});
+
+// Submit → confirmation modal
+document.addEventListener("submit", (e) => {
+  if (e.target.id === "newsLetter") {
+    e.preventDefault();
+
+    const modal = document.getElementById("newsModal");
+    const content = modal.querySelector(".modal-content");
+
+    // Swap content BEFORE reopening
+    content.innerHTML = `
+  <h2>Newsletter Submitted</h2>
+  <p>Your request has been received.</p>
+  <button class="close-confirm">Close</button>
+`;
+
+
+    // Close → reopen ensures animation works
+    closeModal(modal);
+
+    setTimeout(() => {
+      openModal(modal);
+    }, 150);
+  }
+});
+
+// Close confirmation
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("close-confirm")) {
+    closeModal(document.getElementById("newsModal"));
+  }
+});
+
+/* ============================================================
+   FEEDBACK MODAL
+============================================================ */
+document.body.addEventListener("click", (e) => {
+  if (e.target.id === "feedBtn") {
+    const modal = document.getElementById("feedModal");
+    const content = modal.querySelector(".modal-content");
+
+    content.innerHTML = `
+  <h2>Feedback</h2>
+  <form id="feedForm">
+    <label for="feedbackText">Your feedback:</label>
+    <textarea id="feedbackText" placeholder="Write anything you like..." rows="6" required></textarea>
+
+    <input type="text" placeholder="Your name (optional)">
+    <button type="submit">Submit</button>
+  </form>
+`;
+
+
+
+    openModal(modal);
+  }
+});
+
+// Submit → confirmation modal
+document.addEventListener("submit", (e) => {
+  if (e.target.id === "feedForm") {
+    e.preventDefault();
+
+    const modal = document.getElementById("feedModal");
+    const content = modal.querySelector(".modal-content");
+
+    // Swap content BEFORE reopening
+    content.innerHTML = `
+      <h2>Thank You!</h2>
+      <p>Your feedback has been submitted.</p>
+      <button class="close-confirm">Close</button>
+    `;
+
+    // Close → reopen ensures animation works
+    closeModal(modal);
+
+    setTimeout(() => {
+      openModal(modal);
+    }, 150);
+  }
+});
+
+// Close confirmation
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("close-confirm")) {
+    closeModal(document.getElementById("feedModal"));
+  }
+});
+
 /* ============================================================
    PLEASE WAIT
 ============================================================ */
@@ -268,4 +391,11 @@ function showPleaseWait() {
 }
 function hidePleaseWait() {
   document.getElementById("pleasewait").style.display = "none";
+}
+/* ============================================================
+   ENSURE PLEASE WAIT IS ONLY CALLED WHEN NEEDED
+============================================================ */
+function safeHidePleaseWait() {
+  const el = document.getElementById("pleasewait");
+  if (el) el.style.display = "none";
 }
