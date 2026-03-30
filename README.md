@@ -44,6 +44,7 @@
 - [ESlint vs JSlint](#lint)
 - [Colour palette](#colours)
 - [Visual check](#visual-check)
+- [Link Check](#link-check)
 - [Bugs / Design Features](#bugs)
 
 
@@ -438,9 +439,30 @@ ESLint is a far more modern and flexible tool than JSLint, giving developers rea
 
 ## Visual Check
 
-| page|  |
+| page| dark theme | light theme
+|------|---|---|
+| index | ✓ | ✓ |
+| contact | ✓ | ✓ |
+| product | ✓ | ✓ |
+| feedback modal | ✓ | ✓ |
+| newsletter modal | ✓ | ✓ |
+| driving | ✓ | ✓ |
+| skiing | ✓ | ✓ |
+| climbing | ✓ | ✓ |
+| hiking | ✓ | ✓ |
+| image modal | ✓ | ✓ |
+| booking modal | ✓ | ✓ |
+| weather modal | ✓ | ✓ |
+| success modal | ✓ | ✓ |
+
+## Link Check
+
+| page| links & buttons 
 |------|---|
-| index | ✓ |
+| logo| ✓ |
+| contact | ✓ |
+| social media| ✓ |
+| theme | ✓ |
 | product | ✓ |
 | feedback modal | ✓ |
 | newsletter modal | ✓ |
@@ -452,8 +474,6 @@ ESLint is a far more modern and flexible tool than JSLint, giving developers rea
 | booking modal | ✓ |
 | weather modal | ✓ |
 | success modal | ✓ |
-
-
 <a id="bugs"></a>
 
 ## Bugs / Design Features
@@ -480,3 +500,11 @@ Because the weather modal relies on an external API, the response time can vary 
 #### FIX
 
 To prevent this and make the interaction feel more responsive, a “please wait” indicator was added. This provides instant confirmation that the request is in progress and helps guide the user while the data loads.
+
+### CTA Buttons
+
+During visual testing, I noticed that the booking, feedback, and newsletter buttons were obstructing the view on smaller screens.
+
+#### FIX
+
+To resolve this, I introduced a targeted media query at a 400px breakpoint, allowing the floating button to lift higher on compact displays. This ensures the UI remains clear, accessible, and visually balanced across all device sizes.

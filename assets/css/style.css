@@ -735,6 +735,8 @@ using 1 modal for all the modal actions on this page*/
 
 
 
+
+
 /*end of modal*/
 /*floating button to call booking form*/
 .fab {
@@ -752,6 +754,9 @@ using 1 modal for all the modal actions on this page*/
   font-family: var(--font-secondary);
   /*sit under the modal*/
 }
+
+
+
 .fab1 {
   position: fixed;
   bottom: 20px;
@@ -770,11 +775,23 @@ using 1 modal for all the modal actions on this page*/
   left: 20px;
   background: green;
 }
+@media (max-width: 400px) {
+  .fab2{
+    bottom: 110px;
+  }
+}
 .fab3{
   right:auto;
   background: blue;
   left: 20px;
 }
+@media (max-width: 400px) {
+  .fab, .fab3 {
+    bottom: 70px;
+  }
+}
+
+
 
 /*end button*/
 /*booking modal*/
