@@ -1,23 +1,34 @@
 /* ============================================================
    LOGO HOVER TEXT
 ============================================================ */
-document.addEventListener("mouseenter", (e) => {
-  if (e.target.matches(".logo")) {
-    document.querySelector(".logotext").textContent = "Home Page";
-  }
-}, true);
 
-document.addEventListener("mouseleave", (e) => {
-  if (e.target.matches(".logo")) {
-    document.querySelector(".logotext").textContent = "WildRidge Adventures";
-  }
-}, true);
+document.addEventListener(
+  "mouseenter",
+  function (e) {
+    if (e.target.matches(".logo")) {
+      const logoText = document.querySelector(".logotext");
+      logoText.textContent = "Home Page";
+    }
+  },
+  true,
+);
 
+document.addEventListener(
+  "mouseleave",
+  function (e) {
+    if (e.target.matches(".logo")) {
+      const logoText = document.querySelector(".logotext");
+      logoText.textContent = "WildRidge Adventures";
+    }
+  },
+  true,
+);
 
 /* ============================================================
    THEME TOGGLE
 ============================================================ */
-document.addEventListener("click", (e) => {
+
+document.addEventListener("click", function (e) {
   if (e.target.id === "themeToggle") {
     const root = document.documentElement;
     const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
@@ -26,18 +37,22 @@ document.addEventListener("click", (e) => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const saved = localStorage.getItem("theme");
-  if (saved) document.documentElement.setAttribute("data-theme", saved);
+  if (saved) {
+    document.documentElement.setAttribute("data-theme", saved);
+  }
 });
-
 
 /* ============================================================
    LOAD NAVBAR (DRY)
 ============================================================ */
+
 fetch("navbar.html")
-  .then(r => r.text())
-  .then(html => {
+  .then(function (r) {
+    return r.text();
+  })
+  .then(function (html) {
     const nav = document.getElementById("exnavbar");
     nav.innerHTML = html;
     nav.classList.add("loaded");
@@ -56,25 +71,34 @@ function initNavbar() {
   });
 }
 
-
 /* ============================================================
    ACCESSIBLE MODAL SYSTEM (UNIVERSAL)
 ============================================================ */
+
 let lastFocusedElement = null;
 
 function trapFocus(modal) {
   const selectors = [
-    "button", "[href]", "input", "select", "textarea",
-    "[tabindex]:not([tabindex='-1'])"
+    "button",
+    "[href]",
+    "input",
+    "select",
+    "textarea",
+    "[tabindex]:not([tabindex='-1'])",
   ];
   const focusables = modal.querySelectorAll(selectors);
-  if (!focusables.length) return;
+
+  if (!focusables.length) {
+    return;
+  }
 
   const first = focusables[0];
   const last = focusables[focusables.length - 1];
 
-  modal.addEventListener("keydown", (e) => {
-    if (e.key !== "Tab") return;
+  modal.addEventListener("keydown", function (e) {
+    if (e.key !== "Tab") {
+      return;
+    }
 
     if (e.shiftKey && document.activeElement === first) {
       e.preventDefault();
@@ -88,17 +112,14 @@ function trapFocus(modal) {
 
 function openModal(modal) {
   lastFocusedElement = document.activeElement;
+
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
 
   const focusTarget =
-    modal.querySelector(".close") ||
-    modal.querySelector("button") ||
-    modal;
+    modal.querySelector(".close") || modal.querySelector("button") || modal;
 
   focusTarget.focus();
-
-
   trapFocus(modal);
 }
 
@@ -108,39 +129,43 @@ function closeModal(modal) {
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
 
-
   if (document.getElementById("pleasewait")) {
     hidePleaseWait();
   }
 
-
-  if (lastFocusedElement) lastFocusedElement.focus();
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+  }
 }
 
-// Close buttons
-document.addEventListener("click", (e) => {
+/* Close buttons */
+document.addEventListener("click", function (e) {
   if (e.target.classList.contains("close")) {
     closeModal(e.target.closest(".modal"));
   }
 });
 
-// Click outside to close
-document.querySelectorAll(".modal").forEach((modal) => {
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal(modal);
+/* Click outside to close */
+document.querySelectorAll(".modal").forEach(function (modal) {
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      closeModal(modal);
+    }
   });
 
-  modal.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal(modal);
+  modal.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closeModal(modal);
+    }
   });
 });
-
 
 /* ============================================================
    IMAGE MODAL (GALLERY)
 ============================================================ */
-document.querySelectorAll(".img-link").forEach((link) => {
-  link.addEventListener("click", (e) => {
+
+document.querySelectorAll(".img-link").forEach(function (link) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
 
     const modal = document.getElementById("imageModal");
@@ -153,98 +178,59 @@ document.querySelectorAll(".img-link").forEach((link) => {
   });
 });
 
-
-/* ============================================================
-   BOOKING FORM MODAL
-============================================================ */
-document.body.addEventListener("click", (e) => {
-  if (e.target.id === "bookBtn") {
-    const modal = document.getElementById("appModal");
-    const content = modal.querySelector(".modal-content");
-
-    content.innerHTML = `
-      <h2>Booking Form</h2>
-      <form id="bookingForm">
-        <input type="text" placeholder="Your name" required>
-        <input type="email" placeholder="Email" required>
-        <input type="number" placeholder="Phone">
-        <input type="date" required>
-        <label for="package">Select your package:</label>
-        <select id="package" name="package">
-          <option value="1">Driving package</option>
-          <option value="2">Skiing package</option>
-          <option value="3">Climbing package</option>
-          <option value="4">Hiking package</option>
-        </select>
-        <button type="submit">Submit</button>
-      </form>
-    `;
-
-    openModal(modal);
-  }
-});
-
-// Submit → confirmation modal
-document.addEventListener("submit", (e) => {
-  if (e.target.id === "bookingForm") {
-    e.preventDefault();
-
-    const modal = document.getElementById("appModal");
-    const content = modal.querySelector(".modal-content");
-
-    closeModal(modal);
-
-    setTimeout(() => {
-      content.innerHTML = `
-        <h2>Booking Confirmed</h2>
-        <p>Your request has been received.</p>
-        <button class="close-confirm">Close</button>
-      `;
-      openModal(modal);
-    }, 150);
-  }
-});
-
-// Close confirmation
-document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("close-confirm")) {
-    closeModal(document.getElementById("appModal"));
-  }
-});
-
-
 /* ============================================================
    WEATHER (7Timer API)
 ============================================================ */
+
 async function fetch7Timer(lat, lon) {
-  const url = `https://www.7timer.info/bin/api.pl?lon=${lon}&lat=${lat}&product=civil&output=json`;
+  const base = "https://www.7timer.info/bin/api.pl";
+  const query =
+    "?lon=" + lon + "&lat=" + lat + "&product=civil" + "&output=json";
+  const url = base + query;
+
   const response = await fetch(url);
   const data = await response.json();
   return data.dataseries;
 }
 
 function buildForecastHTML(type, series, locationName) {
-  const sliceMap = { today: 8, "3day": 24, "7day": 56 };
+  const sliceMap = {
+    "3day": 24,
+    "7day": 56,
+    today: 8,
+  };
+
   const sliced = series.slice(0, sliceMap[type]);
 
-  let html = `
-    <h1>Weather for ${locationName}</h1>
-    <h2>${type} Forecast</h2>
-  `;
+  let html = "";
+  html += "<h1>Weather for " + locationName + "</h1>";
+  html += "<h2>" + type + " Forecast</h2>";
 
-  sliced.forEach((p) => {
-    html += `
-      <div class="forecast-block">
-        <div class="icon">${getWeatherIcon(p)}</div>
-        <div>
-          <p><strong>+${p.timepoint}h</strong></p>
-          <p>Temp: ${p.temp2m}°C</p>
-          <p>Cloud: ${p.cloudcover}/9</p>
-          <p>Wind: ${p.wind10m.speed} m/s (${p.wind10m.direction})</p>
-          <p>Precip: ${p.prec_type}</p>
-        </div>
-      </div>
-    `;
+  sliced.forEach(function (p) {
+    html +=
+      '<div class="forecast-block">' +
+      '<div class="icon">' +
+      getWeatherIcon(p) +
+      "</div>" +
+      "<div>" +
+      "<p><strong>+" +
+      p.timepoint +
+      "h</strong></p>" +
+      "<p>Temp: " +
+      p.temp2m +
+      "°C</p>" +
+      "<p>Cloud: " +
+      p.cloudcover +
+      "/9</p>" +
+      "<p>Wind: " +
+      p.wind10m.speed +
+      " m/s (" +
+      p.wind10m.direction +
+      ")</p>" +
+      "<p>Precip: " +
+      p.prec_type +
+      "</p>" +
+      "</div></div>";
   });
 
   return html;
@@ -259,69 +245,71 @@ async function showWeather(type, lat, lon, locationName) {
 
   openModal(modal);
 }
+window.showWeather = showWeather;
+
 
 function getWeatherIcon(p) {
-  if (p.prec_type === "rain") return "🌧️";
-  if (p.prec_type === "snow") return "❄️";
+  if (p.prec_type === "rain") {
+    return "🌧️";
+  }
+  if (p.prec_type === "snow") {
+    return "❄️";
+  }
   if (p.prec_type === "none") {
-    if (p.cloudcover <= 3) return "☀️";
-    if (p.cloudcover <= 6) return "⛅";
+    if (p.cloudcover <= 3) {
+      return "☀️";
+    }
+    if (p.cloudcover <= 6) {
+      return "⛅";
+    }
     return "☁️";
   }
   return "🌡️";
 }
 
-
-
-
 /* ============================================================
    NEWS LETTER MODAL
 ============================================================ */
-document.body.addEventListener("click", (e) => {
+
+document.body.addEventListener("click", function (e) {
   if (e.target.id === "newsBtn") {
     const modal = document.getElementById("newsModal");
     const content = modal.querySelector(".modal-content");
 
-    content.innerHTML = `
-      <h2>News Letter</h2>
-      <form id="newsLetter">
-        <input type="text" placeholder="Your name" required>
-        <input type="email" placeholder="Email" required>
-        <button type="submit">Submit</button>
-      </form>
-    `;
+    let html = "";
+    html += "<h2>News Letter</h2>";
+    html += '<form id="newsLetter">';
+    html += '<input type="text" placeholder="Your name" required>';
+    html += '<input type="email" placeholder="Email" required>';
+    html += '<button type="submit">Submit</button>';
+    html += "</form>";
 
+    content.innerHTML = html;
     openModal(modal);
   }
 });
 
-// Submit → confirmation modal
-document.addEventListener("submit", (e) => {
+document.addEventListener("submit", function (e) {
   if (e.target.id === "newsLetter") {
     e.preventDefault();
 
     const modal = document.getElementById("newsModal");
     const content = modal.querySelector(".modal-content");
 
-    // Swap content BEFORE reopening
-    content.innerHTML = `
-  <h2>Newsletter Submitted</h2>
-  <p>Your request has been received.</p>
-  <button class="close-confirm">Close</button>
-`;
+    content.innerHTML =
+      "<h2>Newsletter Submitted</h2>" +
+      "<p>Your request has been received.</p>" +
+      '<button class="close-confirm">Close</button>';
 
-
-    // Close → reopen ensures animation works
     closeModal(modal);
 
-    setTimeout(() => {
+    setTimeout(function () {
       openModal(modal);
     }, 150);
   }
 });
 
-// Close confirmation
-document.addEventListener("click", (e) => {
+document.addEventListener("click", function (e) {
   if (e.target.classList.contains("close-confirm")) {
     closeModal(document.getElementById("newsModal"));
   }
@@ -330,54 +318,49 @@ document.addEventListener("click", (e) => {
 /* ============================================================
    FEEDBACK MODAL
 ============================================================ */
-document.body.addEventListener("click", (e) => {
+
+document.body.addEventListener("click", function (e) {
   if (e.target.id === "feedBtn") {
     const modal = document.getElementById("feedModal");
     const content = modal.querySelector(".modal-content");
 
-    content.innerHTML = `
-  <h2>Feedback</h2>
-  <form id="feedForm">
-    <label for="feedbackText">Your feedback:</label>
-    <textarea id="feedbackText" placeholder="Write anything you like..." rows="6" required></textarea>
+    let html = "";
+    html += "<h2>Feedback</h2>";
+    html += '<form id="feedForm">';
+    html += '<label for="feedbackText">Your feedback:</label>';
+    html += '<textarea id="feedbackText" ';
+    html += 'placeholder="Write anything you like..." ';
+    html += 'rows="6" required></textarea>';
+    html += '<input type="text" placeholder="Your name (optional)">';
+    html += '<button type="submit">Submit</button>';
+    html += "</form>";
 
-    <input type="text" placeholder="Your name (optional)">
-    <button type="submit">Submit</button>
-  </form>
-`;
-
-
-
+    content.innerHTML = html;
     openModal(modal);
   }
 });
 
-// Submit → confirmation modal
-document.addEventListener("submit", (e) => {
+document.addEventListener("submit", function (e) {
   if (e.target.id === "feedForm") {
     e.preventDefault();
 
     const modal = document.getElementById("feedModal");
     const content = modal.querySelector(".modal-content");
 
-    // Swap content BEFORE reopening
-    content.innerHTML = `
-      <h2>Thank You!</h2>
-      <p>Your feedback has been submitted.</p>
-      <button class="close-confirm">Close</button>
-    `;
+    content.innerHTML =
+      "<h2>Thank You!</h2>" +
+      "<p>Your feedback has been submitted.</p>" +
+      '<button class="close-confirm">Close</button>';
 
-    // Close → reopen ensures animation works
     closeModal(modal);
 
-    setTimeout(() => {
+    setTimeout(function () {
       openModal(modal);
     }, 150);
   }
 });
 
-// Close confirmation
-document.addEventListener("click", (e) => {
+document.addEventListener("click", function (e) {
   if (e.target.classList.contains("close-confirm")) {
     closeModal(document.getElementById("feedModal"));
   }
@@ -386,16 +369,82 @@ document.addEventListener("click", (e) => {
 /* ============================================================
    PLEASE WAIT
 ============================================================ */
+
 function showPleaseWait() {
   document.getElementById("pleasewait").style.display = "block";
 }
+
 function hidePleaseWait() {
   document.getElementById("pleasewait").style.display = "none";
 }
+window.showPleaseWait = showPleaseWait;
+
 /* ============================================================
    ENSURE PLEASE WAIT IS ONLY CALLED WHEN NEEDED
 ============================================================ */
+
 function safeHidePleaseWait() {
   const el = document.getElementById("pleasewait");
-  if (el) el.style.display = "none";
+  if (el) {
+    el.style.display = "none";
+  }
 }
+
+/* ============================================================
+   BOOKING FORM MODAL
+============================================================ */
+
+document.body.addEventListener("click", function (e) {
+  const btn = e.target.closest("#bookBtn");
+  if (btn) {
+    const modal = document.getElementById("appModal");
+    const content = modal.querySelector(".modal-content");
+
+    let html = "";
+    html += "<h2>Booking Form</h2>";
+    html += '<form id="bookingForm">';
+    html += '<input type="text" placeholder="Your name" required>';
+    html += '<input type="email" placeholder="Email" required>';
+    html += '<input type="number" placeholder="Phone">';
+    html += '<input type="date" required>';
+    html += '<label for="package">Select your package:</label>';
+    html += '<select id="package" name="package">';
+    html += '<option value="1">Driving package</option>';
+    html += '<option value="2">Skiing package</option>';
+    html += '<option value="3">Climbing package</option>';
+    html += '<option value="4">Hiking package</option>';
+    html += "</select>";
+    html += '<button type="submit">Submit</button>';
+    html += "</form>";
+
+    content.innerHTML = html;
+    openModal(modal);
+  }
+});
+
+/* Submit → confirmation modal */
+document.addEventListener("submit", function (e) {
+  if (e.target.id === "bookingForm") {
+    e.preventDefault();
+
+    const modal = document.getElementById("appModal");
+    const content = modal.querySelector(".modal-content");
+
+    closeModal(modal);
+
+    setTimeout(function () {
+      content.innerHTML =
+        "<h2>Booking Confirmed</h2>" +
+        "<p>Your request has been received.</p>" +
+        '<button class="close-confirm">Close</button>';
+      openModal(modal);
+    }, 150);
+  }
+});
+
+/* Close confirmation */
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("close-confirm")) {
+    closeModal(document.getElementById("appModal"));
+  }
+});

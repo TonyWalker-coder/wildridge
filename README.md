@@ -41,7 +41,9 @@
 - [Testing](#testing)
 - [Lighthouse](#lighthouse)
 - [Validators](#css)
+- [ESlint vs JSlint](#lint)
 - [Colour palette](#colours)
+- [Visual check](#visual-check)
 - [Bugs / Design Features](#bugs)
 
 
@@ -396,25 +398,19 @@ WebKit-prefixed properties exist to support browsers that still rely on legacy e
 ![hiking](screenshots/hiking.png)
 *hiking.html*
 
+<a id="lint"></a>
 
+### ESlint vs JSlint
 
+ESLint is a far more modern and flexible tool than JSLint, giving developers real control over their code quality instead of forcing rigid, outdated rules. It supports custom configurations, plugins, and environments, which means you can tailor it to your project rather than rewriting your project to satisfy the tool. ESLint understands modern JavaScript features, integrates cleanly with editors, and provides clear, actionable feedback instead of the blunt, inflexible warnings JSLint is known for. In short, ESLint fits naturally into a professional workflow, while JSLint feels like a relic from an earlier era of JavaScript.
 
+*screen shots*
 
+### VC extension
+![](screenshots/script.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### web version
+![](screenshots/eslint.png)
 
 <a id="colours"></a>
 
@@ -439,6 +435,24 @@ WebKit-prefixed properties exist to support browsers that still rely on legacy e
 - success : 6.91 : 1
 - warning : 5.81 : 1
 - error : 7.52 : 1
+
+## Visual Check
+
+| page|  |
+|------|---|
+| index | ✓ |
+| product | ✓ |
+| feedback modal | ✓ |
+| newsletter modal | ✓ |
+| driving | ✓ |
+| skiing | ✓ |
+| climbing | ✓ |
+| hiking | ✓ |
+| image modal | ✓ |
+| booking modal | ✓ |
+| weather modal | ✓ |
+| success modal | ✓ |
+
 
 <a id="bugs"></a>
 
