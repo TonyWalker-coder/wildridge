@@ -28,14 +28,6 @@
 - [Colour Palette](#color-palette)
 - [Typography](#typography)
 - [Design Tokens and System Consistency](#tokens)
-- []
-- []
-- []
-- []
-- []
-- []
-- []
-- []
 - [Acknowledgments](#Acknowledgments)
 - [Local Deployment](#local-deployment)
 - [Testing](#testing)
@@ -45,6 +37,7 @@
 - [Colour palette](#colours)
 - [Visual check](#visual-check)
 - [Link Check](#link-check)
+- [Browser support](#browser-support)
 - [Bugs / Design Features](#bugs)
 
 
@@ -474,6 +467,18 @@ ESLint is a far more modern and flexible tool than JSLint, giving developers rea
 | booking modal | ✓ |
 | weather modal | ✓ |
 | success modal | ✓ |
+
+## Browser support
+
+### Edge
+![](screenshots/edge.png)
+
+### Chrome
+![](screenshots/crome.png)
+
+### Firefox
+![](screenshots/firefox.png)
+
 <a id="bugs"></a>
 
 ## Bugs / Design Features
