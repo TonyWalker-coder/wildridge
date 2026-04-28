@@ -28,7 +28,7 @@
 - [Colour Palette](#color-palette)
 - [Typography](#typography)
 - [Design Tokens and System Consistency](#tokens)
-- [Acknowledgments](#Acknowledgments)
+- [Acknowledgments](#acknowledgments)
 - [Local Deployment](#local-deployment)
 - [Testing](#testing)
 - [Lighthouse](#lighthouse)

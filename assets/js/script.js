@@ -179,18 +179,52 @@ document.querySelectorAll(".img-link").forEach(function (link) {
 });
 
 /* ============================================================
-   WEATHER (7Timer API)
+   WEATHER (Open-Meteo API)
 ============================================================ */
 
-async function fetch7Timer(lat, lon) {
-  const base = "https://www.7timer.info/bin/api.pl";
+async function fetchWeather(lat, lon) {
+  const base = "https://api.open-meteo.com/v1/forecast";
   const query =
-    "?lon=" + lon + "&lat=" + lat + "&product=civil" + "&output=json";
+    "?latitude=" + lat +
+    "&longitude=" + lon +
+    "&hourly=temperature_2m,cloudcover,precipitation_probability,precipitation,winddirection_10m,windspeed_10m" +
+    "&forecast_days=7";
+
   const url = base + query;
 
   const response = await fetch(url);
   const data = await response.json();
-  return data.dataseries;
+
+  // Convert Open-Meteo hourly data into your old 7Timer-style objects
+  const series = data.hourly.time.map((t, i) => {
+    return {
+      timepoint: i, // hours ahead
+      temp2m: data.hourly.temperature_2m[i],
+      cloudcover: Math.round(data.hourly.cloudcover[i] / 11), // convert 0–100% → approx 0–9 scale
+      wind10m: {
+        speed: data.hourly.windspeed_10m[i],
+        direction: degToCompass(data.hourly.winddirection_10m[i])
+      },
+      prec_type: getPrecipType(
+        data.hourly.precipitation[i],
+        data.hourly.precipitation_probability[i]
+      )
+    };
+  });
+
+  return series;
+}
+
+// Convert wind degrees → compass direction
+function degToCompass(deg) {
+  const dirs = ["N","NE","E","SE","S","SW","W","NW"];
+  return dirs[Math.round(deg / 45) % 8];
+}
+
+// Convert precipitation → your old "rain/snow/none"
+function getPrecipType(amount, probability) {
+  if (amount > 0 && probability > 50) return "rain";
+  return "none";
 }
 
 function buildForecastHTML(type, series, locationName) {
@@ -237,7 +271,7 @@ function buildForecastHTML(type, series, locationName) {
 }
 
 async function showWeather(type, lat, lon, locationName) {
-  const series = await fetch7Timer(lat, lon);
+  const series = await fetchWeather(lat, lon);
   const html = buildForecastHTML(type, series, locationName);
 
   const modal = document.getElementById("weatherModal");
@@ -248,6 +282,7 @@ async function showWeather(type, lat, lon, locationName) {
 window.showWeather = showWeather;
 
 
+// Your existing icon logic stays the same
 function getWeatherIcon(p) {
   if (p.prec_type === "rain") {
     return "🌧️";
@@ -266,6 +301,7 @@ function getWeatherIcon(p) {
   }
   return "🌡️";
 }
+
 
 /* ============================================================
    NEWS LETTER MODAL
