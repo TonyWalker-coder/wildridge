@@ -407,13 +407,17 @@ The rgba background provides a subtle tint to enhance contrast. */
 #hero h3 {
   font-family: var(--font-primary), sans-serif;
   /*one of colour for both themes to match hero image*/
+  
   color: #955003;
+  color: #952a03;
+  
   display: inline-block;
   padding: var(--padding-1) var(--padding-4);
   /*WebKit implementations, improving the user experience and compatibility for individuals on older devices.*/
   -webkit-backdrop-filter: blur(var(--space-1));
   backdrop-filter: blur(var(--space-1));
   background: rgba(0, 0, 0, 0.1);
+  background: rgba(197, 123, 12, 0.75);
   /* tweak as needed */
   border-radius: var(--radius-lg);
 }
@@ -421,6 +425,7 @@ The rgba background provides a subtle tint to enhance contrast. */
 #hero p {
   font-family: var(--font-secondary), sans-serif;
   color: var(--color-text);
+  
   display: block;
   width: fit-content;
   max-width: 60ch;
@@ -431,6 +436,7 @@ The rgba background provides a subtle tint to enhance contrast. */
   -webkit-backdrop-filter: blur(var(--space-1));
   backdrop-filter: blur(var(--space-1));
   background: rgba(0, 0, 0, 0.1);
+  background: rgba(197, 123, 12, 0.75);
   /* tweak as needed */
   border-radius: var(--radius-lg);
 }
