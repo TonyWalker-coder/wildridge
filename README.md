@@ -16,6 +16,11 @@
 
 [Deployed Website](https://tonywalker-coder.github.io/wildridge/)
 
+## License
+
+This project is licensed under the MIT License.
+You are free to use, modify, distribute, and build upon this project for personal or commercial purposes.
+See the full license in the [**LICENSE**](LICENSE) file for complete details
 
 ## Table of Contents
 
