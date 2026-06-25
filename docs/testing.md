@@ -16,13 +16,13 @@
 
 ## Lighthouse testing
 
-![Lighthouse testing](screenshots/lighthouse.png)
+![Lighthouse testing](../screenshots/lighthouse.png)
 
 <a id="css"></a>
 
 ## CSS validator
 
-![CSS testing](screenshots/css.png)
+![CSS testing](../screenshots/css.png)
 
 <h2 style=color:red;>Errors</h1>
 
@@ -46,28 +46,28 @@ WebKit-prefixed properties exist to support browsers that still rely on legacy e
 
 ## Markup validator
 
-![index](screenshots/index.png)
+![index](../screenshots/index.png)
 *index.html*
 
-![packages](screenshots/packages.png)
+![packages](../screenshots/packages.png)
 *packages.html*
 
-![driving error](screenshots/error.png)
+![driving error](../screenshots/error.png)
 
 <p style=color:red;>The validator is correct there can not be a space in a URL unless it is encoded %20</p>
 
 <p style=color:green;>FIX renaming the file is the cleanest option</p>
 
-![driving](screenshots/driving.png)
+![driving](../screenshots/driving.png)
 *driving.html*
 
-![skiing](screenshots/skiing.png)
+![skiing](../screenshots/skiing.png)
 *skiing.html*
 
-![climbing](screenshots/climbing.png)
+![climbing](../screenshots/climbing.png)
 *climbing.html*
 
-![hiking](screenshots/hiking.png)
+![hiking](../screenshots/hiking.png)
 *hiking.html*
 
 <a id="lint"></a>
@@ -79,10 +79,10 @@ ESLint is a far more modern and flexible tool than JSLint, giving developers rea
 *screen shots*
 
 ### VC extension
-![](screenshots/script.png)
+![](../screenshots/script.png)
 
 ### web version
-![](screenshots/eslint.png)
+![](../screenshots/eslint.png)
 
 <a id="colours"></a>
 
@@ -149,13 +149,13 @@ ESLint is a far more modern and flexible tool than JSLint, giving developers rea
 ## Browser support
 
 ### Edge
-![](screenshots/edge.png)
+![](../screenshots/edge.png)
 
 ### Chrome
-![](screenshots/crome.png)
+![](../screenshots/crome.png)
 
 ### Firefox
-![](screenshots/firefox.png)
+![](../screenshots/firefox.png)
 
 <a id="bugs"></a>
 
