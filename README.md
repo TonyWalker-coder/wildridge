@@ -35,6 +35,7 @@ See the full license in the [**LICENSE**](LICENSE) file for complete details
 - [Design Tokens and System Consistency](#tokens)
 - [Acknowledgments](#acknowledgments)
 - [Local Deployment](#local-deployment)
+- [Social Media](#social-media)
 
 
 ## user stories
@@ -198,9 +199,9 @@ This project is managed using GitHub Projects to mirror real‑world development
         └── 📁js
             └── script.js
     └── 📁docs
-        ├── Changelog.md
-        ├── Design.md
+        └── testing.md
         └── wireframe.pdf
+        └── wireframe.png
     └── 📁screenshots
     └── 📁docs
         └── testing.md
@@ -323,8 +324,20 @@ Usage complies with the Google Maps Platform Terms of Service.
 Weather forecasts in this project are sourced from the 7timer.info API.  
 Data is used in accordance with the 7timer.info service terms.
 
+### Copilot
+
+I used Microsoft Copilot to help write some of the text for this site.
+The goal wasn’t to fill space — it was to make sure the descriptions actually felt relevant to adventure holidays, instead of using generic filler or Lorem Ipsum.
+Everything Copilot produced was edited and shaped to fit the tone and design of the project.
+
 ## Local Deployment
 
 1. Clone the [repository.](https://github.com/TonyWalker-coder/wildridge)
 2. Open index.html in your browser or IDE.
 3. Consult /README.md & /docs/Design.md
+
+### Social Media
+
+This project represents a fictional business, and therefore no real social‑media accounts exist for it.
+The social‑media icons link to the official platform homepages purely to demonstrate the intended functionality and show that external links have been correctly implemented.
+Each link opens in a new browser tab to follow best practice for user safety and site protection, ensuring visitors do not navigate away from the main website.

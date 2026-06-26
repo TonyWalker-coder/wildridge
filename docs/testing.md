@@ -191,3 +191,12 @@ During visual testing, I noticed that the booking, feedback, and newsletter butt
 #### FIX
 
 To resolve this, I introduced a targeted media query at a 400px breakpoint, allowing the floating button to lift higher on compact displays. This ensures the UI remains clear, accessible, and visually balanced across all device sizes.
+
+### Home Page Contrast
+
+The original home‑page text had insufficient contrast, which reduced readability and created a weaker user experience, especially for users viewing the site on brighter screens or with accessibility needs.
+
+### Fix
+
+I added a darker semi‑transparent overlay behind the key text headings.
+This improves the contrast significantly while still preserving the existing colour scheme and overall visual style. The result is clearer, more accessible text without altering the design identity of the page.
