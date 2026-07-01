@@ -171,8 +171,20 @@ document.querySelectorAll(".img-link").forEach(function (link) {
     const modal = document.getElementById("imageModal");
     const modalImage = document.getElementById("modalImage");
 
-    modalImage.src = link.dataset.img;
-    modalImage.alt = link.dataset.alt || "";
+    // Hide current image instantly
+    modalImage.style.opacity = 0;
+
+    // Preload new image
+    const preload = new Image();
+    preload.src = link.dataset.img;
+
+    preload.onload = () => {
+      modalImage.src = preload.src;
+      modalImage.alt = link.dataset.alt || "";
+
+      // Fade in once fully loaded
+      modalImage.style.opacity = 1;
+    };
 
     openModal(modal);
   });

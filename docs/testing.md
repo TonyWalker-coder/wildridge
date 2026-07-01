@@ -200,3 +200,22 @@ The original home‑page text had insufficient contrast, which reduced readabili
 
 I added a darker semi‑transparent overlay behind the key text headings.
 This improves the contrast significantly while still preserving the existing colour scheme and overall visual style. The result is clearer, more accessible text without altering the design identity of the page.
+
+### Modal Image Flicker When Switching Gallery Images
+
+Issue Description
+When opening the image modal and clicking between different gallery images, the previously displayed image remained briefly visible before the new image appeared. This caused a noticeable flicker and created a poor user experience, especially when switching rapidly between images.
+
+Cause of the Issue
+The modal was already visible when the JavaScript updated the <img> element’s src attribute. Browsers continue to display the old bitmap until the new image has finished loading. Because the new image loads asynchronously, the old image becomes visible for a fraction of a second, resulting in the flicker.
+
+Steps to Reproduce
+Open the modal by clicking any .img-link.
+
+Click another .img-link while the modal is still open.
+
+Observe that the previous image flashes briefly before the new one loads.
+
+### Fix
+
+To prevent the flicker, the solution was to hide the current image, preload the new image, and only swap the src once the new image has fully loaded. A fade‑in transition was added to ensure a smooth visual change.

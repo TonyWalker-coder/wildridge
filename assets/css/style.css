@@ -694,6 +694,10 @@ using 1 modal for all the modal actions on this page*/
   overflow-y: auto;
 }
 
+#modalImage {
+  transition: opacity 0.2s ease-in-out;
+}
+
 .modal.open {
   display: flex;
 }

@@ -37,6 +37,8 @@ See the full license in the [**LICENSE**](LICENSE) file for complete details
 - [Local Deployment](#local-deployment)
 - [Social Media](#social-media)
 
+- [Testing Documentation](#testing-documentation)
+
 
 ## user stories
 
@@ -165,6 +167,10 @@ This project is managed using GitHub Projects to mirror real‑world development
 ![](docs/wireframe.png)
 
 [Wire Frames PDF](docs/wireframe.pdf)
+
+## Testing Documentation
+
+[Testing Documentation](docs/testing.md)
 
 ## Tech Stack
 
