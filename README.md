@@ -1,17 +1,6 @@
-<STYLE>
-@font-face {
-    font-family: "New Kansas";
-    src: url("assets/fonts/New-Kansas-Semi-Bold.otf") format("opentype");
-    font-weight: 600;
-    font-style: normal;
-  }
-@font-face {
-    font-family: "Sofia Pro";
-    src: url("assets/fonts/Sofia-Pro-Light.woff") format("woff");
-    font-weight: 300;
-    font-style: normal;
-  }
-</STYLE>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Modak&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 ![Homepage Screenshot](screenshots/website.png)
 
 [Deployed Website](https://tonywalker-coder.github.io/wildridge/)
@@ -290,20 +279,22 @@ d light colour system designed to feel warm, earthy, and consistent across the s
 
 The typography system pairs a bold, characterful display face with a clean, modern body font to create a balance between personality and readability. Headings carry the visual identity and set the tone, while body text stays neutral and highly legible, giving the layout a clear hierarchy and a consistent rhythm across the site.
 
-### Headings — New Kansas
+### Headings — Didone
 
-A strong, expressive serif used for titles and section headers to give the design warmth and personality.
+High Fashion and Luxury: Because Didone fonts look elegant, sharp, and refined, they are heavily favored by luxury brands (like Dior and Cartier) and high-fashion magazines like Vogue.
 
-<p style="font-family:'New Kansas'; font-size:24px;">
+<p style="font-family:'Didone'; font-size:24px;">
 The quick brown fox jumps over the lazy dog.
-A clean, versatile sans‑serif chosen for clarity and comfort, ideal for longer passages and general UI text.
 </p>
 
-### Body Text — Sofia Pro
-
 A clean, versatile sans‑serif chosen for clarity and comfort, ideal for longer passages and general UI text.
 
-<p style="font-family:'Sofia Pro'; font-size:24px;">
+
+### Body Text — Roboto
+
+Dual Nature: Roboto combines a mechanical skeleton and largely geometric forms with friendly, open curves.
+
+<p style="font-family:'Roboto'; font-size:24px;">
   The quick brown fox jumps over the lazy dog.
 </p>
 
@@ -330,17 +321,29 @@ Usage complies with the Google Maps Platform Terms of Service.
 Weather forecasts in this project are sourced from the 7timer.info API.  
 Data is used in accordance with the 7timer.info service terms.
 
+### Open-Meteo weather API
+
+Due to 7timer.info no longer being available after this project was
+handed in this API was rewritten by Microsoft Copilot in the 
+interest of getting a speedy solution using the Open-Meteo weather API
+
 ### Copilot
 
 I used Microsoft Copilot to help write some of the text for this site.
 The goal wasn’t to fill space — it was to make sure the descriptions actually felt relevant to adventure holidays, instead of using generic filler or Lorem Ipsum.
 Everything Copilot produced was edited and shaped to fit the tone and design of the project.
 
+Microsoft Copilot was used to assist with the replacement of the original weather API implementation after the previous provider discontinued its free service.
+
+The assistance was used to accelerate the migration to an alternative weather service and to adapt the existing weather functionality to the new API structure.
+
+Microsoft Copilot was used to fix a bug from the original code where a failed API request could leave the application in a perpetual loading state. Error handling was subsequently implemented to ensure that network or service failures are handled gracefully and that appropriate feedback is presented to the user.
+
 ## Local Deployment
 
 1. Clone the [repository.](https://github.com/TonyWalker-coder/wildridge)
 2. Open index.html in your browser or IDE.
-3. Consult /README.md & /docs/Design.md
+3. Consult /README.md
 
 ### Social Media
 

@@ -3,107 +3,6 @@
 
 @layer tokens {
 
-  @font-face {
-    font-family: "New Kansas";
-    src: url("../fonts/New-Kansas-Thin.otf") format("opentype");
-    font-weight: 100;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "New Kansas";
-    src: url("../fonts/New-Kansas-Light.otf") format("opentype");
-    font-weight: 300;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "New Kansas";
-    src: url("../fonts/New-Kansas-Regular.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "New Kansas";
-    src: url("../fonts/New-Kansas-Medium.otf") format("opentype");
-    font-weight: 500;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "New Kansas";
-    src: url("../fonts/New-Kansas-Semi-Bold.otf") format("opentype");
-    font-weight: 600;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "New Kansas";
-    src: url("../fonts/New-Kansas-Bold.otf") format("opentype");
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "New Kansas";
-    src: url("../fonts/New-Kansas-Black.otf") format("opentype");
-    font-weight: 900;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "New Kansas";
-    src: url("../fonts/New-Kansas-Heavy.otf") format("opentype");
-    font-weight: 950;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Sofia Pro";
-    src: url("../fonts/Sofia-Pro-Light.woff") format("woff");
-    font-weight: 300;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Sofia Pro";
-    src: url("../fonts/Sofia-Pro-Regular.woff") format("woff");
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Sofia Pro";
-    src: url("../fonts/Sofia-Pro-Medium.woff") format("woff");
-    font-weight: 500;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Sofia Pro";
-    src: url("../fonts/Sofia-Pro-Bold.woff") format("woff");
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Sofia Pro";
-    src: url("../fonts/Sofia-Pro-Black.woff") format("woff");
-    font-weight: 900;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Modak";
-    src:
-      url("../fonts/Modak.woff2") format("woff2"),
-      url("../fonts/Modak.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
   :root {
 
     /* Component colour tokens */
@@ -629,7 +528,8 @@ local to the package sections */
   justify-content: center;
 }
 
-.article h2 {
+.article h2,
+.article h1 {
   color: var(--color-heading);
   font-size: clamp(var(--font-size-2xl), 2vw + var(--font-size-lg), var(--font-size-2xxl));
 }
@@ -661,13 +561,10 @@ local to the package sections */
 }
 /*make our own bullet list to keep with current styling*/
 .article p span {
-  /*display: block;*/
   margin-left: 1em;
-  /*line-height: .25;*/
 }
 
 .inline-list span {
-  /*display: block;*/
   padding-left: 1em;
   position: relative;
 }

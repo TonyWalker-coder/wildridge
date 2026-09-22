@@ -1,30 +1,4 @@
 /* ============================================================
-   LOGO HOVER TEXT
-============================================================ */
-
-document.addEventListener(
-  "mouseenter",
-  function (e) {
-    if (e.target.matches(".logo")) {
-      const logoText = document.querySelector(".logotext");
-      logoText.textContent = "Home Page";
-    }
-  },
-  true,
-);
-
-document.addEventListener(
-  "mouseleave",
-  function (e) {
-    if (e.target.matches(".logo")) {
-      const logoText = document.querySelector(".logotext");
-      logoText.textContent = "WildRidge Adventures";
-    }
-  },
-  true,
-);
-
-/* ============================================================
    THEME TOGGLE
 ============================================================ */
 
@@ -60,6 +34,7 @@ fetch("navbar.html")
   });
 
 function initNavbar() {
+
   $("#toggle").on("click", function () {
     const sheet = $(".nav-sheet");
     const navbar = $("#navbar");
@@ -69,6 +44,21 @@ function initNavbar() {
     sheet.toggleClass("open", !isOpen);
     navbar.toggleClass("open", !isOpen);
   });
+
+  const navLeft = document.querySelector(".nav-left");
+  const logoText = document.querySelector(".logotext");
+
+  if (navLeft && logoText) {
+
+    navLeft.addEventListener("mouseenter", function () {
+      logoText.textContent = "Home Page";
+    });
+
+    navLeft.addEventListener("mouseleave", function () {
+      logoText.textContent = "WildRidge Adventures";
+    });
+
+  }
 }
 
 /* ============================================================
@@ -122,8 +112,30 @@ function openModal(modal) {
   focusTarget.focus();
   trapFocus(modal);
 }
+/*add a single call to close modal to stop multiple eventlisteners kicking in*/
+document.addEventListener("click", function (e) {
+
+if (!e.target.classList.contains("close-confirm")) {
+return;
+}
+
+const modalId = e.target.dataset.modal;
+
+
+const modal = e.target.closest(".modal");
+
+if (modal) {
+closeModal(modal);
+}
+
+});
 
 function closeModal(modal) {
+
+  if (!modal) {
+    return;
+  }
+
   safeHidePleaseWait();
 
   modal.classList.remove("open");
@@ -192,6 +204,11 @@ document.querySelectorAll(".img-link").forEach(function (link) {
 
 /* ============================================================
    WEATHER (Open-Meteo API)
+
+Due to 7timer.info no longer being available after this project was
+handed in this API was rewritten by Microsoft Copilot in the 
+interest of getting a speedy solution using the Open-Meteo weather API
+
 ============================================================ */
 
 async function fetchWeather(lat, lon) {
@@ -207,7 +224,7 @@ async function fetchWeather(lat, lon) {
   const response = await fetch(url);
   const data = await response.json();
 
-  // Convert Open-Meteo hourly data into your old 7Timer-style objects
+
   const series = data.hourly.time.map((t, i) => {
     return {
       timepoint: i, // hours ahead
@@ -227,13 +244,13 @@ async function fetchWeather(lat, lon) {
   return series;
 }
 
-// Convert wind degrees → compass direction
+
 function degToCompass(deg) {
   const dirs = ["N","NE","E","SE","S","SW","W","NW"];
   return dirs[Math.round(deg / 45) % 8];
 }
 
-// Convert precipitation → your old "rain/snow/none"
+
 function getPrecipType(amount, probability) {
   if (amount > 0 && probability > 50) return "rain";
   return "none";
@@ -283,18 +300,41 @@ function buildForecastHTML(type, series, locationName) {
 }
 
 async function showWeather(type, lat, lon, locationName) {
-  const series = await fetchWeather(lat, lon);
-  const html = buildForecastHTML(type, series, locationName);
 
-  const modal = document.getElementById("weatherModal");
-  modal.querySelector(".modal-content").innerHTML = html;
+  try {
 
-  openModal(modal);
+    showPleaseWait();
+
+    const series = await fetchWeather(lat, lon);
+    const html = buildForecastHTML(type, series, locationName);
+
+    const modal = document.getElementById("weatherModal");
+
+    modal.querySelector(".modal-content").innerHTML = html;
+
+    openModal(modal);
+
+  } catch (error) {
+
+    const modal = document.getElementById("weatherModal");
+
+    modal.querySelector(".modal-content").innerHTML =
+      "<h2>Weather Unavailable</h2>" +
+      "<p>Unable to retrieve forecast data at this time.</p>";
+
+    openModal(modal);
+
+
+
+  } finally {
+
+    hidePleaseWait();
+
+  }
 }
 window.showWeather = showWeather;
 
 
-// Your existing icon logic stays the same
 function getWeatherIcon(p) {
   if (p.prec_type === "rain") {
     return "🌧️";
@@ -327,8 +367,10 @@ document.body.addEventListener("click", function (e) {
     let html = "";
     html += "<h2>News Letter</h2>";
     html += '<form id="newsLetter">';
-    html += '<input type="text" placeholder="Your name" required>';
-    html += '<input type="email" placeholder="Email" required>';
+    html += '<label for="newsletterName">Name</label>';
+    html += '<input id="newsletterName" type="text" placeholder="Your name" required>';
+    html += '<label for="newsletterEmail">Email Address</label>';
+    html += '<input id="newsletterEmail" type="email" placeholder="Email" required>';
     html += '<button type="submit">Submit</button>';
     html += "</form>";
 
@@ -356,12 +398,12 @@ document.addEventListener("submit", function (e) {
     }, 150);
   }
 });
-
+/*
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("close-confirm")) {
     closeModal(document.getElementById("newsModal"));
   }
-});
+});*/
 
 /* ============================================================
    FEEDBACK MODAL
@@ -379,7 +421,8 @@ document.body.addEventListener("click", function (e) {
     html += '<textarea id="feedbackText" ';
     html += 'placeholder="Write anything you like..." ';
     html += 'rows="6" required></textarea>';
-    html += '<input type="text" placeholder="Your name (optional)">';
+    html += '<label for="feedbackName">Your name (optional)</label>';
+    html += '<input id="feedbackName" type="text" placeholder="Your name (optional)">';
     html += '<button type="submit">Submit</button>';
     html += "</form>";
 
@@ -407,12 +450,12 @@ document.addEventListener("submit", function (e) {
     }, 150);
   }
 });
-
+/*
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("close-confirm")) {
     closeModal(document.getElementById("feedModal"));
   }
-});
+});*/
 
 /* ============================================================
    PLEASE WAIT
@@ -451,10 +494,14 @@ document.body.addEventListener("click", function (e) {
     let html = "";
     html += "<h2>Booking Form</h2>";
     html += '<form id="bookingForm">';
-    html += '<input type="text" placeholder="Your name" required>';
-    html += '<input type="email" placeholder="Email" required>';
-    html += '<input type="number" placeholder="Phone">';
-    html += '<input type="date" required>';
+    html += '<label for="bookingName">Name</label>';
+    html += '<input id="bookingName" type="text" placeholder="Your name" required>';
+    html += '<label for="bookingEmail">Email Address</label>';
+    html += '<input id="bookingEmail" type="email" placeholder="Email" required>';
+    html += '<label for="bookingPhone">Phone Number</label>';
+    html += '<input id="bookingPhone" type="tel" placeholder="Phone">';
+    html += '<label for="bookingDate">Booking Date</label>';
+    html += '<input id="bookingDate" type="date" required>';
     html += '<label for="package">Select your package:</label>';
     html += '<select id="package" name="package">';
     html += '<option value="1">Driving package</option>';
@@ -470,7 +517,7 @@ document.body.addEventListener("click", function (e) {
   }
 });
 
-/* Submit → confirmation modal */
+/* Submit → confirmation modal 
 document.addEventListener("submit", function (e) {
   if (e.target.id === "bookingForm") {
     e.preventDefault();
@@ -488,11 +535,11 @@ document.addEventListener("submit", function (e) {
       openModal(modal);
     }, 150);
   }
-});
+});*/
 
-/* Close confirmation */
+/* Close confirmation 
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("close-confirm")) {
     closeModal(document.getElementById("appModal"));
   }
-});
+});*/
