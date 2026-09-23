@@ -13,6 +13,8 @@ See the full license in the [**LICENSE**](LICENSE) file for complete details
 
 ## Table of Contents
 
+- [Project Rationale](#projectrationale)
+- [Target Audience](#targetaudience)
 - [User Stories](#user-stories)
 - [Navbar link to Home Page](#navbar-link-to-home-page)
 - [GitHub Projects](#github-projects)
@@ -25,9 +27,15 @@ See the full license in the [**LICENSE**](LICENSE) file for complete details
 - [Acknowledgments](#acknowledgments)
 - [Local Deployment](#local-deployment)
 - [Social Media](#social-media)
-
 - [Testing Documentation](#testing-documentation)
 
+## Project Rationale
+
+Wildridge Adventures was created to provide visitors with a simple and engaging way to explore outdoor adventure activities, view weather information, and submit booking enquiries.
+
+## Target Audience
+
+The target audience is adults and families interested in outdoor activities such as hiking, climbing, skiing, and off-road driving who wish to obtain information and make booking enquiries online.
 
 ## user stories
 
@@ -42,8 +50,7 @@ The site should present high‑quality images and clear descriptions of each tou
 * 	The homepage establishes the overall theme and visual identity of the site.
 * 	A fixed navbar provides consistent navigation across all pages.
 * 	The layout is fully responsive across a range of breakpoints (mobile, tablet, desktop, large desktop).
-* 	The homepage clearly links to all other key pages (e.g., Tours, About, Contact).
-* 	Tour pages include:
+* 	The homepage links to the product page.
 * 	A hero image or gallery
 * 	A short, engaging description
 * 	Clear calls to action
@@ -339,11 +346,17 @@ The assistance was used to accelerate the migration to an alternative weather se
 
 Microsoft Copilot was used to fix a bug from the original code where a failed API request could leave the application in a perpetual loading state. Error handling was subsequently implemented to ensure that network or service failures are handled gracefully and that appropriate feedback is presented to the user.
 
+### Google Fonts
+
+This project uses fonts supplied by Google Fonts under their respective licences.
+
 ## Local Deployment
 
 1. Clone the [repository.](https://github.com/TonyWalker-coder/wildridge)
-2. Open index.html in your browser or IDE.
-3. Consult /README.md
+2. Open project in VS Code.
+3. Install/use the Live Server extension.
+4. Right-click index.html → Open with Live Server.
+5. Browse to the local URL provided by Live Server.
 
 ### Social Media
 

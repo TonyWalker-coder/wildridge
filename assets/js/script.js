@@ -348,7 +348,7 @@ async function showWeather(type, lat, lon, locationName) {
 
     modal.querySelector(".modal-content").innerHTML =
       "<h2>Weather Unavailable</h2>" +
-      "<p>Unable to retrieve forecast data at this time.</p>";
+      "<p class='weather-p-error'>Unable to retrieve forecast data at this time.</p>";
 
     openModal(modal);
 
@@ -530,5 +530,25 @@ document.body.addEventListener("click", function (e) {
 
     content.innerHTML = html;
     openModal(modal);
+  }
+});
+
+document.addEventListener("submit", function (e) {
+  if (e.target.id === "bookingForm") {
+    e.preventDefault();
+
+    const modal = document.getElementById("appModal");
+    const content = modal.querySelector(".modal-content");
+
+    content.innerHTML =
+      "<h2>Booking Request Received</h2>" +
+      "<p>Your booking request has been submitted successfully.</p>" +
+      '<button class="close-confirm">Close</button>';
+
+    closeModal(modal);
+
+    setTimeout(function () {
+      openModal(modal);
+    }, 150);
   }
 });

@@ -1,14 +1,46 @@
 ## Table of Contents
 
-- [Testing](#testing)
+- [User Story Validation](#userstoryvalidation)
 - [Lighthouse](#lighthouse)
 - [Validators](#css)
-- [ESlint vs JSlint](#lint)
+- [ESlint](#lint)
 - [Colour palette](#colours)
 - [Visual check](#visual-check)
 - [Link Check](#link-check)
 - [Browser support](#browser-support)
 - [Bugs / Design Features](#bugs)
+
+## User Story Validation
+
+## Homepage
+
+### Acceptance Criteria
+* 	The homepage establishes the overall theme and visual identity of the site.
+* 	A fixed navbar provides consistent navigation across all pages.
+* 	The layout is fully responsive across a range of breakpoints (mobile, tablet, desktop, large desktop).
+* 	The homepage links to the packages page.
+* 	A hero image or gallery
+* 	A short, engaging description
+* 	Clear calls to action
+* 	Contact details are visible or easily accessible from the navbar/footer
+
+<img  width=800px height=100% src="../screenshots/homepage1-1.png">
+
+<img  width=800px height=100% src="../screenshots/homepage1-2.png">
+
+<img  width=800px height=100% src="../screenshots/homepage1-3.png">
+
+The homepage has a fixed navigation bar and contact details can be accessed via the navigation bar, the navigation bar has a link to the packages.html
+
+<img  width=800px height=100% src="../screenshots/homepage1-4.png">
+
+the homepage remains responsive with the use of clamp
+
+<img  width=800px height=100% src="../screenshots/homepage1-5.png">
+
+
+
+
 
 
 ## Testing
@@ -72,32 +104,16 @@ WebKit-prefixed properties exist to support browsers that still rely on legacy e
 
 <a id="lint"></a>
 
-### ESlint vs JSlint
+### ESlint
 
-ESLint is a far more modern and flexible tool than JSLint, giving developers real control over their code quality instead of forcing rigid, outdated rules. It supports custom configurations, plugins, and environments, which means you can tailor it to your project rather than rewriting your project to satisfy the tool. ESLint understands modern JavaScript features, integrates cleanly with editors, and provides clear, actionable feedback instead of the blunt, inflexible warnings JSLint is known for. In short, ESLint fits naturally into a professional workflow, while JSLint feels like a relic from an earlier era of JavaScript.
+JavaScript linting was performed using ESLint throughout development. ESLint was chosen because it supports modern JavaScript standards, including current syntax, modules. As an installed Visual Studio Code extension, ESLint provided continuous real-time feedback while coding, highlighting errors and potential issues directly within the editor.
 
-*screen shots*
+In addition to in-editor checking, project-wide linting was performed from the command line using:
 
-Automated Testing
-ESLint was used throughout development to identify potential JavaScript issues and coding standard violations. Following implementation of the assessor feedback fixes, ESLint was run against the project and reported no errors under the configured rule set.
+`eslint .`
 
-Automated Testing vs Manual Testing
-Testing within this project used a combination of automated and manual approaches.
+This command allowed all JavaScript files within the project directory to be checked before submission, providing a final sanity check to help identify any remaining errors, warnings, or code quality issues. Using both the Visual Studio Code integration and command-line linting ensured that code quality was monitored continuously throughout development and verified prior to handover.
 
-Automated testing involves using tools to automatically check code for errors, inconsistencies, or standards violations. In this project, ESLint was used as an automated testing tool to identify JavaScript syntax issues, unused variables, and coding standard violations. Automated testing is particularly useful for quickly checking large amounts of code and for detecting common errors consistently across a project.
-
-Manual testing involves a developer or tester interacting directly with the application and verifying that features behave as expected. Throughout development, manual testing was used to verify navigation, responsive layouts, modal functionality, keyboard accessibility, form validation, weather API behaviour, and theme switching. Manual testing is particularly useful for evaluating user experience, visual design, accessibility, and workflows that cannot easily be validated by automated tools.
-
-Both approaches are important because automated testing can identify technical issues quickly, while manual testing helps ensure that the application functions correctly from the user's perspective.
-
-ESLint was selected because it offers greater flexibility, support for modern JavaScript features, custom configuration options, and integration with contemporary development workflows.
-
-
-
-### VC extension
-![](../screenshots/script.png)
-
-### web version
 ![](../screenshots/eslint.png)
 
 <a id="colours"></a>
@@ -284,5 +300,10 @@ The fix was tested by disconnecting the network before initiating the weather re
 
 A fallback was added to the navigation loader to handle situations where the shared navbar.html cannot be retrieved. The application now checks the HTTP response before rendering the navigation and displays a user-friendly message if it is unavailable, preventing a server 404 error on the page.
 
+*note this is only available via the homepage as the site would not function without the navigation
+
+### 404.html
+
+Added a 404.html with link back to homepage.
 
 
