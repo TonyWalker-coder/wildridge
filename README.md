@@ -171,9 +171,9 @@ This project is managed using GitHub Projects to mirror real‑world development
 - GitHub Project (user stories)
 - Balsamiq.com (wireframes)
 - canva.com (image editing)
-- Copilot (website text articles)
+- Copilot
 - fontawesome
-- w3.org (validators)
+- Open-Meteo weather API
 - 7timer.info (weather API)
 - adobe.com (colour contrast analyzer)
 - google.com (google maps)

@@ -8,3 +8,5 @@ farm.*
 tockentester.html
 p*.json
 node*
+.vscode
+extract.py

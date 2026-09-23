@@ -24,13 +24,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
 fetch("navbar.html")
   .then(function (r) {
+
+    if (!r.ok) {
+      throw new Error(`HTTP ${r.status}`);
+    }
+
     return r.text();
   })
+
   .then(function (html) {
     const nav = document.getElementById("exnavbar");
+
     nav.innerHTML = html;
     nav.classList.add("loaded");
+
     initNavbar();
+  })
+
+  .catch(function (error) {
+
+    console.error("Navbar failed to load:", error);
+
+    document.getElementById("exnavbar").style.display = "none";
+
+    const navFail = document.getElementById("navfail");
+
+    if (navFail) {
+      navFail.classList.remove("hidden");
+      navFail.textContent =
+        "Navigation could not be loaded. Please refresh the page or try again later.";
+    }
   });
 
 function initNavbar() {
@@ -112,7 +135,11 @@ function openModal(modal) {
   focusTarget.focus();
   trapFocus(modal);
 }
-/*add a single call to close modal to stop multiple eventlisteners kicking in*/
+/* ============================================================
+   CLOSE MODAL
+   add a single call to close modal to stop multiple eventlisteners kicking in
+============================================================ */
+
 document.addEventListener("click", function (e) {
 
 if (!e.target.classList.contains("close-confirm")) {
@@ -206,8 +233,9 @@ document.querySelectorAll(".img-link").forEach(function (link) {
    WEATHER (Open-Meteo API)
 
 Due to 7timer.info no longer being available after this project was
-handed in this API was rewritten by Microsoft Copilot in the 
-interest of getting a speedy solution using the Open-Meteo weather API
+handed in and the time it took to write this API handler. This API 
+was rewritten by Microsoft Copilot in the interest of getting a 
+speedy solution using the Open-Meteo weather API
 
 ============================================================ */
 
@@ -398,12 +426,6 @@ document.addEventListener("submit", function (e) {
     }, 150);
   }
 });
-/*
-document.addEventListener("click", function (e) {
-  if (e.target.classList.contains("close-confirm")) {
-    closeModal(document.getElementById("newsModal"));
-  }
-});*/
 
 /* ============================================================
    FEEDBACK MODAL
@@ -450,12 +472,6 @@ document.addEventListener("submit", function (e) {
     }, 150);
   }
 });
-/*
-document.addEventListener("click", function (e) {
-  if (e.target.classList.contains("close-confirm")) {
-    closeModal(document.getElementById("feedModal"));
-  }
-});*/
 
 /* ============================================================
    PLEASE WAIT
@@ -516,30 +532,3 @@ document.body.addEventListener("click", function (e) {
     openModal(modal);
   }
 });
-
-/* Submit → confirmation modal 
-document.addEventListener("submit", function (e) {
-  if (e.target.id === "bookingForm") {
-    e.preventDefault();
-
-    const modal = document.getElementById("appModal");
-    const content = modal.querySelector(".modal-content");
-
-    closeModal(modal);
-
-    setTimeout(function () {
-      content.innerHTML =
-        "<h2>Booking Confirmed</h2>" +
-        "<p>Your request has been received.</p>" +
-        '<button class="close-confirm">Close</button>';
-      openModal(modal);
-    }, 150);
-  }
-});*/
-
-/* Close confirmation 
-document.addEventListener("click", function (e) {
-  if (e.target.classList.contains("close-confirm")) {
-    closeModal(document.getElementById("appModal"));
-  }
-});*/

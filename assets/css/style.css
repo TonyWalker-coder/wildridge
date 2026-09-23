@@ -85,7 +85,7 @@ p {
   font-size: clamp(var(--font-size-sm), 1.5vw + var(--font-size-xs), var(--font-size-2xxl));
 }
 
-/* Utility class for visually hidden content, ensuring accessibility while keeping the content hidden from sighted users. */
+/* Utility class for visually hidden content */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -97,7 +97,7 @@ p {
   border: 0;
 }
 
-/*remove browser default margin and padding, set background color */
+/*remove browser default margin and padding, set background colour */
 body {
   margin: var(--margin-0);
   background-color: var(--color-bg);
@@ -143,7 +143,8 @@ body {
   border-bottom: none;
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
-/*nice big swing on the chevron to show the toggle*/
+/*nice big swing on the chevron to show the toggle
+make sure the user can see the action*/
 #navbar.open .chevron-btn::after {
   transform: translateY(-50%) rotate(180deg);
 }
@@ -188,10 +189,9 @@ body {
   padding-right: calc(var(--padding-5) + 20px);
   /* space for the icon */
 }
-
+/* down chevron */
 .chevron-btn::after {
   content: "⌄";
-  /* down chevron */
   position: absolute;
   right: var(--padding-3);
   top: 50%;
@@ -222,14 +222,11 @@ body {
 
 .nav-wrapper .nav-sheet.open {
   max-height: 700px;
-  /* adjust as needed for content */
   border-bottom: 3px solid var(--color-borders);
   border-left: 3px solid var(--color-borders);
   border-right: 3px solid var(--color-borders);
   overflow-y: auto;
-  /* enable vertical scroll when open */
   scrollbar-gutter: stable;
-  /* prevent layout shift when scrollbar appears */
   background: var(--color-surface);
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   padding-left: var(--padding-5);
@@ -269,7 +266,7 @@ body {
   line-height: clamp(0.5, 1.25, var(--line-tight));
   letter-spacing: var(--letter-spacing-tight);
   transition: opacity 0.9s ease;
-  /*add transition as I am using a js to swap text in and out*/
+  /*add transition as I am using a js to swap text in and out this should stop text from jumping*/
 }
 
 /* clear default link styles for the navbar links,
@@ -330,7 +327,7 @@ The rgba background provides a subtle tint to enhance contrast. */
 }
 /* end of hero section styles */
 
-/* Grid system styles */
+/* grid system styles */
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -474,7 +471,7 @@ and spacing across different screen sizes. */
 }
 
 /*card image wrapper provides consistent padding around the image, ensuring it fits well within the card layout 
-and maintains a clean, polished appearance. */
+and maintains a clean appearance. */
 
 .card_image_wrapper {
   padding: .25rem;
@@ -489,7 +486,7 @@ and maintains a clean, polished appearance. */
 }
 
 /* styling the call-to-action button within the package cards, 
-using the design tokens for colors and spacing to maintain consistency 
+using the design tokens for colours and spacing to maintain consistency 
 with the overall design system. */
 #packages .btn {
   display: inline-block;
@@ -502,8 +499,6 @@ with the overall design system. */
   font-weight: 600;
   transition: background-color 0.2s ease;
   margin-top: auto;
-  /* pushes the button to the bottom */
-
 }
 
 #packages .btn:hover {
@@ -511,9 +506,7 @@ with the overall design system. */
 }
 
 /*end of packages card*/
-/*styles for the package sections and pages 
-add a mobile @media here if the images get
-to small on the mobile layout*/
+/*styles for the package sections and pages*/
 .packagewrapper img {
   border-radius: var(--radius-lg);
   border: 3px solid wheat;
@@ -559,7 +552,7 @@ local to the package sections */
 .article {
   padding: var(--padding-7);
 }
-/*make our own bullet list to keep with current styling*/
+/*make bullet list to keep with current styling*/
 .article p span {
   margin-left: 1em;
 }
@@ -629,10 +622,6 @@ using 1 modal for all the modal actions on this page*/
   border-radius: var(--radius-md);
 }
 
-
-
-
-
 /*end of modal*/
 /*floating button to call booking form*/
 .fab {
@@ -648,7 +637,6 @@ using 1 modal for all the modal actions on this page*/
   z-index: 199;
   font-size: .75rem;
   font-family: var(--font-secondary);
-  /*sit under the modal*/
 }
 
 
@@ -686,8 +674,6 @@ using 1 modal for all the modal actions on this page*/
     bottom: 70px;
   }
 }
-
-
 
 /*end button*/
 /*booking modal*/
@@ -775,7 +761,6 @@ using 1 modal for all the modal actions on this page*/
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   background: rgba(255, 255, 255, 0.25);
-  /*tiny filler needed so icon stands out on hero image*/
 }
 /*end icon*/
 /*fetch weather modal and buttons*/
@@ -817,7 +802,7 @@ using 1 modal for all the modal actions on this page*/
   animation: weatherFade 0.25s ease-out;
 }
 
-/* smooth fade-in */
+
 @keyframes weatherFade {
   from {
     opacity: 0;
@@ -891,9 +876,22 @@ using 1 modal for all the modal actions on this page*/
   font-family: var(--font-secondary);
   border-radius: var(--radius-md);
 }
-/* validators dont understand 100% so use a class to set responsive images*/
+
 .img-fluid {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.hidden {
+  display:none;
+}
+
+#navfail {
+background: rgba(180, 0, 0, 0.85);
+color: #fff;
+padding: 0.5rem 1rem;
+text-align: center;
+font-weight: 600;
+border-bottom: 2px solid #700;
 }

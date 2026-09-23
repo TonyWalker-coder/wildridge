@@ -78,6 +78,22 @@ ESLint is a far more modern and flexible tool than JSLint, giving developers rea
 
 *screen shots*
 
+Automated Testing
+ESLint was used throughout development to identify potential JavaScript issues and coding standard violations. Following implementation of the assessor feedback fixes, ESLint was run against the project and reported no errors under the configured rule set.
+
+Automated Testing vs Manual Testing
+Testing within this project used a combination of automated and manual approaches.
+
+Automated testing involves using tools to automatically check code for errors, inconsistencies, or standards violations. In this project, ESLint was used as an automated testing tool to identify JavaScript syntax issues, unused variables, and coding standard violations. Automated testing is particularly useful for quickly checking large amounts of code and for detecting common errors consistently across a project.
+
+Manual testing involves a developer or tester interacting directly with the application and verifying that features behave as expected. Throughout development, manual testing was used to verify navigation, responsive layouts, modal functionality, keyboard accessibility, form validation, weather API behaviour, and theme switching. Manual testing is particularly useful for evaluating user experience, visual design, accessibility, and workflows that cannot easily be validated by automated tools.
+
+Both approaches are important because automated testing can identify technical issues quickly, while manual testing helps ensure that the application functions correctly from the user's perspective.
+
+ESLint was selected because it offers greater flexibility, support for modern JavaScript features, custom configuration options, and integration with contemporary development workflows.
+
+
+
 ### VC extension
 ![](../screenshots/script.png)
 
@@ -219,3 +235,54 @@ Observe that the previous image flashes briefly before the new one loads.
 ### Fix
 
 To prevent the flicker, the solution was to hide the current image, preload the new image, and only swap the src once the new image has fully loaded. A fade‑in transition was added to ensure a smooth visual change.
+
+### Redundant development code
+
+Redundant development code in packages.html & index.html has left the theme toggle inside a '<div>' meaning it does not comply with WCAG 2.1.
+
+### Fix
+
+Wrapped the function in a '<button>' like the rest of the site.
+
+### Multiple close modals used through out script.js
+
+Due to my inexperience when initially implementing modals, script.js accumulated multiple modal close handlers. This created the potential for several event listeners to respond to the same action, as well as situations where code could attempt to close a modal that no longer exists, potentially resulting in unhandled errors.
+
+### Fix
+
+All modals now use a shared action class and a single unified event handler, which calls the closeModal() function. Additional validation has been added to ensure the event originated from a valid modal element before attempting to close it, preventing null reference errors.
+
+As part of this all redundant modal close functions and duplicate event listeners have been removed, resulting in more predictable modal behaviour.
+
+### Multiple console errors
+
+The original mouseover and mouseleave implementation generated numerous console errors. Events triggered by unrelated elements, such as <a> tags and <button> elements, were being processed by the handler, resulting in invalid or null event references and unnecessary error logging.
+
+### Fix
+
+The functionality was rewritten and moved into the navbar fetch process, allowing the event listeners to be attached directly to the intended elements once they navbar loaded. This has removed invalid event triggers being processed, eliminating the console errors.
+
+### 7timer.info weather API free service unavailable
+
+After submitting the project 7timer discontinued its free tier meaning the weather API failed.
+
+### Fix
+
+Due to the amount of time that was taken to make the original API service function correctly Microsoft Copilot was used to source and implement a new weather API and rewrite the original function.
+
+### Weather API unavailable service hang
+
+When the Weather API service is unavailable, the application remained stuck on the "Please Wait" prompt. This left the user without any indication that the request had failed or that the service was unreachable.
+
+### Fix
+
+The application now uses the previously unused status response to detect when a connection to the Weather API cannot be established. When this condition is encountered, the "Please Wait" prompt is automatically removed and an informational modal is displayed to notify the user that the service is unavailable.
+
+The fix was tested by disconnecting the network before initiating the weather request, confirming that the application now handles the failure with user feedback.
+
+### Navigation Resource Fallback
+
+A fallback was added to the navigation loader to handle situations where the shared navbar.html cannot be retrieved. The application now checks the HTTP response before rendering the navigation and displays a user-friendly message if it is unavailable, preventing a server 404 error on the page.
+
+
+
