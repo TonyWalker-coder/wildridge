@@ -901,3 +901,6 @@ border-bottom: 2px solid #700;
   font-size :1rem;
 
 }
+.nav-left a:focus-visible .logo {
+box-shadow: 0 0 0 3px #fff;
+}

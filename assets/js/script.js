@@ -58,6 +58,10 @@ fetch("navbar.html")
 
 function initNavbar() {
 
+  const sheet = $(".nav-sheet");
+sheet.find("a").attr("tabindex", "-1");
+
+
   $("#toggle").on("click", function () {
     const sheet = $(".nav-sheet");
     const navbar = $("#navbar");
@@ -66,7 +70,14 @@ function initNavbar() {
     sheet.scrollTop(0);
     sheet.toggleClass("open", !isOpen);
     navbar.toggleClass("open", !isOpen);
+
+    if (isOpen) {
+      sheet.find("a").attr("tabindex", "-1");
+    } else {
+      sheet.find("a").attr("tabindex", "0");
+    }
   });
+
 
   const navLeft = document.querySelector(".nav-left");
   const logoText = document.querySelector(".logotext");

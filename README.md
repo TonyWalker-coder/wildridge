@@ -75,7 +75,6 @@ The site should meet the requirements of WCAG 2.1 Level AA, ensuring that conten
 * 	Meaningful alt text for images
 * 	ARIA labels where appropriate
 * 	Focus states must be visible, clear, and consistent.
-* 	Text must be resizable up to 200% without breaking layout or hiding content.
 * 	Navigation must be predictable and consistent across the site.
 * 	No content should flash more than three times per second (to avoid seizure risk)
 

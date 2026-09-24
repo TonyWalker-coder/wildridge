@@ -26,17 +26,65 @@
 
 <img  width=800px height=100% src="../screenshots/homepage1-1.png">
 
+The homepage has the required hero and site description.
+
 <img  width=800px height=100% src="../screenshots/homepage1-2.png">
+
+The homepage has a fixed navigation bar.
 
 <img  width=800px height=100% src="../screenshots/homepage1-3.png">
 
-The homepage has a fixed navigation bar and contact details can be accessed via the navigation bar, the navigation bar has a link to the packages.html
+Contact details can be accessed via the navigation bar.
 
 <img  width=800px height=100% src="../screenshots/homepage1-4.png">
 
-the homepage remains responsive with the use of clamp
+The navigation bar has a link to the packages.html.
 
-<img  width=800px height=100% src="../screenshots/homepage1-5.png">
+<img  width=200px height=100% src="../screenshots/homepage1-5.png">
+
+The homepage remains responsive with the use of clamp.
+
+<img  width=800px height=100% src="../screenshots/homepage1-6.png">
+
+404.html page has a clear link back to the homepage.
+
+<img  width=800px height=100% src="../screenshots/homepage1-7.png">
+
+The navigation `fetch` has error handling for a failed promise and a clear user message.
+
+<img  width=800px height=100% src="../screenshots/homepage1-8.png">
+
+The site has a light/dark theme toggle.
+
+<img  width=800px height=100% src="../screenshots/homepage1-9.png">
+
+The home page is keyboard accessible.
+
+## Accessibility
+
+### Acceptance Criteria
+* 	The site must use a consistent colour theme across all pages.
+* 	The site must offer both light and dark themes.
+* 	The colour palette must meet WCAG 2.1 AA contrast ratios:
+* 	Minimum 4.5:1 for normal text
+* 	Minimum 3:1 for large text
+* 	All interactive elements (links, buttons, menus, cards) must be fully ope rable using keyboard input alone.
+* 	Screen reader support must be ensured through:
+* 	Semantic HTML structure
+* 	Meaningful alt text for images
+* 	ARIA labels where appropriate
+* 	Focus states must be visible, clear, and consistent.
+* 	Navigation must be predictable and consistent across the site.
+* 	No content should flash more than three times per second (to avoid seizure risk)
+
+<img  width=800px height=100% src="../screenshots/colour.png">
+
+The site has a consistent colour theme throughout.
+
+<img  width=800px height=100% src="../screenshots/lightanddark.png">
+
+The site has a light and dark theme
+
 
 
 
@@ -306,4 +354,6 @@ A fallback was added to the navigation loader to handle situations where the sha
 
 Added a 404.html with link back to homepage.
 
+### Keyboard access
 
+During keyboard navigation testing, it was identified that the home-page logo link could receive keyboard focus but did not display a sufficiently visible focus indicator. A :focus-visible style was added to provide a clear visual outline for keyboard users without affecting mouse interaction.
