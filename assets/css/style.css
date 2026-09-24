@@ -496,8 +496,7 @@ with the overall design system. */
 #packages .btn {
   display: inline-block;
   padding: var(--padding-2) var(--padding-4);
-  /*one of colour for accessibility */
-  background-color: #EDC7AB;
+  background-color: var(--color-accent);
   border: 2px solid var(--color-borders);
   color: var(--color-text);
   text-decoration: none;
