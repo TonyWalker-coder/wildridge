@@ -23,7 +23,7 @@
     --input-focus-ring: var(--color-accent);
     --input-placeholder: var(--color-text-muted);
 
-    --link-text: var(--color-accent);
+    --link-text: var(--color-accent-link);
     --link-hover: var(--color-accent-hover);
     --link-active: var(--color-accent-active);
 
@@ -427,6 +427,7 @@ and spacing across different screen sizes. */
   font-size: clamp(var(--font-size-lg), 3vw + var(--font-size-md), var(--font-size-1xl));
   font-weight: var(--font-primary);
   color: var(--color-text);
+  
 }
 
 #packages p {
@@ -466,8 +467,10 @@ and spacing across different screen sizes. */
   color: var(--color-text)
 }
 
-.packages-card h3 {
+.packages-card h3 , 
+.packages-card h2 {
   color: var(--color-heading);
+
 }
 
 /*card image wrapper provides consistent padding around the image, ensuring it fits well within the card layout 
@@ -485,13 +488,16 @@ and maintains a clean appearance. */
   border-radius: var(--radius-md);
 }
 
+.package-card h2 { color:green;}
+
 /* styling the call-to-action button within the package cards, 
 using the design tokens for colours and spacing to maintain consistency 
 with the overall design system. */
 #packages .btn {
   display: inline-block;
   padding: var(--padding-2) var(--padding-4);
-  background-color: var(--color-accent);
+  /*one of colour for accessibility */
+  background-color: #EDC7AB;
   border: 2px solid var(--color-borders);
   color: var(--color-text);
   text-decoration: none;
@@ -521,13 +527,14 @@ local to the package sections */
   justify-content: center;
 }
 
-.article h2,
+
 .article h1 {
   color: var(--color-heading);
+
   font-size: clamp(var(--font-size-2xl), 2vw + var(--font-size-lg), var(--font-size-2xxl));
 }
 
-.article h3 {
+.article h2 {
   color: var(--color-heading);
   font-size: clamp(var(--font-size-lg), 2vw + var(--font-size-md), var(--font-size-1xl));
   margin-bottom: -1rem;
@@ -638,7 +645,20 @@ using 1 modal for all the modal actions on this page*/
   font-size: .75rem;
   font-family: var(--font-secondary);
 }
-
+.booking {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 14px 20px;
+  border-radius: 50px;
+  background: #AD1500;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  z-index: 199;
+  font-size: .75rem;
+  font-family: var(--font-secondary);
+}
 
 
 .fab1 {
@@ -903,4 +923,11 @@ border-bottom: 2px solid #700;
 }
 .nav-left a:focus-visible .logo {
 box-shadow: 0 0 0 3px #fff;
+}
+
+.h2style{
+
+color: var(--color-heading) !important;
+font-size: 1.17rem !important;
+font-weight: bold !important;
 }

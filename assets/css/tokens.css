@@ -13,7 +13,8 @@
         --dark-color-text-muted: rgba(255, 249, 235, 0.4);
         --dark-color-borders:rgb(180, 126, 28);
         --dark-color-special-borders: rgb(236, 173, 56);
-        --dark-color-accent: #ac674c;
+        --dark-color-accent: #6F2F16;
+        --dark-color-accent-link: #3d460c;
         --dark-color-accent-hover: #ba7e66;
         --dark-color-accent-active: #c46742;
         --dark-color-special:#efdaa8;
@@ -31,6 +32,7 @@
         --light-color-borders: #5d0b0b;
         --light-color-special-borders: #c25f38;
         --light-color-accent: #d1712c;
+        --light-color-accent-link: #d1712c;
         --light-color-accent-hover: #cc954d;
         --light-color-accent-active: #cc824d;
         --light-color-special: #c93636;
