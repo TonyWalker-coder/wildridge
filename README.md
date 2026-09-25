@@ -88,8 +88,7 @@ The site must provide intuitive navigation for new users. A well‑positioned, c
 ## Acceptance Criteria
 * 	A consistent navbar appears on all pages.
 * 	The navbar contains clear, descriptive labels for each major section.
-* 	Contact details are accessible via a dedicated Contact page.
-* 	The Contact page is linked from the navbar and/or footer.
+* 	Contact details are accessible via the navigation bar.
 * 	Navigation items remain visible and usable across all screen sizes.
 * 	The homepage provides clear signposts to the main areas of the site.
 
@@ -99,29 +98,27 @@ and I want the option to sign up for a newsletter
 so that I can stay informed about new tours and updates.
 
 ## Description
-The site should feel well‑maintained, trustworthy, and professional. Users must be able to sign up for the company newsletter easily from any page. A dedicated newsletter form should collect user details and provide clear confirmation when the sign‑up is successful.
+The site should feel well-maintained, trustworthy, and professional. Users must be able to sign up for the company newsletter. A dedicated newsletter sign-up feature should collect user details and provide clear confirmation when the sign-up is successful.
 
 ## Acceptance Criteria
-* 	The footer contains a clear link to the newsletter sign‑up form.
-* 	A dedicated newsletter sign‑up form exists on its own page.
-* 	The form includes fields for at least name and email.
-* 	Submitting the form displays a clear success message.
-* 	The form is accessible from all pages via the footer or navbar.
-* 	The form uses validation to prevent incomplete or invalid submissions.
+* 	A dedicated newsletter sign‑up feature should be available via a button and modal.
+* 	The feature should includes fields for at least name and email.
+* 	Submitting the data displays a clear success message.
+* 	The feature uses validation to prevent incomplete or invalid submissions.
 
 ## As a customer _(must have)_
 I want to be able to leave feedback
 so that I can share my experience and help improve the service.
 
 ## Description
-The site must include a dedicated feedback form where customers can submit comments, suggestions, or concerns. The form should be simple, accessible, and provide confirmation once feedback has been submitted.
+The site must include a dedicated feedback option where customers can submit comments, suggestions, or concerns. The feature should be simple, accessible, and provide confirmation once feedback has been submitted.
 
 ## Acceptance Criteria
-* 	A dedicated feedback form page exists.
-* 	The form includes fields for name, email, and feedback message.
-* 	The form validates required fields before submission.
-* 	A clear success message is shown after the form is submitted.
-* 	The feedback page is accessible from the main navigation or footer.
+* 	A dedicated feedback function must exists.
+* 	Use a dedicated button and modal for this.
+* 	The feature will take the form of a modal and includes fields for name, email, and feedback message.
+* 	The feature validates required fields before submission.
+* 	A clear success message is shown after the data is submitted.
 
 ## As an owner _(should have)_
 As the site owner, I want the site to display our holidays so that visitors can quickly understand what tours we offer.
@@ -131,7 +128,6 @@ The site should present each holiday/tour using visually engaging cards that hig
 
 ## Acceptance Criteria
 * Cards are created to visually represent each tour, including title, image, short description, and key details.
-* A carousel or grid layout allows users to browse multiple tour cards smoothly.
 * Cards are responsive and display correctly on mobile, tablet, and desktop.
 * Clicking a card takes the user to the full tour details page.
 
@@ -142,8 +138,8 @@ As a customer, I would like extra information about the locations so that I can 
 The site can integrate external APIs to provide additional real‑time or contextual information about each destination, such as weather, terrain, safety alerts, or travel logistics.
 
 ## Acceptance Criteria
-* An API interface is implemented to fetch location‑specific information.
-* Relevant data (e.g., weather, elevation, hazards, travel info) is displayed clearly on the tour details page.
+* An API interface is implemented to fetch location‑specific weather information.
+* Relevant data is displayed clearly on the tour details page by way of a modal.
 
 ## Navbar link to Home Page
 
@@ -321,11 +317,6 @@ This site uses public‑domain imagery from [pixabay][pb].
 
 This project integrates Google Maps services for location and mapping features.  
 Usage complies with the Google Maps Platform Terms of Service.
-
-### 7timer.info Weather Data
-
-Weather forecasts in this project are sourced from the 7timer.info API.  
-Data is used in accordance with the 7timer.info service terms.
 
 ### Open-Meteo weather API
 
