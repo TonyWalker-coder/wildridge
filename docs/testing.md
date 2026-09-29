@@ -9,6 +9,9 @@
 - [Mobil phone support](#mobile)
 - [Bugs / Design Features](#bugs)
 - [Post-testing](#posttest)
+- [ESLint Configuration and Validation Output](#figurex)
+- [Weather Error Handling](#api)
+- [Automated and Manual Testing](#automatedtesting)
 
 ## **Documentation Note**
 
@@ -514,3 +517,43 @@ During keyboard navigation testing, it was identified that the home-page logo li
 ## Post-testing
 
 Post-testing note: As some testing activities resulted in minor code changes and bug fixes, all validators, including HTML validation, CSS validation and ESLint, were run again across the project to verify that no new issues or code violations were introduced.
+
+<a id="figurex"></a>
+
+## Figure X: ESLint Configuration and Validation Output
+
+The ESLint rules no-unused-vars and no-undef have been enabled to ensure that unused variables and undefined references are reported during development. Browser globals such as document, window, fetch, localStorage, and jQuery ($) are explicitly configured to prevent false-positive linting errors. The ESLint configuration also includes Node.js globals for the configuration file itself.
+
+The terminal output shows the command:
+`npx eslint .`
+executing successfully with no output returned, which is the expected result when ESLint detects zero errors and zero warnings. This confirms that all JavaScript files pass the configured linting rules and that the previously identified unused variable issue has been resolved.
+
+<img  width=700px height=100% src="../screenshots/figurex.png">
+
+<a id="api"></a>
+
+## Weather Error Handling
+
+The weather feature uses a third-party weather service. Where forecast data cannot be retrieved, users are provided with a clear and actionable error message:
+
+"Unable to retrieve forecast data at this time. Please check your internet connection and try again."
+
+As the application has no visibility of the specific cause of failure (for example, network interruption, API downtime, rate limiting, or service availability issues), it is not possible to provide more precise guidance without potentially misleading the user. The message therefore offers the most appropriate user action while clearly communicating that forecast data could not be retrieved.
+
+## Weather Forecast Amendments
+
+The weather feature was updated following the replacement of the original weather service with the Open-Meteo API. The reported issues relating to wind speed units and forecast time labels have been addressed. Wind speed is now displayed in km/h, matching the units returned by the API, and forecast timestamps have been clarified to avoid misleading users.
+
+The current implementation continues to present forecast information as an hourly forecast. A complete redesign of the forecast logic to provide dedicated daily forecast views would require a more substantial refactor of the weather component and is outside the scope of the current resubmission. The existing implementation remains fully functional and provides accurate forecast data obtained from the Open-Meteo service.
+
+<a id="automatedtesting"></a>
+
+## Automated and Manual Testing
+
+Testing for this project was carried out using both automated and manual methods.
+
+Automated testing was used to validate code quality and standards. This included HTML validation through the W3C Validator, CSS validation through the W3C CSS Validator, JavaScript linting with ESLint, and accessibility and performance testing using Lighthouse. These tools automatically analyse the code and report any errors, warnings, or areas for improvement.
+
+Manual testing was used to verify the functionality and usability of the application. Each page, navigation link, package card, contact method, weather feature, modal, and user interaction was tested individually. Manual testing was also carried out across different screen sizes and browsers to confirm that the website behaved as expected for end users.
+
+Both approaches were used throughout development, with automated testing helping to identify technical issues and manual testing confirming that features worked correctly from a user's perspective.

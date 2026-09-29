@@ -26,6 +26,7 @@ See the full license in the [**LICENSE**](LICENSE) file for complete details
 - [Design Tokens and System Consistency](#tokens)
 - [Acknowledgments](#acknowledgments)
 - [Local Deployment](#local-deployment)
+- [GitHub Pages Deployment](#github)
 - [Social Media](#social-media)
 - [Testing Documentation](#testing-documentation)
 
@@ -347,6 +348,20 @@ This project uses fonts supplied by Google Fonts under their respective licences
 3. Install/use the Live Server extension.
 4. Right-click index.html → Open with Live Server.
 5. Browse to the local URL provided by Live Server.
+
+<a id="github"></a>
+
+## GitHub Pages Deployment
+
+1. Log in to GitHub.
+2. Open the repository.
+3. Select Settings.
+4. Navigate to Pages in the left-hand menu.
+5. Under Build and deployment, select Deploy from a branch.
+6. Choose the main branch and /root folder.
+7. Click Save.
+8. Wait for the deployment to complete.
+9. The live site will be available at the URL provided by GitHub Pages.
 
 ### Social Media
 

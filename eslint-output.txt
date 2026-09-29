@@ -1,0 +1,7 @@
+
+C:\Users\mrton\OneDrive\projects\hackit\eslint.config.js
+  1:17  error  'require' is not defined  no-undef
+  3:1   error  'module' is not defined   no-undef
+
+Ô£û 2 problems (2 errors, 0 warnings)
+

@@ -1,16 +1,26 @@
+const globals = require("globals");
+
 module.exports = [
-{
-files: ["**/*.js"],
-
-languageOptions: {
-ecmaVersion: "latest",
-sourceType: "script",
-},
-
-rules: {
-"no-unused-vars": "off",
-"no-undef": "off",
-"no-console": "off",
-},
-},
+  {
+    files: ["eslint.config.js"],
+    languageOptions: {
+      globals: globals.node
+    }
+  },
+  {
+    files: ["**/*.js"],
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "script",
+      globals: {
+        ...globals.browser,
+        $: "readonly"
+      }
+    },
+    rules: {
+      "no-unused-vars": "error",
+      "no-undef": "error",
+      "no-console": "off"
+    }
+  }
 ];

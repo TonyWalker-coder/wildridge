@@ -157,7 +157,6 @@ if (!e.target.classList.contains("close-confirm")) {
 return;
 }
 
-const modalId = e.target.dataset.modal;
 
 
 const modal = e.target.closest(".modal");
@@ -297,9 +296,9 @@ function getPrecipType(amount, probability) {
 
 function buildForecastHTML(type, series, locationName) {
   const sliceMap = {
-    "3day": 24,
-    "7day": 56,
-    today: 8,
+    "3day": 72,
+    "7day": 168,
+    today: 24,
   };
 
   const sliced = series.slice(0, sliceMap[type]);
@@ -326,7 +325,7 @@ function buildForecastHTML(type, series, locationName) {
       "/9</p>" +
       "<p>Wind: " +
       p.wind10m.speed +
-      " m/s (" +
+      " km/h (" +
       p.wind10m.direction +
       ")</p>" +
       "<p>Precip: " +
@@ -353,13 +352,13 @@ async function showWeather(type, lat, lon, locationName) {
 
     openModal(modal);
 
-  } catch (error) {
+  } catch {
 
     const modal = document.getElementById("weatherModal");
 
     modal.querySelector(".modal-content").innerHTML =
       "<h2>Weather Unavailable</h2>" +
-      "<p class='weather-p-error'>Unable to retrieve forecast data at this time.</p>";
+      "<p class='weather-p-error'>Unable to retrieve forecast data at this time. Unable to retrieve forecast data at this time.</p>";
 
     openModal(modal);
 
