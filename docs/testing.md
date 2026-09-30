@@ -557,3 +557,13 @@ Automated testing was used to validate code quality and standards. This included
 Manual testing was used to verify the functionality and usability of the application. Each page, navigation link, package card, contact method, weather feature, modal, and user interaction was tested individually. Manual testing was also carried out across different screen sizes and browsers to confirm that the website behaved as expected for end users.
 
 Both approaches were used throughout development, with automated testing helping to identify technical issues and manual testing confirming that features worked correctly from a user's perspective.
+
+
+
+## Live Site Console Check
+
+Following deployment, the live GitHub Pages site was tested using browser Developer Tools. No JavaScript errors, warnings, or missing resources were detected in the console. A favicon was added to remove the previously reported 404 resource request and verify a clean console output on the deployed site.
+
+## Additional user navigational information
+
+The decision was made not to introduce additional page headings across the Driving, Climbing, Skiing, and Hiking package pages, as testing showed they added unnecessary visual clutter and detracted from the overall layout. Instead, the booking button was enhanced with a dynamic, package-specific title that updates according to the selected package within the dropdown menu, providing users with clear contextual feedback before booking. Each package page contains dedicated content and imagery relevant to the activity being presented, ensuring that users are already provided with sufficient context and visual cues without the need for additional headings. This approach maintains a cleaner interface, preserves the visual design, and supports usability by keeping the user's focus on the available packages and booking action.
