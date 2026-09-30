@@ -12,6 +12,7 @@
 - [ESLint Configuration and Validation Output](#figurex)
 - [Weather Error Handling](#api)
 - [Automated and Manual Testing](#automatedtesting)
+- [Latest lighthouse screenshots and evaluation](#light)
 
 ## **Documentation Note**
 
@@ -569,6 +570,12 @@ Following deployment, the live GitHub Pages site was tested using browser Develo
 The decision was made not to introduce additional page headings across the Driving, Climbing, Skiing, and Hiking package pages, as testing showed they added unnecessary visual clutter and detracted from the overall layout. Instead, the booking button was enhanced with a dynamic, package-specific title that updates according to the selected package within the dropdown menu, providing users with clear contextual feedback before booking. Each package page contains dedicated content and imagery relevant to the activity being presented, ensuring that users are already provided with sufficient context and visual cues without the need for additional headings. This approach maintains a cleaner interface, preserves the visual design, and supports usability by keeping the user's focus on the available packages and booking action.
 
 
+<a id="light"></a>
+
 ## Latest lighthouse screenshots and evaluation
 
-The screenshots below represent the final Lighthouse assessment results for the completed website. Five pages achieved scores of 100 across all Lighthouse categories, while one page achieved a Performance score of 96 and scores of 100 in Accessibility, Best Practices, and SEO. The remaining recommendations relate primarily to minor performance optimisations, such as image delivery and network-related efficiencies, rather than usability, accessibility, or functionality concerns. Given the consistently high results achieved across the site, I am satisfied that the project meets a strong standard of performance and user experience. Further optimisation was considered; however, the potential gains were minimal and unlikely to provide a meaningful improvement for end users. Therefore, the project was considered complete at this stage, with priority given to maintaining code quality, usability, accessibility, and an effective visual design.
+The screenshots below represent the final Lighthouse assessment results for the completed website. Five pages achieved scores of 99+ one page achieved a Performance score of 94 all pages have scores of 100 in Accessibility, Best Practices, and SEO. The remaining recommendations relate primarily to minor performance optimisations, such as image delivery and network-related efficiencies, rather than usability, accessibility, or functionality concerns. Given the consistently high results achieved across the site, I am satisfied that the project meets a strong standard of performance and user experience. Further optimisation was considered; however, the potential gains were minimal and unlikely to provide a meaningful improvement for end users. Therefore, the project was considered complete at this stage, with priority given to maintaining code quality, usability, accessibility, and an effective visual design.
+
+<img  width=400px height=100% src="../screenshots/light-index.png"><img  width=400px height=100% src="../screenshots/light-packages.png"><img  width=400px height=100% src="../screenshots/light-driving.png">
+
+<img  width=400px height=100% src="../screenshots/light-skiing.png"><img  width=400px height=100% src="../screenshots/light-climbing.png"><img  width=400px height=100% src="../screenshots/light-hiking.png">
