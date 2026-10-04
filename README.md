@@ -190,7 +190,6 @@ This project is managed using GitHub Projects to mirror real‑world development
         └── 📁css
             ├── tokens.css
             └── style.css
-        └── 📁favicon
         └── 📁fonts
         └── 📁images
         └── 📁gallery
