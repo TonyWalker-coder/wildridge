@@ -1,3 +1,12 @@
+const theme =
+    localStorage.getItem("theme") ||
+    "dark";
+
+
+if (!localStorage.getItem("theme")) {
+    localStorage.setItem("theme", theme);
+}
+document.documentElement.setAttribute("data-theme", theme);
 /* ============================================================
    THEME TOGGLE
 ============================================================ */
